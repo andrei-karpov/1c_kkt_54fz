@@ -1,3 +1,5 @@
+[![Release](https://img.shields.io/github/tag/andrei-karpov/1c_kkt_54fz.svg?label=Last%20release&a)](https://github.com/andrei-karpov/1c_kkt_54fz/releases)
+
 # ККТ-ОНЛАЙН 54ФЗ: «Обработка для работы фискальных регистраторов» #
 
 ## Что умеет ##
