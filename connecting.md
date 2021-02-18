@@ -2,7 +2,7 @@
 
 [в начало](README.md#навигация)
 
-[Актуальная версия программы](https://github.com/andrei-karpov/1c_kkt_54fz/releases/latest) , ссылка в разделе _Assets_
+[Актуальная версия программы](https://yadi.sk/d/jcdpGNZ43WQtro)
 
 [Видео-пример подключения](https://www.youtube.com/watch?v=i_1eexDzheM)
 
