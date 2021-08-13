@@ -27,8 +27,8 @@ IskraKKT_COM_2002_32_IskraKKT.dll | ПРИМ 07\08\88\09Ф | 32x | 3002 | 2.0.4.
 SCHETMASHKKT_COM_2002_32_fr_feliksrmf1c83.dll | Феликс-РМФ | 32x | 3002 | 1.1.20.331 | 05.07.2020
 MEBIUSKKT_NATIVE_32_Moebius1C_NET.dll | МЁБИУС NET H21 Ф | 32x | 2005 | 3.1.1.3 | 13.01.2020
 KOMTETKKT_NATIVE_2002_32_KOMTET_KASSA_KKM_54FZ_FFD105.dll | КОМТЕТ КАССА | 32x | 2005 | 1.0.3.1 |
-CASTOMKKT_NATIVE_32_q3xfru.dll | Q3X-Ф | 32x |  |  | 12.08.2021
-CASTOMKKT_NATIVE_64_q3xfru.dll | Q3X-Ф | 64x |  |  | 12.08.2021
+CASTOMKKT_NATIVE_32_q3xfru.dll | Q3X-Ф | 32x | 3003 | 1.94 | 12.08.2021
+CASTOMKKT_NATIVE_64_q3xfru.dll | Q3X-Ф | 64x | 3003 | 1.94| 12.08.2021
 INITPROKKT_NATIVE_32_NKR_KKT.dll | НКР-01-Ф | 32x | 3002 | 1.3.0.1 | 12.08.2021
 INITPROKKT_NATIVE_64_NKR_KKT.dll | НКР-01-Ф | 64x | 3002 | 1.3.0.1 | 12.08.2021
 KKCKKT_NATIVE_32_Spark130.dll | СПАРК 115-Ф\СПАРК 130-Ф  | 32x | 3002 | 2.0.0.2 | 12.08.2021
