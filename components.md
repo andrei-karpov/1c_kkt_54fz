@@ -8,8 +8,8 @@ ATOLKKT10_NATIVE_2002_32_ATOL_KKT_1C83_V10.dll | АТОЛ | 32x | 3004 | 10.9.0.
 ATOLKKT10_NATIVE_2002_64_ATOL_KKT_1C83_V10.dll | АТОЛ | 64x | 3004 | 10.9.0.4
 VikiPKKT_NATIVE_2002_32_VikiP.dll | ВИКИ ПРИНТ\ ПИРИТ | 32x | 3002 | 1.5.0.15
 VikiPKKT_NATIVE_2002_64_VikiP.dll | ВИКИ ПРИНТ\ ПИРИТ | 64x | 3002 | 1.5.0.15
-SHTRIHMKKT_NATIVE_32_SMDrvFR1C34.dll | ШТРИХ М | 32x | 3004 | 4.16.0.868
-SHTRIHMKKT_NATIVE_64_SMDrvFR1C34.dll | ШТРИХ М | 64x | 3004 | 4.16.0.868
+SHTRIHMKKT_NATIVE_32_SMDrvFR1C34.dll | ШТРИХ М | 32x | 3004 | 5.16.0.868
+SHTRIHMKKT_NATIVE_64_SMDrvFR1C34.dll | ШТРИХ М | 64x | 3004 | 5.16.0.868
 ATOLSERVICE_FILE_81.dll | АТОЛ ВЕБ-СЕРВИС | 32x | 3002 | 1.31
 ATOLSERVICE_FILE_82.dll | АТОЛ ВЕБ-СЕРВИС | 32x-64x | 3002 | 1.31
 SHTRIHMKKT_FILE_81.dll | ШТРИХ М | 32x | 3002 | 1.0.1
