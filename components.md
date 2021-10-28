@@ -4,12 +4,12 @@
 
  Наименование файла | Оборудование | Разрядность клиента 1с| Ревизия | Версия
 ---------|----------|---------|---------|---------
-ATOLKKT10_NATIVE_2002_32_ATOL_KKT_1C83_V10.dll | АТОЛ | 32x | 3002 | 10.9.0.0
-ATOLKKT10_NATIVE_2002_64_ATOL_KKT_1C83_V10.dll | АТОЛ | 64x | 3002 | 10.9.0.0
+ATOLKKT10_NATIVE_2002_32_ATOL_KKT_1C83_V10.dll | АТОЛ | 32x | 3004 | 10.9.0.4
+ATOLKKT10_NATIVE_2002_64_ATOL_KKT_1C83_V10.dll | АТОЛ | 64x | 3004 | 10.9.0.4
 VikiPKKT_NATIVE_2002_32_VikiP.dll | ВИКИ ПРИНТ\ ПИРИТ | 32x | 3002 | 1.5.0.15
 VikiPKKT_NATIVE_2002_64_VikiP.dll | ВИКИ ПРИНТ\ ПИРИТ | 64x | 3002 | 1.5.0.15
-SHTRIHMKKT_NATIVE_32_SMDrvFR1C34.dll | ШТРИХ М | 32x | 3004 | 4.16.0.868
-SHTRIHMKKT_NATIVE_64_SMDrvFR1C34.dll | ШТРИХ М | 64x | 3004 | 4.16.0.868
+SHTRIHMKKT_NATIVE_32_SMDrvFR1C34.dll | ШТРИХ М | 32x | 3004 | 5.16.0.868
+SHTRIHMKKT_NATIVE_64_SMDrvFR1C34.dll | ШТРИХ М | 64x | 3004 | 5.16.0.868
 ATOLSERVICE_FILE_81.dll | АТОЛ ВЕБ-СЕРВИС | 32x | 3002 | 1.31
 ATOLSERVICE_FILE_82.dll | АТОЛ ВЕБ-СЕРВИС | 32x-64x | 3002 | 1.31
 SHTRIHMKKT_FILE_81.dll | ШТРИХ М | 32x | 3002 | 1.0.1
@@ -44,8 +44,8 @@ MSSTARKKT_NATIVE_2002_64_AlfaFiscalPrinter.so | MStar-TK | 64x | 3002 | 1.3.29.0
 K1FKKT_NATIVE_2002_32_VT_KKT_V2.so | АМС-100Ф\К1Ф | 32x | 3002 | 2.0.0.57
 K1FKKT_NATIVE_2002_64_VT_KKT_V2.so | АМС-100Ф\К1Ф | 64x | 3002 | 2.0.0.57
 EmulatorKKT_FILE_82.so | Эмулятор | 32x-64x | 3002 | 1.06
-ATOLKKT10_NATIVE_2002_64_ATOL_KKT_1C83_V10.so | АТОЛ | 64x | 3002 | 10.9.0.0
-ATOLKKT10_NATIVE_2002_32_ATOL_KKT_1C83_V10.so | АТОЛ | 32x | 3002 | 10.9.0.0
+ATOLKKT10_NATIVE_2002_64_ATOL_KKT_1C83_V10.so | АТОЛ | 64x | 3004 | 10.9.0.4
+ATOLKKT10_NATIVE_2002_32_ATOL_KKT_1C83_V10.so | АТОЛ | 32x | 3004 | 10.9.0.4
 ATOLSERVICE_FILE_82.so | АТОЛ ВЕБ-СЕРВИС | 32x-64x | 3002 | 1.31
 WNJIKKT_NATIVE_32_WnjiFiscalPrinter.dll | WNJI 003Ф | 32x | 3003 | 1.3.30
 WNJIKKT_NATIVE_64_WnjiFiscalPrinter.dll | WNJI 003Ф | 64x | 3003 | 1.3.30
