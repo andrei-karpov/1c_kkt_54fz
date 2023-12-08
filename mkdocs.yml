@@ -1,0 +1,28 @@
+title: 'ККТ ОНЛАЙН 54-ФЗ - Обработка для работы с онлайн кассами. Инструкция'
+nav:
+  - Домашняя: README.md
+heme: 
+  name: material
+  language: ru
+  palette:
+    primary: 'white'
+    accent: 'indigo'
+extra:
+  search:
+    language: 'ru'
+  social:
+    - type: 'github'
+      link: 'https://github.com/andrei-karpov'
+extra_css:
+  - 'docs/assets/stylesheets/extra.css'
+markdown_extensions:
+  - admonition
+  - codehilite
+  - toc:
+      permalink: true
+docs_dir: ''
+
+site_url: 'https://andrei-karpov.github.io/1c_kkt_54f'
+repo_name: 'andrei-karpov/1c_kkt_54fz'
+repo_url: 'https://github.com/andrei-karpov/1c_kkt_54fz'
+edit_uri: 'edit/master'
