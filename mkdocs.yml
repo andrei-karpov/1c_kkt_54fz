@@ -1,4 +1,5 @@
-site_name: 'ККТ ОНЛАЙН 54-ФЗ - Обработка для работы с онлайн кассами. Инструкция'
+site_name: 'ККТ ОНЛАЙН 54-ФЗ'
+docs_dir: ''
 nav:
   - Домашняя: README.md
 theme: 
@@ -20,9 +21,8 @@ markdown_extensions:
   - codehilite
   - toc:
       permalink: true
-docs_dir: ''
 
 site_url: 'https://andrei-karpov.github.io/1c_kkt_54f'
 repo_name: 'andrei-karpov/1c_kkt_54fz'
 repo_url: 'https://github.com/andrei-karpov/1c_kkt_54fz'
-edit_uri: 'edit/master'
+edit_uri: 'edit/main'

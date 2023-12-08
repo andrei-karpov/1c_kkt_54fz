@@ -1,0 +1,66 @@
+name: GitHub Pages
+
+on:
+  push:
+    branches:
+    - main
+    paths:
+    - 'mkdocs.yml'
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Set up Python
+      uses: actions/setup-python@v1
+      with:
+        python-version: '3.10'
+        architecture: 'x64'
+
+    - name: Install dependencies
+      run: |
+        pip install --upgrade pip
+        pip install mkdocs mkdocs-material pygments-bsl
+    
+    - name: Dowload latest GitHub Pages
+      run: |
+        wget https://github.com/${{ github.repository }}/archive/gh-pages.zip || true
+        unzip gh-pages.zip || true
+    
+    - name: Save latest Main
+      if: github.ref == 'refs/heads/main'
+      run: |
+        mkdir public
+        mkdir public/dev
+        cp -R ${GITHUB_REPOSITORY#*/}-gh-pages/dev/. public/dev || true 
+            
+    - name: Patch Main
+      if: github.ref == 'refs/heads/main'
+      run: |         
+        sed -i "s%Phoenix BSL%Phoenix BSL Dev%g" mkdocs.yml
+        sed -i "s%https://otymko.github.io/phoenixbsl%https://otymko.github.io/phoenixbsl/dev%g" mkdocs.yml
+    
+    - name: Build Russian
+      run: |
+        mkdir temp
+        cp mkdocs.yml temp
+        cp -R *.md temp/.
+        cd temp
+        mkdocs build
+    
+    - name: Public Russian Main
+      if: github.ref == 'refs/heads/main'
+      run: |
+        cp -R temp/site/. public/dev
+    
+    - name: Clean temp
+      run: rm -rf temp
+        
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v2.5.0
+      env:
+        ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+        PUBLISH_BRANCH: main
+        PUBLISH_DIR: ./public
