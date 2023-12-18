@@ -72,6 +72,9 @@ markdown_extensions:
   - md_in_html
   - toc:
       permalink: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+            case: lower
   - tables
   - codehilite
 
