@@ -1,28 +1,120 @@
-site_name: 'ККТ ОНЛАЙН 54-ФЗ'
-docs_dir: ''
+site_name: 'ККТ ОНЛАЙН 54-ФЗ: Решение для онлайн касс'
+docs_dir: docs
+site_author: Андрей Карпов
+site_description: >-
+  Инструкция по работе с программой "ККТ-ОНЛАЙН 54-ФЗ: Обработка для 
+  работы фискальных регистраторов" 1С.
+
 nav:
-  - Домашняя: README.md
+  - Главная: index.md
+  - Подключение: 
+    - Описание: connecting.md
+    - Рарус: rarus_connecting.md
+  - Описание параметров: parameters_description.md
+  - Документация: 
+    - Общая информация: instruction.md
+    - Маркировка: marking.md
+    - Рассылка: management_distribution.md
+    - Форма проверки чека: form_check_and_check_correction.md
+    - Шаблон чека: template_document.md
+    - Механизм распределения: mechanism_distribution.md
+  - Для программистов: for_programmers.md
+  - Лицензирование: licensing.md
+  - Дополнительно:
+    - Компоненты: components.md
+    - Полезные ссылки: useful_links.md
+    - Возможные ошибки: errors.md
+
 theme: 
   name: material
   language: ru
+  favicon: assets/images/logo.png
+  logo: assets/images/logo.png
+  features:
+    - navigation.sections
+    - navigation.footer
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - content.tooltips
+    - content.code.copy
+    - search.highlight
+    - toc.follow
+
+
   palette:
-    primary: 'white'
-    accent: 'indigo'
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      accent: teal
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: teal
+      toggle:
+        icon: material/link
+        name: Switch to light mode
+  font:
+    text: Roboto
+    code: Roboto Mono
+
 extra:
   search:
     language: 'ru'
-  social:
-    - type: 'github'
-      link: 'https://github.com/andrei-karpov'
-extra_css:
-  - 'docs/assets/stylesheets/extra.css'
+
 markdown_extensions:
+  - abbr
   - admonition
-  - codehilite
+  - attr_list
+  - footnotes
+  - md_in_html
   - toc:
       permalink: true
+  - tables
+  - codehilite
 
-site_url: 'https://andrei-karpov.github.io/1c_kkt_54f'
+  # Python Markdown Extensions
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets:
+      auto_append:
+        - includes/abbreviations.md
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+extra_css:
+  - assets/stylesheets/extra.css
+
+extra_javascript:
+  - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
+  - _javascript/tablesort.js
+  - _javascript/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+site_url: 'https://andrei-karpov.github.io/1c_kkt_54fz'
 repo_name: 'andrei-karpov/1c_kkt_54fz'
 repo_url: 'https://github.com/andrei-karpov/1c_kkt_54fz'
-edit_uri: 'edit/main'
