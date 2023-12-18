@@ -1,0 +1,1248 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Инструкция по работе с программой "ККТ-ОНЛАЙН 54-ФЗ: Обработка для  работы фискальных регистраторов" 1С.">
+      
+      
+        <meta name="author" content="Андрей Карпов">
+      
+      
+        <link rel="canonical" href="https://andrei-karpov.github.io/1c_kkt_54fz/rarus_connecting/">
+      
+      
+        <link rel="prev" href="../connecting/">
+      
+      
+        <link rel="next" href="../parameters_description/">
+      
+      
+      <link rel="icon" href="../assets/images/logo.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.2">
+    
+    
+      
+        <title>Рарус - ККТ ОНЛАЙН 54-ФЗ: Решение для онлайн касс</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.50c56a3b.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href=".." title="ККТ ОНЛАЙН 54-ФЗ: Решение для онлайн касс" class="md-header__button md-logo" aria-label="ККТ ОНЛАЙН 54-ФЗ: Решение для онлайн касс" data-md-component="logo">
+      
+  <img src="../assets/images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ККТ ОНЛАЙН 54-ФЗ: Решение для онлайн касс
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Рарус
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="teal"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1M8 13h8v-2H8v2m9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1 0 1.71-1.39 3.1-3.1 3.1h-4V17h4a5 5 0 0 0 5-5 5 5 0 0 0-5-5Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/andrei-karpov/1c_kkt_54fz" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    andrei-karpov/1c_kkt_54fz
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Главная
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../connecting/" class="md-tabs__link">
+          
+  
+  Подключение
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../parameters_description/" class="md-tabs__link">
+        
+  
+    
+  
+  Описание параметров
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../instruction/" class="md-tabs__link">
+          
+  
+  Документация
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../for_programmers/" class="md-tabs__link">
+        
+  
+    
+  
+  Для программистов
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../licensing/" class="md-tabs__link">
+        
+  
+    
+  
+  Лицензирование
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../components/" class="md-tabs__link">
+          
+  
+  Дополнительно
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="ККТ ОНЛАЙН 54-ФЗ: Решение для онлайн касс" class="md-nav__button md-logo" aria-label="ККТ ОНЛАЙН 54-ФЗ: Решение для онлайн касс" data-md-component="logo">
+      
+  <img src="../assets/images/logo.png" alt="logo">
+
+    </a>
+    ККТ ОНЛАЙН 54-ФЗ: Решение для онлайн касс
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/andrei-karpov/1c_kkt_54fz" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    andrei-karpov/1c_kkt_54fz
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Главная
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Подключение
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Подключение
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../connecting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Описание
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Рарус
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Рарус
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Изменение конфигурации
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Подключение оборудования
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../parameters_description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Описание параметров
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Документация
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Документация
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../instruction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Общая информация
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../marking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Маркировка
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../management_distribution/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Рассылка
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../form_check_and_check_correction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Форма проверки чека
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../template_document/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Шаблон чека
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mechanism_distribution/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Механизм распределения
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../for_programmers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Для программистов
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../licensing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Лицензирование
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Дополнительно
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Дополнительно
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../components/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Компоненты
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../useful_links/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Полезные ссылки
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../errors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Возможные ошибки
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Изменение конфигурации
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Подключение оборудования
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="_1">Подключение Рарус<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>Для конфигураций Рарус: Альфа-Авто 4 и 5-й версии, типовой механизм работы с торговым оборудованием использует компоненту лицензирования, и имеет ряд ограничений и неудобств, например ошибки при работы оборудования через RDP-подключение, или несовместимость компонент для работы с торговым оборудованием с другими конфигурациями, а из-за этого они остаются довольно устаревшими, плюс не поддерживаются многие современные модели оборудования, в частности Вики-принт.</p>
+<p>В данной инструкции будет описано как использовать программу <a href="https://yadi.sk/d/jcdpGNZ43WQtro">ККТ-ОНЛАЙН 54ФЗ: "Обработка для работы фискальных регистраторов"</a>, вместе с типовым функционалом.</p>
+<p>Вся суть доработки сводится к тому, что мы подменим момент инициализации торгового оборудования на свой механизм, а если будет вызываться не наше оборудование, то будет использован типовой функционал.</p>
+<p>Пример подключения представлен в текстовом виде, и видео-инструкцией, однако текстовый вариант будет более актуальным, так как чаще обновляется.</p>
+<p><a href="https://www.youtube.com/watch?v=KY9TM6lczlA">Видео-инструкция</a> по подключению</p>
+<p>Ссылка на <a href="https://yadi.sk/d/AmJnxbkksSN2ag">актуальный комплект интеграции</a></p>
+<blockquote>
+<p><strong>Важно</strong>: следует понимать, что хоть механизм печати будет такой же как в типовой программе, но чек заполняется по алгоритму именно обработки, которая берет данные из фронт-кассира, либо из указанного документа основания.</p>
+</blockquote>
+<h2 id="_2">Изменение конфигурации<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>Доработка Альфа-Авто 4-й и 5-й версии немного отличается в инструкции на это будут соответствующая пометка.</p>
+<ul>
+<li>
+<p>Скачайте <a href="https://yadi.sk/d/AmJnxbkksSN2ag">комплект интеграции Рарус</a> и откройте файл <em>Комплект_доработки_РАРУС_8_2.cf</em> в конфигураторе.</p>
+</li>
+<li>
+<p>переносим переменную из модуля обычного приложения комплекта интеграции в модуль конфигурации.</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kd">Перем</span> <span class="nv">глРарус_КомпонентаТО</span> <span class="k">Экспорт</span><span class="p">;</span>
+</code></pre></div>
+<p>в итоге получится так
+  <img alt="Рарус модуль обычного приложения" src="../media/%D0%B4%D0%BE%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0_%D1%80%D0%B0%D1%80%D1%83%D1%81_%D0%BC%D0%BE%D0%B4%D1%83%D0%BB%D1%8C%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F.png" /></p>
+<div class="codehilite"><pre><span></span><code>Данная переменная будет использоваться наравне с типовой ```глРарус_Компонента```, в которой расположена компонента лицензирования
+</code></pre></div>
+
+<ul>
+<li>теперь скопируем 2 общих модуля <strong>ККТ_ФормаДокументаГенерация</strong> и <strong>ККТ_РаботаСТорговымОборудованием</strong>, чтобы получилось так</li>
+</ul>
+<p><img alt="Рарус общие модули" src="../media/%D0%B4%D0%BE%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0_%D1%80%D0%B0%D1%80%D1%83%D1%81_%D0%BE%D0%B1%D1%89%D0%B8%D0%B5%D0%BC%D0%BE%D0%B4%D1%83%D0%BB%D0%B8.png" /></p>
+<ul>
+<li>
+<p>полностью копируем справочник <strong>ПараметрыРарус</strong>, он используется, чтобы эмулировать COM-объект типовых параметров Рарус, в случае, если произойдет ошибка в инициализации компоненты лицензирования и COM-объект не будет доступен.</p>
+<p><img alt="Рарус справочник параметры" src="../media/%D0%B4%D0%BE%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0_%D1%80%D0%B0%D1%80%D1%83%D1%81_%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80%D1%8B_%D1%80%D0%B0%D1%80%D1%83%D1%81.png" /></p>
+</li>
+<li>
+<p>скорректируем справочник <strong>Оборудование</strong>, чтобы можно было добавлять внешние обработки для работы с ТО:</p>
+</li>
+<li>
+<p>вначале скопируем новые реквизиты справочника.</p>
+<p><img alt="Рарус реквизиты оборудования" src="../media/%D0%B4%D0%BE%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0_%D1%80%D0%B0%D1%80%D1%83%D1%81_%D1%80%D0%B5%D0%BA%D0%B2%D0%B8%D0%B7%D0%B8%D1%82%D1%8B_%D0%BE%D0%B1%D0%BE%D1%80%D1%83%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5.png" /></p>
+</li>
+<li>
+<p>в форме элемента необходимо заменить переменную <code>глРарус_Компонента</code> на нашу <code>глРарус_КомпонентаТО</code>, она встречается только одни раз в процедуре <code>ОсновныеДействияФормыОборудование</code> и будет выглядеть так
+      <img alt="Рарус подмена компоненты" src="../media/%D0%B4%D0%BE%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0_%D1%80%D0%B0%D1%80%D1%83%D1%81_%D1%84%D0%BE%D1%80%D0%BC%D0%B0_%D1%8D%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D0%B0_%D0%BF%D0%BE%D0%B4%D0%BC%D0%B5%D0%BD%D0%B0_%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D1%82%D1%8B.png" /></p>
+<ul>
+<li>
+<p>в самом конце процедуры <code>ПередОткрытием()</code> формы элемента добавить следующий код</p>
+<div class="highlight"><pre><span></span><code><span class="nv">ККТ_ФормаДокументаГенерация</span><span class="o">.</span><span class="nf">Справочник_Оборудование_ФормаЭлемента_ПередОткрытием</span><span class="p">(</span><span class="nv">ЭтаФорма</span><span class="p">,</span> <span class="nv">Отказ</span><span class="p">);</span>
+<span class="nv">ККТ_РаботаСТорговымОборудованием</span><span class="o">.</span><span class="nf">УстановитьДоступностьЭлементовФормыОборудования</span><span class="p">(</span><span class="nv">ЭтаФорма</span><span class="p">,</span> <span class="nv">ИспользоватьВнешнююОбработку</span><span class="p">);</span>
+</code></pre></div>
+<p>чтобы получилось так</p>
+<p><img alt="Рарус перед открытием оборудования" src="../media/%D0%B4%D0%BE%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0_%D1%80%D0%B0%D1%80%D1%83%D1%81_%D1%84%D0%BE%D1%80%D0%BC%D0%B0_%D1%8D%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D0%B0_%D0%BF%D0%B5%D1%80%D0%B5%D0%B4%D0%BE%D1%82%D0%BA%D1%80%D1%8B%D1%82%D0%B8%D0%B5%D0%BC.png" /></p>
+</li>
+<li>
+<p>и в самом конце модуля формы элемента, до области инициализации модуля, добавить следующий код:</p>
+<div class="highlight"><pre><span></span><code><span class="k">Процедура</span> <span class="nf">КнопкаНастроитьПараметрыНажатие</span><span class="p">(</span><span class="nv">Элемент</span><span class="p">)</span>
+    <span class="nv">ККТ_РаботаСТорговымОборудованием</span><span class="o">.</span><span class="nf">НастроитьПараметрыОборудования</span><span class="p">(</span><span class="nv">ЭтотОбъект</span><span class="p">);</span>
+<span class="k">КонецПроцедуры</span>
+
+<span class="k">Процедура</span> <span class="nf">КнопкаОчиститьПараметрыНажатие</span><span class="p">(</span><span class="nv">Элемент</span><span class="p">)</span>
+    <span class="nv">ККТ_РаботаСТорговымОборудованием</span><span class="o">.</span><span class="nf">ОчиститьПараметрыОборудования</span><span class="p">(</span><span class="nv">ЭтотОбъект</span><span class="p">,</span> <span class="nv">ЭтаФорма</span><span class="p">);</span>
+<span class="k">КонецПроцедуры</span>
+
+<span class="k">Процедура</span> <span class="nf">ЗагрузкаОбновлениеОбработкиИзКаталогаНажатие</span><span class="p">(</span><span class="nv">Элемент</span><span class="p">)</span>
+    <span class="nv">ККТ_РаботаСТорговымОборудованием</span><span class="o">.</span><span class="nf">ЗагрузитьОбработкуОбслуживанияКнопка</span><span class="p">(</span><span class="nv">ЭтотОбъект</span><span class="p">);</span>
+<span class="k">КонецПроцедуры</span>
+
+<span class="k">Процедура</span> <span class="nf">ИспользоватьВнешнююОбработкуПриИзменении</span><span class="p">(</span><span class="nv">Элемент</span><span class="p">)</span>
+    <span class="nv">ККТ_РаботаСТорговымОборудованием</span><span class="o">.</span><span class="nf">УстановитьДоступностьЭлементовФормыОборудования</span><span class="p">(</span><span class="nv">ЭтаФорма</span><span class="p">,</span> <span class="nv">ИспользоватьВнешнююОбработку</span><span class="p">);</span>
+<span class="k">КонецПроцедуры</span>
+</code></pre></div>
+<p>будет так</p>
+<p><img alt="Рарус новые процедуры оборудования" src="../media/%D0%B4%D0%BE%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0_%D1%80%D0%B0%D1%80%D1%83%D1%81_%D1%84%D0%BE%D1%80%D0%BC%D0%B0_%D1%8D%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D0%B0_%D0%BD%D0%BE%D0%B2%D1%8B%D0%B5_%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D0%B4%D1%83%D1%80%D1%8B.png" /></p>
+</li>
+</ul>
+</li>
+<li>
+<p>теперь нужно изменить "форму списка" оборудования, здесь достаточно заменить только глобальную переменную <code>глРарус_Компонента</code> на <code>глРарус_КомпонентаТО</code> в процедуре <code>ОсновныеДействияФормыДействия</code>, но если вы там ничего не найдете, то и заменять не нужно.</p>
+<p><img alt="Рарус форма списка оборудования - замена компоненты" src="../media/%D0%B4%D0%BE%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0_%D1%80%D0%B0%D1%80%D1%83%D1%81_%D1%84%D0%BE%D1%80%D0%BC%D0%B0_%D1%81%D0%BF%D0%B8%D1%81%D0%BA%D0%B0_%D0%B7%D0%B0%D0%BC%D0%B5%D0%BD%D0%B0_%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D1%8B.png" /></p>
+</li>
+<li>
+<p>также изменим форму "ВводНового", заменим глобальную переменную <code>глРарус_Компонента</code> на <code>глРарус_КомпонентаТО</code>, тут уже в 3х местах <code>кнИзменитьОборудованиеНажатие</code> и <code>КнопкаДалееНажатие</code>, но если вы там ничего не найдете, то и заменять не нужно.</p>
+<p><img alt="Рарус ввод нового 1" src="../media/%D0%B4%D0%BE%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0_%D1%80%D0%B0%D1%80%D1%83%D1%81_%D1%84%D0%BE%D1%80%D0%BC%D0%B0_%D0%B2%D0%B2%D0%BE%D0%B4_%D0%BD%D0%BE%D0%B2%D0%BE%D0%B3%D0%BE1.png" /></p>
+<p><img alt="Рарус ввод нового 2" src="../media/%D0%B4%D0%BE%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0_%D1%80%D0%B0%D1%80%D1%83%D1%81_%D1%84%D0%BE%D1%80%D0%BC%D0%B0_%D0%B2%D0%B2%D0%BE%D0%B4_%D0%BD%D0%BE%D0%B2%D0%BE%D0%B3%D0%BE2.png" />
+- теперь перейдем к обработке "<strong>ТорговоеОборудование</strong>".
+  - откроем модуль объекта и заменим глобальную переменную <code>глРарус_Компонента</code> на <code>глРарус_КомпонентаТО</code>, для <strong>Альфа-Авто 5-й</strong> версии найдется в 4-х местах <code>ПолучитьОписаниеОшибкиКомпоненты</code> , <code>СоздатьОборудование</code>, <code>УдалитьОборудование</code> и в области инициализации модуля, а для <strong>Альфа-Авто 4-й</strong> версии только в области инициализации модуля</p>
+<p><img alt="Рарус торговое оборудование замена компоненты" src="../media/%D0%B4%D0%BE%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0_%D1%80%D0%B0%D1%80%D1%83%D1%81_%D1%82%D0%BE%D1%80%D0%B3%D0%BE%D0%B2%D0%BE%D0%B5_%D0%BE%D0%B1%D0%BE%D1%80%D1%83%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D0%B7%D0%B0%D0%BC%D0%B5%D0%BD%D0%B0_%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D1%8B.png" /></p>
+</li>
+<li>
+<p>в модуле объекта изменим функцию <code>ВыполнитьДействие</code>. Так как наш функционал не будет использовать COM объект, для передачи параметров, нам необходимо отключить здесь проверку на его передачу, необходимо закомментировать строку <code>ИЛИ (ТипЗнч(ОбъектЗадача) &lt;&gt; ТипСОМОбъект)</code></p>
+<p><em>до</em></p>
+<div class="highlight"><pre><span></span><code><span class="nf">Если</span> <span class="p">(</span><span class="nb">ТипЗнч</span><span class="p">(</span><span class="nv">GUID_Оборудования</span><span class="p">)</span> <span class="o">&lt;&gt;</span> <span class="nb">Тип</span><span class="p">(</span><span class="s">&quot;Строка&quot;</span><span class="p">))</span> <span class="nf">ИЛИ</span> <span class="p">(</span><span class="nb">СтрДлина</span><span class="p">(</span><span class="nv">GUID_Оборудования</span><span class="p">)</span> <span class="o">&lt;&gt;</span> <span class="m">38</span><span class="p">)</span>
+    <span class="nf">ИЛИ</span> <span class="p">(</span><span class="nb">Лев</span><span class="p">(</span><span class="nv">GUID_Оборудования</span><span class="p">,</span><span class="m">1</span><span class="p">)</span> <span class="o">&lt;&gt;</span> <span class="s">&quot;{&quot;</span><span class="p">)</span> <span class="nf">ИЛИ</span> <span class="p">(</span><span class="nb">Прав</span><span class="p">(</span><span class="nv">GUID_Оборудования</span><span class="p">,</span><span class="m">1</span><span class="p">)</span> <span class="o">&lt;&gt;</span> <span class="s">&quot;}&quot;</span><span class="p">)</span>
+    <span class="nf">ИЛИ</span> <span class="p">(</span><span class="nb">ТипЗнч</span><span class="p">(</span><span class="nv">Действие</span><span class="p">)</span> <span class="o">&lt;&gt;</span> <span class="nb">Тип</span><span class="p">(</span><span class="s">&quot;Строка&quot;</span><span class="p">))</span> <span class="k">ИЛИ</span> <span class="nb">ПустаяСтрока</span><span class="p">(</span><span class="nv">Действие</span><span class="p">)</span>
+    <span class="k">ИЛИ</span> <span class="nf">НЕ</span><span class="p">((</span><span class="nb">ТипЗнч</span><span class="p">(</span><span class="nv">Параметры</span><span class="p">)</span> <span class="o">=</span> <span class="nv">ТипСОМОбъект</span><span class="p">)</span> <span class="nf">ИЛИ</span> <span class="p">(</span><span class="nv">Параметры</span> <span class="o">=</span> <span class="kc">НЕОПРЕДЕЛЕНО</span><span class="p">)</span> <span class="k">ИЛИ</span> <span class="nb">ПустаяСтрока</span><span class="p">(</span><span class="nv">Параметры</span><span class="p">))</span>
+    <span class="nf">ИЛИ</span> <span class="p">(</span><span class="nb">ТипЗнч</span><span class="p">(</span><span class="nv">ТаймАут</span><span class="p">)</span> <span class="o">&lt;&gt;</span> <span class="nb">Тип</span><span class="p">(</span><span class="s">&quot;Число&quot;</span><span class="p">))</span>
+    <span class="nf">ИЛИ</span> <span class="p">(</span><span class="nb">ТипЗнч</span><span class="p">(</span><span class="nv">ОбъектЗадача</span><span class="p">)</span> <span class="o">&lt;&gt;</span> <span class="nv">ТипСОМОбъект</span><span class="p">)</span>
+</code></pre></div>
+<p><em>после</em></p>
+<div class="highlight"><pre><span></span><code><span class="nf">Если</span> <span class="p">(</span><span class="nb">ТипЗнч</span><span class="p">(</span><span class="nv">GUID_Оборудования</span><span class="p">)</span> <span class="o">&lt;&gt;</span> <span class="nb">Тип</span><span class="p">(</span><span class="s">&quot;Строка&quot;</span><span class="p">))</span> <span class="nf">ИЛИ</span> <span class="p">(</span><span class="nb">СтрДлина</span><span class="p">(</span><span class="nv">GUID_Оборудования</span><span class="p">)</span> <span class="o">&lt;&gt;</span> <span class="m">38</span><span class="p">)</span>
+    <span class="nf">ИЛИ</span> <span class="p">(</span><span class="nb">Лев</span><span class="p">(</span><span class="nv">GUID_Оборудования</span><span class="p">,</span><span class="m">1</span><span class="p">)</span> <span class="o">&lt;&gt;</span> <span class="s">&quot;{&quot;</span><span class="p">)</span> <span class="nf">ИЛИ</span> <span class="p">(</span><span class="nb">Прав</span><span class="p">(</span><span class="nv">GUID_Оборудования</span><span class="p">,</span><span class="m">1</span><span class="p">)</span> <span class="o">&lt;&gt;</span> <span class="s">&quot;}&quot;</span><span class="p">)</span>
+    <span class="nf">ИЛИ</span> <span class="p">(</span><span class="nb">ТипЗнч</span><span class="p">(</span><span class="nv">Действие</span><span class="p">)</span> <span class="o">&lt;&gt;</span> <span class="nb">Тип</span><span class="p">(</span><span class="s">&quot;Строка&quot;</span><span class="p">))</span> <span class="k">ИЛИ</span> <span class="nb">ПустаяСтрока</span><span class="p">(</span><span class="nv">Действие</span><span class="p">)</span>
+    <span class="k">ИЛИ</span> <span class="nf">НЕ</span><span class="p">((</span><span class="nb">ТипЗнч</span><span class="p">(</span><span class="nv">Параметры</span><span class="p">)</span> <span class="o">=</span> <span class="nv">ТипСОМОбъект</span><span class="p">)</span> <span class="nf">ИЛИ</span> <span class="p">(</span><span class="nv">Параметры</span> <span class="o">=</span> <span class="kc">НЕОПРЕДЕЛЕНО</span><span class="p">)</span> <span class="k">ИЛИ</span> <span class="nb">ПустаяСтрока</span><span class="p">(</span><span class="nv">Параметры</span><span class="p">))</span>
+    <span class="nf">ИЛИ</span> <span class="p">(</span><span class="nb">ТипЗнч</span><span class="p">(</span><span class="nv">ТаймАут</span><span class="p">)</span> <span class="o">&lt;&gt;</span> <span class="nb">Тип</span><span class="p">(</span><span class="s">&quot;Число&quot;</span><span class="p">))</span>
+    <span class="c1">//ИЛИ (ТипЗнч(ОбъектЗадача) &lt;&gt; ТипСОМОбъект)</span>
+</code></pre></div>
+</li>
+<li>
+<p>из комплекта интеграции копируем форму <strong>"ФР_ККТ_54ФЗ_ДрайверФР"</strong>, и добавляем ее к остальным формам обработки <strong>ТорговоеОборудование</strong></p>
+<p><img alt="Рарус торговое оборудование ФР_ККТ_54ФЗ_ДрайверФР" src="../media/%D0%B4%D0%BE%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0_%D1%80%D0%B0%D1%80%D1%83%D1%81_%D0%A4%D0%A0_%D0%9A%D0%9A%D0%A2_54%D0%A4%D0%97_%D0%94%D1%80%D0%B0%D0%B9%D0%B2%D0%B5%D1%80%D0%A4%D0%A0.png" /></p>
+</li>
+<li>
+<p>доработаем модуль объекта обработки "ФронтКассира":</p>
+</li>
+<li>
+<p>заменим глобальную переменную <code>глРарус_Компонента</code> на <code>глРарус_КомпонентаТО</code>, изменения будут только в области инициализации модуля</p>
+<p><img alt="Рарус фронт кассира замена компоненты" src="../media/%D0%B4%D0%BE%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0_%D1%80%D0%B0%D1%80%D1%83%D1%81_%D1%84%D1%80%D0%BE%D0%BD%D1%82_%D0%BA%D0%B0%D1%81%D0%B8%D1%80%D0%B0_%D0%B7%D0%B0%D0%BC%D0%B5%D0%BD%D0%B0_%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D1%8B.png" /></p>
+</li>
+<li>
+<p>в функции <code>ПробитьЧек</code> перед строкой <code>Если ВыполнитьКомандуОборудования("ФР",GUID_ФР,"ПробитьЧек"</code> добавляем следующий код</p>
+<div class="highlight"><pre><span></span><code><span class="nv">ККТ_РаботаСТорговымОборудованием</span><span class="o">.</span><span class="nf">ККТ_ПодготовитьДанныеДляПечати54ФЗ</span><span class="p">(</span><span class="nv">ЭтотОбъект</span><span class="p">);</span>
+</code></pre></div>
+<p>данный код, закэширует параметры печати чека, и передаст их в обработку.</p>
+<p><img alt="Рарус фронт кассира пробитие чека" src="../media/%D0%B4%D0%BE%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0_%D1%80%D0%B0%D1%80%D1%83%D1%81_%D1%84%D1%80%D0%BE%D0%BD%D1%82_%D0%BA%D0%B0%D1%81%D0%B8%D1%80%D0%B0_%D0%BF%D1%80%D0%BE%D0%B1%D0%B8%D1%82%D0%B8%D0%B5_%D1%87%D0%B5%D0%BA%D0%B0.png" />
+  - если в вашей конфигурации уже поддерживается работа с чеком коррекции, то во ФронтКассира можно попробовать найти еще функцию <code>ПробитьЧекКоррекции</code> и доработать ее также, но код нужно вставить перед процедурой <code>ВыполнитьКомандуОборудования("ФР",GUID_ФР,"ПробитьЧекКоррекции"</code></p>
+<p><img alt="Рарус фронт кассира чек коррекции" src="../media/%D0%B4%D0%BE%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0_%D1%80%D0%B0%D1%80%D1%83%D1%81_%D1%84%D1%80%D0%BE%D0%BD%D1%82_%D0%BA%D0%B0%D1%81%D0%B8%D1%80%D0%B0_%D1%87%D0%B5%D0%BA_%D0%BA%D0%BE%D1%80%D1%80%D0%B5%D0%BA%D1%86%D0%B8%D0%B8.png" /></p>
+</li>
+<li>
+<p>в модуле объекта обработки "ЗакрытиеСмены" заменим глобальную переменную <code>глРарус_Компонента</code> на <code>глРарус_КомпонентаТО</code>, изменения будут только в области инициализации модуля</p>
+<p><img alt="Рарус закрытие смены модуль объекта" src="../media/%D0%B4%D0%BE%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0_%D1%80%D0%B0%D1%80%D1%83%D1%81_%D0%B7%D0%B0%D0%BA%D1%80%D1%8B%D1%82%D0%B8%D0%B5_%D1%81%D0%BC%D0%B5%D0%BD%D1%8B.png" /></p>
+</li>
+<li>
+<p>доработаем обработку "СтартСистемы":</p>
+</li>
+<li>
+<p>для <strong>Альфа-Авто 5</strong> изменения нужно вносить в модуль объекта, в процедурах <code>ПроверитьОбновитьКомпонентуОборудования</code> и <code>ИнициализацияФункцийВнешнихКомпонент</code> после строки:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">РезультатИнициализацииОборудования</span> <span class="o">=</span> <span class="nv">ОбработкаЗащиты</span><span class="o">.</span><span class="nf">ЗагрузитьКомпонентуОборудования</span><span class="p">(</span><span class="nv">КаталогНазначения</span><span class="p">);</span>
+</code></pre></div>
+<p>добавить следующий код</p>
+<div class="highlight"><pre><span></span><code><span class="k">Если</span> <span class="nv">РезультатИнициализацииОборудования</span> <span class="o">=</span> <span class="s">&quot;OK&quot;</span> <span class="k">Тогда</span>
+    <span class="nv">ККТ_РаботаСТорговымОборудованием</span><span class="o">.</span><span class="nf">ККТ_ИнициализироватьКомпонентуОбертку</span><span class="p">();</span>
+<span class="k">КонецЕсли</span><span class="p">;</span>
+</code></pre></div>
+<p><img alt="Рарус старт системы Альфа-авто 5" src="../media/%D0%B4%D0%BE%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0_%D1%80%D0%B0%D1%80%D1%83%D1%81_%D1%81%D1%82%D0%B0%D1%80%D1%82_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B_%D0%B0%D0%BB%D1%8C%D1%84%D0%B05.png" /></p>
+</li>
+<li>
+<p>для <strong>Альфа-Авто 4</strong> изменения нужно вносить в модуль основной формы, в процедуре <code>ЗагрузитьКомпонентуЗащиты</code> после строки:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">ТекстОшибки</span> <span class="o">=</span> <span class="nv">Защита</span><span class="o">.</span><span class="nf">ЗагрузитьКомпоненту</span><span class="p">(</span><span class="nv">ПутьДоКомпоненты</span><span class="p">);</span>
+</code></pre></div>
+<p>добавляется следующий код</p>
+<div class="highlight"><pre><span></span><code><span class="k">Если</span> <span class="nv">ТекстОшибки</span><span class="o">=</span><span class="s">&quot;OK&quot;</span> <span class="k">Тогда</span>
+    <span class="nv">ККТ_РаботаСТорговымОборудованием</span><span class="o">.</span><span class="nf">ККТ_ИнициализироватьКомпонентуОбертку</span><span class="p">();</span>
+<span class="k">КонецЕсли</span><span class="p">;</span>
+</code></pre></div>
+</li>
+<li>
+<p>копируем из комплекта интеграции обработку "ОберткаКомпонентаРарус", именно ее объект находится в переменной <code>глРарус_КомпонентаТО</code></p>
+<p><img alt="Рарус компонента обертка" src="../media/%D0%B4%D0%BE%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0_%D1%80%D0%B0%D1%80%D1%83%D1%81_%D0%BE%D0%B1%D0%B5%D1%80%D1%82%D0%BA%D0%B0_%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0.png" /></p>
+</li>
+</ul>
+<p>на этом доработка будет завершена, и можно переходить на этап добавления и настройки внешнего оборудования</p>
+<h2 id="_3">Подключение оборудования<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<ul>
+<li>запустите вашу программу в режиме 1С:Предприятия</li>
+<li>
+<p>откройте справочник "Оборудование" и нажмите "<strong>добавить</strong>"</p>
+<p><img alt="Рарус форма списка оборудования" src="../media/%D1%80%D0%B0%D1%80%D1%83%D1%81_%D1%84%D0%BE%D1%80%D0%BC%D0%B0_%D1%81%D0%BF%D0%B8%D1%81%D0%BA%D0%B0_%D0%BE%D0%B1%D0%BE%D1%80%D1%83%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5.png" /></p>
+</li>
+<li>
+<p>В форме добавления нового оборудования, выбираем «<strong>Фискальные регистраторы</strong>» - «<strong>Универсальное оборудование ККТ 54ФЗ</strong>» - <strong>"Создать новое устройство"</strong>,
+устанавливаем наименование вашего оборудования (может быть любое), и нажмите <strong>"Готово"</strong></p>
+</li>
+<li>
+<p>откроется форма настройки фискального регистратора, в ней переходим на закладку <strong>"Внешняя обработка"</strong> и устанавливаем флажок <strong>"Использовать внешнюю обработку"</strong></p>
+<p><img alt="Рарус форма настройки оборудования" src="../media/%D1%80%D0%B0%D1%80%D1%83%D1%81_%D1%84%D0%BE%D1%80%D0%BC%D0%B0_%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B8_%D0%BE%D0%B1%D0%BE%D1%80%D1%83%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F.png" /></p>
+</li>
+<li>
+<p>нажмите <strong>"Настроить параметры"</strong>, и воспользуйтесь <a href="../connecting/">этой инструкцией по настройке</a> обработки</p>
+</li>
+<li>сохраните настройки и перезапустите 1С</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Нижний колонтитул" >
+        
+          
+          <a href="../connecting/" class="md-footer__link md-footer__link--prev" aria-label="Назад: Описание">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              <div class="md-ellipsis">
+                Описание
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../parameters_description/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Описание параметров">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              <div class="md-ellipsis">
+                Описание параметров
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections", "navigation.footer", "navigation.tabs", "navigation.tabs.sticky", "content.tooltips", "content.code.copy", "search.highlight", "toc.follow"], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      
+        <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
+      
+        <script src="../_javascript/tablesort.js"></script>
+      
+        <script src="../_javascript/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

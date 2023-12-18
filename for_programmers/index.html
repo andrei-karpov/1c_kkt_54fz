@@ -1,0 +1,2103 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Инструкция по работе с программой "ККТ-ОНЛАЙН 54-ФЗ: Обработка для  работы фискальных регистраторов" 1С.">
+      
+      
+        <meta name="author" content="Андрей Карпов">
+      
+      
+        <link rel="canonical" href="https://andrei-karpov.github.io/1c_kkt_54fz/for_programmers/">
+      
+      
+        <link rel="prev" href="../mechanism_distribution/">
+      
+      
+        <link rel="next" href="../licensing/">
+      
+      
+      <link rel="icon" href="../assets/images/logo.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.2">
+    
+    
+      
+        <title>Для программистов - ККТ ОНЛАЙН 54-ФЗ: Решение для онлайн касс</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.50c56a3b.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href=".." title="ККТ ОНЛАЙН 54-ФЗ: Решение для онлайн касс" class="md-header__button md-logo" aria-label="ККТ ОНЛАЙН 54-ФЗ: Решение для онлайн касс" data-md-component="logo">
+      
+  <img src="../assets/images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ККТ ОНЛАЙН 54-ФЗ: Решение для онлайн касс
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Для программистов
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="teal"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1M8 13h8v-2H8v2m9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1 0 1.71-1.39 3.1-3.1 3.1h-4V17h4a5 5 0 0 0 5-5 5 5 0 0 0-5-5Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/andrei-karpov/1c_kkt_54fz" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    andrei-karpov/1c_kkt_54fz
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Главная
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../connecting/" class="md-tabs__link">
+          
+  
+  Подключение
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../parameters_description/" class="md-tabs__link">
+        
+  
+    
+  
+  Описание параметров
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../instruction/" class="md-tabs__link">
+          
+  
+  Документация
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+    
+  
+  Для программистов
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../licensing/" class="md-tabs__link">
+        
+  
+    
+  
+  Лицензирование
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../components/" class="md-tabs__link">
+          
+  
+  Дополнительно
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="ККТ ОНЛАЙН 54-ФЗ: Решение для онлайн касс" class="md-nav__button md-logo" aria-label="ККТ ОНЛАЙН 54-ФЗ: Решение для онлайн касс" data-md-component="logo">
+      
+  <img src="../assets/images/logo.png" alt="logo">
+
+    </a>
+    ККТ ОНЛАЙН 54-ФЗ: Решение для онлайн касс
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/andrei-karpov/1c_kkt_54fz" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    andrei-karpov/1c_kkt_54fz
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Главная
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Подключение
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Подключение
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../connecting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Описание
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rarus_connecting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Рарус
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../parameters_description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Описание параметров
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Документация
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Документация
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../instruction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Общая информация
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../marking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Маркировка
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../management_distribution/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Рассылка
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../form_check_and_check_correction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Форма проверки чека
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../template_document/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Шаблон чека
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mechanism_distribution/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Механизм распределения
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Для программистов
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Для программистов
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Доработка конфигурации
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Дополнительные параметры
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Изменение функционала "под себя"
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Доступные команды доп обработчика
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Доступные команды доп обработчика">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      ОсновнаяОбработка
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ОсновнаяОбработка">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      ПредварительныйПросмотрЧека
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      ПолучитьКассираСДолжностью
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_xml" class="md-nav__link">
+    <span class="md-ellipsis">
+      ККТ_XMLПредставлениеЧека
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      ОбработатьУниверсальныйДок
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      ПроверитьПечатьИВернутьРезультат
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      Функции работы с оборудованием
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      ВыполнитьОсновнуюКомандуОборудования
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      ВыполнитьДополнительнуюКомандуОборудования
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      ВыполнитьОсновнуюКомандуЭквайринга
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      ВыполнитьДополнительнуюКомандуЭквайринга
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      Команды модуля обработчика
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Команды модуля обработчика">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      ОбработатьЧекПоСвоему
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      ДанныеДляПечатиЧекаДокумента
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      МассивПриоритетовОпределенияТоварногоДокумента
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      ПослеФормированииТаблицыЧека
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      МассивНетиповыхДокументов
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      ДанныеНетиповогоДокумента
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_" class="md-nav__link">
+    <span class="md-ellipsis">
+      ПолучитьПредставлениеПоляЗапроса_Универсальное
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      Примеры коды
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Примеры коды">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      Программное переопределение параметров агента и поставщика
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../licensing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Лицензирование
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Дополнительно
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Дополнительно
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../components/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Компоненты
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../useful_links/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Полезные ссылки
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../errors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Возможные ошибки
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Доработка конфигурации
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Дополнительные параметры
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Изменение функционала "под себя"
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Доступные команды доп обработчика
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Доступные команды доп обработчика">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      ОсновнаяОбработка
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ОсновнаяОбработка">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      ПредварительныйПросмотрЧека
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      ПолучитьКассираСДолжностью
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_xml" class="md-nav__link">
+    <span class="md-ellipsis">
+      ККТ_XMLПредставлениеЧека
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      ОбработатьУниверсальныйДок
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      ПроверитьПечатьИВернутьРезультат
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      Функции работы с оборудованием
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      ВыполнитьОсновнуюКомандуОборудования
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      ВыполнитьДополнительнуюКомандуОборудования
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      ВыполнитьОсновнуюКомандуЭквайринга
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      ВыполнитьДополнительнуюКомандуЭквайринга
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      Команды модуля обработчика
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Команды модуля обработчика">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      ОбработатьЧекПоСвоему
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      ДанныеДляПечатиЧекаДокумента
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      МассивПриоритетовОпределенияТоварногоДокумента
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      ПослеФормированииТаблицыЧека
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      МассивНетиповыхДокументов
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      ДанныеНетиповогоДокумента
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_" class="md-nav__link">
+    <span class="md-ellipsis">
+      ПолучитьПредставлениеПоляЗапроса_Универсальное
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      Примеры коды
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Примеры коды">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      Программное переопределение параметров агента и поставщика
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="_1">Для программистов<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>В данном разделе размещены примеры изменения программы или конфигурации.</p>
+<h2 id="_2">Доработка конфигурации<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>Если ваша конфигурация использует вид торгового оборудования <strong>"ККТ с передачей данных"</strong>, то доработка вам не требуется. Для остальных конфигураций, при печати программа пытается определить документ откуда печатается чек по данным журнала регистрации, это довольно затратно по производительности, плюс не всегда корректно получается, поэтому, чтобы явно задать документ откуда запущена печать, и тем самым ее ускорив, нужно подключить внешнюю печатную форму <a href="../connecting/#структура-архива-с-обработкой">"ВПФ_Чек"</a>, которая лежит в архиве с обработкой (если механизм внешних печатных форм поддерживается вашей конфигурацией).</p>
+<p>Либо сделать небольшую доработку вашей конфигурации. Пример изменения конфигурации (видео): <a href="https://www.youtube.com/watch?v=Ehp2DU-YnqM&amp;index=1&amp;list=PLv043XNq9i-6_DdLAy1kTuExX2E-ikn65">Доработка конфигурации</a></p>
+<p><strong>Описание действий:</strong></p>
+<ol>
+<li>
+<p>Откройте конфигурацию вашей базы 1С. В меню "Конфигурация" - "Поддержка" - "Настройка поддержки" проверьте включена ли возможность редактирования. Если нет - включите ее.
+   <img alt="Настройка поддержки конфигурации" src="../media/%D0%BF%D0%BE%D0%B4%D0%B4%D0%B5%D1%80%D0%B6%D0%BA%D0%B0_%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B3%D1%83%D1%80%D0%B0%D1%86%D0%B8%D0%B8.png" />
+   <img alt="Меню &quot;снять с поддержки&quot;" src="../media/%D0%BC%D0%B5%D0%BD%D1%8E_%D1%81%D0%BD%D1%8F%D1%82%D1%8C_%D0%BF%D0%BE%D0%B4%D0%B4%D0%B5%D1%80%D0%B6%D0%BA%D1%83.png" /></p>
+</li>
+<li>
+<p>Найдите все упоминания строки <code>ПолучитьСерверТО().ОплатитьПлатежнойКартой</code>. Перед найденной строкой добавьте такой код:</p>
+<div class="highlight"><pre><span></span><code><span class="nf">СохранитьЗначение</span><span class="p">(</span><span class="s">&quot;ДокументПечатиККТ&quot;</span><span class="p">,</span> <span class="nv">Ссылка</span><span class="p">);</span>
+</code></pre></div>
+</li>
+<li>
+<p>Найдите все упоминания строки <code>ПолучитьСерверТО().ПечатьЧека</code>. Перед найденной строкой добавьте такой код:</p>
+<div class="highlight"><pre><span></span><code><span class="nf">СохранитьЗначение</span><span class="p">(</span><span class="s">&quot;ДокументПечатиККТ&quot;</span><span class="p">,</span> <span class="nv">Ссылка</span><span class="p">);</span>
+</code></pre></div>
+</li>
+<li>
+<p>Для конфигурации <strong>Розница 1</strong>, найдите упоминания <code>ПолучитьСерверТО().ОткрытьЧек;</code> в документе "Чек ККМ". Перед найденной строкой добавьте такой код:</p>
+<div class="highlight"><pre><span></span><code><span class="nf">СохранитьЗначение</span><span class="p">(</span><span class="s">&quot;ДокументПечатиККТ&quot;</span><span class="p">,</span> <span class="nv">Ссылка</span><span class="p">);</span>
+</code></pre></div>
+</li>
+<li>
+<p>Нажмите кнопку <strong>F7</strong>, приняв тем самым изменения</p>
+</li>
+</ol>
+<h2 id="_3">Дополнительные параметры<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>Если при разработке шаблона чека, или доработке функционала программы требуется ссылка на объект в базе, то ее можно явно прописать в параметрах обработки, а затем вызывать в коде таким образом.</p>
+<div class="highlight"><pre><span></span><code><span class="nv">ЗначениеПараметра</span> <span class="o">=</span> <span class="nv">ОсновнаяОбработка</span><span class="o">.</span><span class="nf">ККТ_ЗначениеДополнительногоПараметра</span><span class="p">(</span><span class="s">&quot;ИмяПараметра&quot;</span><span class="p">);</span>
+</code></pre></div>
+<p>Форму добавления дополнительных параметров, расположена в поле параметров программы</p>
+<p><img alt="Вызов дополнительные параметры" src="../media/%D0%B2%D1%8B%D0%B7%D0%BE%D0%B2_%D0%B4%D0%BE%D0%BF_%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80%D1%8B.png" /></p>
+<p>Здесь необходимо указать произвольное имя параметра и его возможное значение.</p>
+<p><img alt="Дополнительные параметры" src="../media/f59e12e9afcf868c7f4bb320fc094d87.png" /></p>
+<h2 id="_4">Изменение функционала "под себя"<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>Хотя основной модуль программы и закрыт для изменения, однако функционал программы все же можно изменить. Для этого необходимо использовать подключаемую обработку <a href="../connecting/#структура-архива-с-обработкой">KKT_DEVELOPE82</a> для 1С версии 8.2 и 8.3 и <a href="../connecting/#структура-архива-с-обработкой">KKT_DEVELOPE81</a> для версии 8.1 соответственно. Обработка находится в том же архиве, что и основная программа. В дальнейшем будем именовать его, как <strong>доп обработчик</strong></p>
+<p>Пример таких изменения описан в <a href="https://youtu.be/5t4pye9cRd8">видео</a> (<em>устарело</em>)</p>
+<h2 id="_5">Доступные команды доп обработчика<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>В модуле <strong>доп обработчика</strong> расположены экспортные команды и переменные, которые при необходимости можно использовать для собственного кода. Так можно перехватить и подменить выполнение фискальных операций, в том числе печать чека.</p>
+<h3 id="_6">ОсновнаяОбработка<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p><code>ОсновнаяОбработка</code> - переменная, в ней хранится объект основной программы. Через нее можно получить данные и вызывать методы доступные только в модуле объекта основной программы.
+    <em>Пример</em>, <code>ОсновнаяОбработка.мПараметрыУстройства</code> - вернет текущие параметры обработки.</p>
+<p>В любой процедуре доп обработчика можно получить доступ к параметрам чека, вызвав их через <code>ОсновнаяОбработка</code>:</p>
+<ul>
+<li><code>мОбщиеПараметры</code> - тип Структура, содержит данные основного чека, со всеми заполненными полями для печати. Данные заполняются после вызова  команды <code>ОбработатьЧекПоСвоему</code> и до выполнения процедуры фискализации чека. Пример заполнения <code>ОсновнаяОбработка.мОбщиеПараметры</code> можно посмотреть, в форме основной программы "МодульОбщий" функция <code>ПараметрыОперацииФискализацииЧека()</code>
+    <img alt="Модуль общий" src="../media/%D0%BC%D0%BE%D0%B4%D1%83%D0%BB%D1%8C%D0%BE%D0%B1%D1%89%D0%B8%D0%B9.png" /></li>
+<li>
+<p><code>мПараметрыУстройства</code> - тип Структура, содержит общие параметры программы, как они были заданы пользователем.</p>
+</li>
+<li>
+<p>Также доступны специальные <strong><em>формы-модули</em></strong>, через которые можно выполнять экспортный методы. Например, заполнение чека по умолчанию, можно вызвать через <code>ОсновнаяОбработка.мМодульККТОбщий.ПараметрыОперацииФискализацииЧека()</code>. Содержимое модулей можно увидеть, открыв основную программу в конфигураторе, каждый модуль это отдельная форма обработки. В общей сложности доступны следующие модули:</p>
+</li>
+<li>
+<p><code>мМодульККТОбщий</code> - форма "МодульОбщий"</p>
+</li>
+<li><code>мМодульККТШаблон</code> - форма "МодульШаблон"</li>
+<li><code>мМодульККТМаркировка</code> - форма "МодульМаркировка"</li>
+<li><code>мМодульККТПочтаSMS</code> - форма "МодульОтправкаПочтыSMS"</li>
+<li><code>мМодульККТЗапросы</code> - форма "МодульРаботаСЗапросами"</li>
+<li><code>мМодульККТСобственная</code> - форма "МодульСобственныйОбработчик"</li>
+</ul>
+<h4 id="_7">ПредварительныйПросмотрЧека<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><code>ПредварительныйПросмотрЧека(СсылкаНаДокумент)</code> - процедура, формирует и выводит на экран предварительный чек по переданной ссылки документа. <em>Пример</em>,</p>
+<div class="highlight"><pre><span></span><code><span class="nv">ОсновнаяОбработка</span><span class="o">.</span><span class="nf">ПредварительныйПросмотрЧека</span><span class="p">(</span><span class="nv">СсылкаНаДокумент</span><span class="p">);</span>
+</code></pre></div>
+</li>
+</ul>
+<h4 id="_8">ПолучитьКассираСДолжностью<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><code>ПолучитьКассираСДолжностью(СсылкаНаДокумент = Неопределено)</code> - возвращает строку со сформированной должностью и именем кассира. Данные формируются на основании параметров обработки и переданной ссылке на документ (документ указывать необязательно). <em>Пример</em>,</p>
+<div class="highlight"><pre><span></span><code><span class="nv">КассирСДолжностью</span> <span class="o">=</span> <span class="nv">ОсновнаяОбработка</span><span class="o">.</span><span class="nf">ПолучитьКассираСДолжностью</span><span class="p">();</span>
+</code></pre></div>
+</li>
+</ul>
+<h4 id="_xml">ККТ_XMLПредставлениеЧека<a class="headerlink" href="#_xml" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>ККТ_XMLПредставлениеЧека</code> - возвращает XML представление напечатанного чека, соответствующее <a href="https://its.1c.ru/db/metod8dev/content/4829/hdoc">требованиям к передаче данных</a><div class="codehilite"><pre><span></span><code><span class="nt">_Параметры_</span><span class="o">:</span>
+
+<span class="err">```</span><span class="nt">ДанныеТекущегоЧека</span><span class="err">```</span><span class="w"> </span><span class="nt">-</span><span class="w"> </span><span class="nt">тип</span><span class="w"> </span><span class="nt">Структура</span><span class="o">,</span><span class="w"> </span><span class="nt">содержит</span><span class="w"> </span><span class="nt">структура</span><span class="w"> </span><span class="nt">чека</span><span class="w"> </span><span class="nt">для</span><span class="w"> </span><span class="nt">печати</span><span class="o">,</span><span class="w"> </span><span class="nt">если</span><span class="w"> </span><span class="nt">чек</span><span class="w"> </span><span class="nt">для</span><span class="w"> </span><span class="nt">печати</span><span class="w"> </span><span class="nt">один</span><span class="o">,</span><span class="w"> </span><span class="nt">то</span><span class="w"> </span><span class="nt">по</span><span class="w"> </span><span class="nt">умолчанию</span><span class="w"> </span><span class="nt">он</span><span class="w"> </span><span class="nt">равен</span><span class="w"> </span><span class="err">```</span><span class="nt">ОсновнаяОбработка</span><span class="p">.</span><span class="nc">мОбщиеПараметры</span><span class="err">```</span>
+
+<span class="err">```</span><span class="nt">ПараметрыПодключения</span><span class="err">```</span><span class="w"> </span><span class="nt">-</span><span class="w"> </span><span class="nt">Тип</span><span class="w"> </span><span class="nt">Структура</span><span class="o">,</span><span class="w"> </span><span class="nt">содержит</span><span class="w"> </span><span class="nt">параметры</span><span class="w"> </span><span class="nt">подключения</span><span class="w"> </span><span class="nt">оборудования</span><span class="o">:</span><span class="w"> </span><span class="nt">заводской</span><span class="w"> </span><span class="nt">номер</span><span class="w"> </span><span class="nt">ФН</span><span class="o">,</span><span class="w"> </span><span class="nt">версию</span><span class="w"> </span><span class="nt">ФФД</span><span class="w"> </span><span class="nt">и</span><span class="w"> </span><span class="nt">т</span><span class="p">.</span><span class="nc">д</span><span class="o">,</span><span class="w"> </span><span class="nt">если</span><span class="w"> </span><span class="nt">формирование</span><span class="w"> </span><span class="nt">происходит</span><span class="w"> </span><span class="nt">для</span><span class="w"> </span><span class="nt">основного</span><span class="w"> </span><span class="nt">фискального</span><span class="w"> </span><span class="nt">регистратора</span><span class="o">,</span><span class="w"> </span><span class="nt">то</span><span class="w"> </span><span class="nt">параметры</span><span class="w"> </span><span class="nt">подключения</span><span class="w"> </span><span class="nt">можно</span><span class="w"> </span><span class="nt">получить</span><span class="o">,</span><span class="w"> </span><span class="nt">вызвав</span><span class="w"> </span><span class="err">```</span><span class="nt">ОсновнаяОбработка</span><span class="p">.</span><span class="nc">мПараметрыПодключения</span><span class="err">```</span>
+
+<span class="err">```</span><span class="nt">ШиринаСтроки</span><span class="err">```</span><span class="w"> </span><span class="nt">-</span><span class="w"> </span><span class="nt">тип</span><span class="w"> </span><span class="nt">Число</span><span class="o">,</span><span class="w"> </span><span class="nt">необязательный</span><span class="o">,</span><span class="w"> </span><span class="nt">по</span><span class="w"> </span><span class="nt">умолчанию</span><span class="w"> </span><span class="nt">равен</span><span class="w"> </span><span class="nt">32</span><span class="o">.</span><span class="w"> </span><span class="nt">Содержит</span><span class="w"> </span><span class="nt">ширину</span><span class="w"> </span><span class="nt">строки</span><span class="w"> </span><span class="nt">ленты</span><span class="w"> </span><span class="nt">фискального</span><span class="w"> </span><span class="nt">регистратора</span><span class="o">,</span><span class="w"> </span><span class="nt">используется</span><span class="o">,</span><span class="w"> </span><span class="nt">если</span><span class="w"> </span><span class="nt">дополнительно</span><span class="w"> </span><span class="nt">формируются</span><span class="w"> </span><span class="nt">текстовые</span><span class="w"> </span><span class="nt">строки</span><span class="o">,</span><span class="w"> </span><span class="nt">чтобы</span><span class="w"> </span><span class="nt">разбить</span><span class="w"> </span><span class="nt">одну</span><span class="w"> </span><span class="nt">длинную</span><span class="w"> </span><span class="nt">строку</span><span class="w"> </span><span class="nt">на</span><span class="w"> </span><span class="nt">несколько</span><span class="o">.</span>
+
+<span class="nt">_Пример_</span><span class="o">,</span>
+
+<span class="err">```</span><span class="nt">bsl</span>
+<span class="nt">XMLЧек</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nt">ОсновнаяОбработка</span><span class="p">.</span><span class="nc">ККТ_XMLПредставлениеЧека</span><span class="o">(</span><span class="nt">ОсновнаяОбработка</span><span class="p">.</span><span class="nc">мОбщиеПараметры</span><span class="o">,</span><span class="w"> </span><span class="nt">ОсновнаяОбработка</span><span class="p">.</span><span class="nc">мПараметрыПодключения</span><span class="o">);</span>
+<span class="err">```</span>
+</code></pre></div>
+
+</li>
+</ul>
+<h4 id="_9">ОбработатьУниверсальныйДок<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><code>ОбработатьУниверсальныйДок(СсылкаНаДокумент, СписокЧеков, ПараметрыОбработки, СуммаБезНал, СуммаНал, ДополнительнаяСтруктураДокумента = Неопределено)</code>:</p>
+<p><code>СсылкаНаДокумент</code> - тип ДокументСсылка, ссылка на документ, откуда происходит печать.</p>
+<p><code>СписокЧеков</code> - тип Массив, содержит массив структур, это чеки, которые будут напечатаны. Если список чеков получать в функции <a href="#обработатьчекпосвоему"><code>ОбработатьЧекПоСвоему</code></a>, то там всегда будет находиться только один основной чек, разбиение происходит только в самом конце перед пробитием. Пример такой структуры чека можно получить, вызвав <code>ОсновнаяОбработки.мМодульККТОбщий.ПараметрыОперацииФискализацииЧека()</code></p>
+<p><code>ПараметрыОбработки</code> - тип Структура, содержит параметры обработки, как они заданы пользователем через форму настройки.</p>
+<p><code>СуммаБезНал</code> - тип Число, сумма безналичной оплаты в чеке, <em>устарело</em></p>
+<p><code>СуммаНал</code> - тип число, сумма наличной оплаты в чеке, <em>устарело, не используется</em></p>
+<p><code>ДополнительнаяСтруктураДокумента</code> - тип Структура, см. <a href="#данныедляпечатичекадокумента"><code>ДанныеДляПечатиЧекаДокумента</code></a>, используется для того, чтобы переопределить определенное свойство документа именно в момент печати текущего чека, например, можно указать, что для этого чека, мы используем для получения товара только табличную часть Услуги, либо, что этот документа пробивается по безналу по умолчанию. В отличие от функции <a href="#массивнетиповыхдокументов">МассивНетиповыхДокументов</a> данные дополнительной структуры документа не кэшируются, и используются только для обработки текущего чека, ее удобно применять, когда параметры заполнения чека меняются в зависимости от вида операции, или значения других полей.</p>
+<p>Выполняет типовой функционал заполнения и печати чека, с учетом переданной ссылки на документ, однако при этом, передав через ДополнительнаяСтруктураДокумента - дополнительные условия, мы можем управлять этим заполнением. Например, по умолчанию программа считает, что "<strong>ПриходныйКассовыйОрдер</strong>"  - это кассовый документ и содержит в себе табличную часть "<strong>РасшифровкаПлатежа</strong>", где указываются документы основания, однако если у вас он нетиповой, и не является кассовым и приходует товар, то мы можем передать вот так,</p>
+<p>```bsl
+   Функция ОбработатьЧекПоСвоему(СсылкаНаДокумент, СписокЧеков, ПараметрыОбработки, СуммаБезНал = 0, СуммаНал = 0, ПропуститьПроверку = Ложь) Экспорт</p>
+<div class="codehilite"><pre><span></span><code>   ПропуститьПроверку = Истина;
+
+   ИмяДокумента = пДок.Метаданные().Имя;
+   СтруктураДокумента = Неопределено;
+
+   Если ИмяДокумента = &quot;ПриходныйКассовыйОрдер&quot; Тогда
+       СтруктураДокумента = Новый Структура();
+       СтруктураДокумента.ЭтоКассовыйДокумент = Ложь;
+       СтруктураДокумента.ТабличнаяЧасть = &quot;Товары|Услуги&quot;;
+   КонецЕсли;
+
+   Возврат ОсновнаяОбработка.ОбработатьУниверсальныйДок(СсылкаНаДокумент, СписокЧеков, ПараметрыОбработки, СуммаБезНал, СуммаНал, СтруктураДокумента);
+</code></pre></div>
+
+<p>КонецФункции</p>
+</li>
+</ul>
+<h4 id="_10">ПроверитьПечатьИВернутьРезультат<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><code>ПроверитьПечатьИВернутьРезультат(СписокЧеков, ПараметрыОбработки)</code>:</p>
+<p><code>СписокЧеков</code> - тип Массив, содержит массив структур, это чеки, которые будут напечатаны. Перед этой командой список чеков должен быть полностью заполнен итоговыми данными;</p>
+<p><code>ПараметрыОбработки</code> - тип Структура, содержит параметры обработки, как они заданы пользователем через форму настройки.</p>
+<p>проверяет необходимость открытия <a href="../form_check_and_check_correction/">Формы проверки печати</a>, и открывает ее. Возвращает пустую строку, если все прошло успешно, или текст ошибки. Удобно, если список чеков формируете самостоятельно, но пользователю хотите вывести для корректировки.</p>
+<p><em>Пример</em>,</p>
+<div class="highlight"><pre><span></span><code><span class="k">Возврат</span> <span class="nv">ОсновнаяОбработка</span><span class="o">.</span><span class="nf">ПроверитьПечатьИВернутьРезультат</span><span class="p">(</span><span class="nv">СписокЧеков</span><span class="p">,</span> <span class="nv">ПараметрыОбработки</span><span class="p">);</span>
+</code></pre></div>
+</li>
+</ul>
+<h4 id="_11">Функции работы с оборудованием<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
+<p>Данные команды используется для самостоятельного вызова функций фискального регистратора или эквайринга, например можно предварительно открыть денежный ящик, или снять итоги по эквайрингу, либо вывести в интерфейс кассира кнопку для снятия отчета по секциям (Доступен например для оборудования Штрих-М)</p>
+<h4 id="_12">ВыполнитьОсновнуюКомандуОборудования<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><code>мМодульККТСобственная.ВыполнитьОсновнуюКомандуОборудования</code> - позволяет через доп обработчик вызвать основную команду фискального регистратора (это общие команды, описание которых доступны в <a href="https://its.1c.ru/db/metod8dev#content:4829:hdoc:chapter270">требованиях к драйверам подключаемого оборудования</a>).
+Параметры:</p>
+<p><code>ИмяФискальногоРегистратора</code> - тип Строка, имя подключенного фискального регистратора, как вы его назвали через меню подключения дополнительного оборудования, если это основной фискальный регистратор, то оставляем строку пустой.</p>
+<p><code>ИмяКоманды</code> - тип Строка, русское наименование команды, как она указана в <a href="https://its.1c.ru/db/metod8dev#content:4829:hdoc:chapter270">требованиях к драйверам подключаемого оборудования</a>, например, <code>ОткрытьДенежныйЯщик</code></p>
+<p><code>ВходныеПараметры</code> - необязательный, тип Массив, можно передать входные параметры для выполнения операции, например, Имя и ИНН кассира.</p>
+<p>Возвращает структуру, вида:</p>
+<div class="highlight"><pre><span></span><code>    <span class="nv">ДанныеОтвета</span> <span class="o">=</span> <span class="k">Новый</span> <span class="nv">Структура</span><span class="p">;</span>
+    <span class="nv">ДанныеОтвета</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;Успешно&quot;</span><span class="p">,</span> <span class="kc">Ложь</span><span class="p">);</span>
+    <span class="nv">ДанныеОтвета</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;ТекстОшибки&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">);</span>
+    <span class="nv">ДанныеОтвета</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;ВыходныеПараметры&quot;</span><span class="p">);</span>
+</code></pre></div>
+<p><code>ВыходныеПараметры</code> заполняются, при их наличии</p>
+<p><em>Пример</em>,</p>
+<div class="highlight"><pre><span></span><code><span class="nv">ОсновнаяОбработка</span><span class="o">.</span><span class="nv">мМодульККТСобственная</span><span class="o">.</span><span class="nf">ВыполнитьОсновнуюКомандуОборудования</span><span class="p">(</span><span class="s">&quot;ДополнительныйФР&quot;</span><span class="p">,</span> <span class="s">&quot;ОткрытьДенежныйЯщик&quot;</span><span class="p">)</span>
+</code></pre></div>
+</li>
+</ul>
+<h4 id="_13">ВыполнитьДополнительнуюКомандуОборудования<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><code>мМодульККТСобственная.ВыполнитьДополнительнуюКомандуОборудования</code> - позволяет через доп обработчик вызвать дополнительную команду (это команды, которые предусмотрены только производителем определенного оборудования, например "Печать отчета по секциям") на подключенном фискальном регистраторе.
+Параметры:</p>
+<p><code>ИмяФискальногоРегистратора</code> - тип Строка, имя подключенного фискального регистратора, как вы его назвали через меню подключения дополнительного оборудования, если это основной фискальный регистратор, то оставляем строку пустой.</p>
+<p><code>ИмяДополнительнойКоманды</code> - тип Строка, наименование дополнительной команды, как она прописана в описании драйвера, например, <code>PrintChooseReceiptCopy</code></p>
+<p>Возвращает структуру, вида:</p>
+<div class="highlight"><pre><span></span><code>    <span class="nv">ДанныеОтвета</span> <span class="o">=</span> <span class="k">Новый</span> <span class="nv">Структура</span><span class="p">;</span>
+    <span class="nv">ДанныеОтвета</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;Успешно&quot;</span><span class="p">,</span> <span class="kc">Ложь</span><span class="p">);</span>
+    <span class="nv">ДанныеОтвета</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;ТекстОшибки&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">);</span>
+    <span class="nv">ДанныеОтвета</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;ВыходныеПараметры&quot;</span><span class="p">);</span>
+</code></pre></div>
+<p><code>ВыходныеПараметры</code> заполняются, при их наличии</p>
+<p><em>Пример</em>,</p>
+<div class="highlight"><pre><span></span><code><span class="nv">ОсновнаяОбработка</span><span class="o">.</span><span class="nv">мМодульККТСобственная</span><span class="o">.</span><span class="nf">ВыполнитьДополнительнуюКомандуОборудования</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">,</span> <span class="s">&quot;PrintChooseReceiptCopy&quot;</span><span class="p">);</span>
+</code></pre></div>
+</li>
+</ul>
+<h4 id="_14">ВыполнитьОсновнуюКомандуЭквайринга<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><code>мМодульККТСобственная.ВыполнитьОсновнуюКомандуЭквайринга</code> - позволяет через доп обработчик вызвать основную команду подключенного эквайрингового терминала (это общие команды, описание которых доступны в <a href="https://its.1c.ru/db/metod8dev#content:4829:hdoc:chapter238">требованиях к драйверам подключаемого оборудования</a> для эквайринга)</p>
+<p><em>Параметры</em>:</p>
+<p><code>ИмяЭквайринга</code> - тип Строка, имя подключенного эквайрингового терминала, как вы его назвали через меню подключения эквайринговых терминалов.</p>
+<p><code>ИмяКоманды</code> - тип Строка, русское наименование команды, как она указана в <a href="https://its.1c.ru/db/metod8dev#content:4829:hdoc:chapter238">требованиях к драйверам подключаемого оборудования</a>, например, <code>ВернутьПлатежПоПлатежнойКарте</code></p>
+<p><code>ВходныеПараметры</code> - необязательный, тип Массив, можно передать входные параметры для выполнения операции.</p>
+<p>Возвращает структуру, вида:</p>
+<div class="highlight"><pre><span></span><code>    <span class="nv">ДанныеОтвета</span> <span class="o">=</span> <span class="k">Новый</span> <span class="nv">Структура</span><span class="p">;</span>
+    <span class="nv">ДанныеОтвета</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;Успешно&quot;</span><span class="p">,</span> <span class="kc">Ложь</span><span class="p">);</span>
+    <span class="nv">ДанныеОтвета</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;ТекстОшибки&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">);</span>
+    <span class="nv">ДанныеОтвета</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;ВыходныеПараметры&quot;</span><span class="p">);</span>
+</code></pre></div>
+<p><code>ВыходныеПараметры</code> заполняются, при их наличии</p>
+<p><em>Пример</em>,</p>
+<p>```bsl
+ОсновнаяОбработка.мМодульККТСобственная.ВыполнитьОсновнуюКомандуЭквайринга("Наш Эквайринг", "ИтогиДняПоКартам")</p>
+</li>
+</ul>
+<h4 id="_15">ВыполнитьДополнительнуюКомандуЭквайринга<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><code>мМодульККТСобственная.ВыполнитьДополнительнуюКомандуЭквайринга</code> - позволяет через доп обработчик вызвать дополнительную команду (это команды, которые предусмотрены только производителем определенного оборудования) на подключенном фискальном терминале.
+Параметры:</p>
+<p><code>ИмяЭквайринга</code> - тип Строка, имя подключенного эквайрингового терминала, как вы его назвали через меню подключения терминалов.</p>
+<p><code>ИмяДополнительнойКоманды</code> - тип Строка, наименование дополнительной команды, как она прописана в описании драйвера, например, <code>PrintChooseReceiptCopy</code></p>
+<p>Возвращает структуру, вида:</p>
+<div class="highlight"><pre><span></span><code>    <span class="nv">ДанныеОтвета</span> <span class="o">=</span> <span class="k">Новый</span> <span class="nv">Структура</span><span class="p">;</span>
+    <span class="nv">ДанныеОтвета</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;Успешно&quot;</span><span class="p">,</span> <span class="kc">Ложь</span><span class="p">);</span>
+    <span class="nv">ДанныеОтвета</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;ТекстОшибки&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">);</span>
+    <span class="nv">ДанныеОтвета</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;ВыходныеПараметры&quot;</span><span class="p">);</span>
+</code></pre></div>
+<p><code>ВыходныеПараметры</code> заполняются, при их наличии</p>
+<p><em>Пример</em>,</p>
+<div class="highlight"><pre><span></span><code><span class="nv">ОсновнаяОбработка</span><span class="o">.</span><span class="nv">мМодульККТСобственная</span><span class="o">.</span><span class="nf">ВыполнитьДополнительнуюКомандуЭквайринга</span><span class="p">(</span><span class="s">&quot;Наш эквайринг&quot;</span><span class="p">,</span> <span class="s">&quot;Test&quot;</span><span class="p">);</span>
+</code></pre></div>
+</li>
+</ul>
+<h3 id="_16">Команды модуля обработчика<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
+<p>Здесь представлено описание команд доп обработчика, расположенных непосредственно в нем, и которые основная программа ожидает в нем увидеть.</p>
+<h4 id="_17">ОбработатьЧекПоСвоему<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><code>ОбработатьЧекПоСвоему</code> - Выполняется перед запуском заполнения чека в основной обработке. Здесь можно добавить неподдерживаемые типы документов, или реализовать собственный функционал по заполнению чеков. При этом, если планируется реализовать собственный функционал, то необходимо установить значение переменной <code>ПропуститьСтандартнуюОбработку</code> в значение <code>Истина</code>. Данная процедура обычно используется в паре с <a href="#обработатьуниверсальныйдок"><code>ОбработатьУниверсальныйДок</code></a></p>
+<p>Параметры:</p>
+<p><code>СсылкаНаДокумент</code> - Тип Ссылка на документ, документ из которого происходит печать</p>
+<p><code>СписокЧеков</code> - тип Массив, содержит массив структур, это чеки, которые будут напечатаны. Первоначально содержит только один элемент, если предполагается напечатать несколько чеков, то необходимо добавлять дополнительные значения в эту структуру. Пример такой структуры чека можно получить, вызвав <code>ОсновнаяОбработки.мМодульККТОбщий.ПараметрыОперацииФискализацииЧека()</code></p>
+<p><code>ПараметрыОбработки</code> - Тип Структура, Настройки обработки, см. мПараметрыУстройства</p>
+<p><code>СуммаБезНал</code> - Необязательный, Тип Число. Сумма безналичной оплаты чека. <em>устарело</em>, не используется.</p>
+<p><code>СуммаНал</code> - Необязательный, Тип Число. Сумма наличной оплаты чека. <em>устарело</em>, не используется.</p>
+<p><code>ПропуститьСтандартнуюОбработку</code> - Необязательный, Тип Булево, указывает обрабатывать ли переданный документ по стандартному алгоритму основной программы. По умолчанию, <code>ЛОЖЬ</code></p>
+<p>Возвращаемое значение, тип Строка, возвращает текст ошибки, либо пустую строку при успешной срабатывании.</p>
+<p><em>Пример</em>,</p>
+<div class="highlight"><pre><span></span><code><span class="k">Функция</span> <span class="nf">ОбработатьЧекПоСвоему</span><span class="p">(</span><span class="nv">СсылкаНаДокумент</span><span class="p">,</span> <span class="nv">СписокЧеков</span><span class="p">,</span> <span class="nv">ПараметрыОбработки</span><span class="p">,</span> <span class="nv">СуммаБезНал</span> <span class="o">=</span> <span class="m">0</span><span class="p">,</span> <span class="nv">СуммаНал</span> <span class="o">=</span> <span class="m">0</span><span class="p">,</span> <span class="nv">ПропуститьСтандартнуюОбработку</span> <span class="o">=</span> <span class="kc">Ложь</span><span class="p">)</span> <span class="k">Экспорт</span>
+
+    <span class="nv">ПропуститьСтандартнуюОбработку</span> <span class="o">=</span> <span class="kc">Истина</span><span class="p">;</span>
+
+    <span class="nv">ИмяДокумента</span> <span class="o">=</span> <span class="nv">СсылкаНаДокумент</span><span class="o">.</span><span class="nf">Метаданные</span><span class="p">()</span><span class="o">.</span><span class="nv">Имя</span><span class="p">;</span>
+    <span class="nv">СтруктураДокумента</span> <span class="o">=</span> <span class="kc">Неопределено</span><span class="p">;</span>
+    <span class="k">Если</span> <span class="nv">ИмяДокумента</span> <span class="o">=</span> <span class="s">&quot;ПлатежноеПоручениеВходящее&quot;</span> <span class="k">Тогда</span>
+        <span class="nv">СтруктураДокумента</span> <span class="o">=</span> <span class="k">Новый</span> <span class="nf">Структура</span><span class="p">();</span>
+        <span class="nv">СтруктураДокумента</span><span class="o">.</span><span class="nv">ЭтоКассовыйДокумент</span> <span class="o">=</span> <span class="kc">Истина</span><span class="p">;</span>
+        <span class="nv">СтруктураДокумента</span><span class="o">.</span><span class="nv">Электронно</span> <span class="o">=</span> <span class="kc">Истина</span><span class="p">;</span>
+        <span class="nv">СтруктураДокумента</span><span class="o">.</span><span class="nv">ТабличнаяЧасть</span> <span class="o">=</span> <span class="s">&quot;РасшифровкаПлатежа&quot;</span><span class="p">;</span>
+    <span class="k">ИначеЕсли</span> <span class="nv">ИмяДокумента</span> <span class="o">=</span> <span class="s">&quot;РасходныйКассовыйОрдер&quot;</span> <span class="k">Тогда</span> 
+        <span class="nv">СтруктураДокумента</span> <span class="o">=</span> <span class="k">Новый</span> <span class="nf">Структура</span><span class="p">();</span>
+        <span class="nv">СтруктураДокумента</span><span class="o">.</span><span class="nv">ЭтоКассовыйДокумент</span> <span class="o">=</span> <span class="kc">Истина</span><span class="p">;</span>
+        <span class="nv">СтруктураДокумента</span><span class="o">.</span><span class="nv">ТипРасчетаПоУмолчанию</span> <span class="o">=</span> <span class="m">3</span><span class="p">;</span>
+        <span class="nv">СтруктураДокумента</span><span class="o">.</span><span class="nv">ТабличнаяЧасть</span> <span class="o">=</span> <span class="s">&quot;РасшифровкаПлатежа&quot;</span><span class="p">;</span>
+    <span class="k">КонецЕсли</span><span class="p">;</span> 
+
+    <span class="k">Возврат</span> <span class="nv">ОсновнаяОбработка</span><span class="o">.</span><span class="nf">ОбработатьУниверсальныйДок</span><span class="p">(</span><span class="nv">СсылкаНаДокумент</span><span class="p">,</span> <span class="nv">СписокЧеков</span><span class="p">,</span> <span class="nv">ПараметрыОбработки</span><span class="p">,</span> <span class="nv">СуммаБезНал</span><span class="p">,</span> <span class="nv">СуммаНал</span><span class="p">,</span> <span class="nv">СтруктураДокумента</span><span class="p">);</span>
+
+<span class="k">КонецФункции</span>
+</code></pre></div>
+<p><em>Пример</em>, как программно задать "передавать чек только в электронном виде".</p>
+<p>```bsl</p>
+<p>Функция ОбработатьЧекПоСвоему(СсылкаНаДокумент, СписокЧеков, ПараметрыОбработки, СуммаБезНал = 0, СуммаНал = 0, ПропуститьСтандартнуюОбработку = Ложь) Экспорт</p>
+</li>
+</ul>
+<p>ПараметрыОбработки.T_БезПечати = Истина;
+ ОсновнаяОбработка.мОбщиеПараметры.Электронно = Истина;</p>
+<div class="codehilite"><pre><span></span><code>    Возврат &quot;&quot;;
+
+КонецФункции
+
+```
+</code></pre></div>
+
+<h4 id="_18">ДанныеДляПечатиЧекаДокумента<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><code>ДанныеДляПечатиЧекаДокумента</code> - функция, возвращает структуру следующего вида:</p>
+<div class="highlight"><pre><span></span><code>    <span class="nv">ПараметрыДокумента</span> <span class="o">=</span> <span class="k">Новый</span> <span class="nf">Структура</span><span class="p">();</span>
+    <span class="nv">ПараметрыДокумента</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;ТипРасчетаПоУмолчанию&quot;</span><span class="p">,</span> <span class="m">1</span><span class="p">);</span>
+    <span class="nv">ПараметрыДокумента</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;ЭтоКассовыйДокумент&quot;</span><span class="p">,</span> <span class="kc">Ложь</span><span class="p">);</span>
+    <span class="nv">ПараметрыДокумента</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;ВидОплатыПоУмолчанию&quot;</span><span class="p">,</span> <span class="m">0</span><span class="p">);</span>
+    <span class="nv">ПараметрыДокумента</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;ПризнакСпособаРасчетаПоУмолчанию&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">);</span>
+    <span class="nv">ПараметрыДокумента</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;ТабличнаяЧасть&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">);</span>
+    <span class="nv">ПараметрыДокумента</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;ЭтоТоварныйДокумент&quot;</span><span class="p">,</span> <span class="kc">Ложь</span><span class="p">);</span>
+    <span class="nv">ПараметрыДокумента</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;НеЗаполнятьПозиции&quot;</span><span class="p">,</span> <span class="kc">Ложь</span><span class="p">);</span>
+    <span class="nv">ПараметрыДокумента</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;НеЗаполнятьОплату&quot;</span><span class="p">,</span> <span class="kc">Ложь</span><span class="p">);</span>
+</code></pre></div>
+</li>
+</ul>
+<p>Ее можно использовать как образец для заполнения полей, которые необходимо переопределить при использовании функции <a href="#обработатьуниверсальныйдок"><code>ОбработатьУниверсальныйДок</code></a>.</p>
+<p><code>ТипРасчетаПоУмолчанию</code> - Тип Число, отвечает за то, на какой тип расчета будет отнесен документ, если программе не удастся его определить по виду операции. Возможные значения: 1 - "Приход", 2 - "Возврат прихода", 3 - "Расход", 4 - "Возврат расхода"</p>
+<div class="codehilite"><pre><span></span><code>```ЭтоКассовыйДокумент``` - Тип Булево, определяет является ли документ кассовым. Ярким примером является, например, документ &quot;Приходный кассовый ордер&quot;. Для кассовых документов применяется особый механизм заполнения: программа пытается определить документ сделки, который содержит данные о товаре, это может быть документ расчетов с контрагентами, заказ, документ основания и т.д. У кассовых документов может быть несколько документов сделки с товарами. Также, если не устраивает типовой алгоритм определения сделки, например, нужно брать информацию по товарам из документа основания, а не из документа расчетов, то нужно переопределить еще эту функцию [```МассивПриоритетовОпределенияТоварногоДокумента```](#массивприоритетовопределениятоварногодокумента)
+
+```ВидОплатыПоУмолчанию``` - тип Число, определяет, куда относить по умолчанию данные об оплате, если программе не удастся определить эту информация автоматически. Возможные значения: 0 - &quot;Наличные&quot;, 1 - &quot;Безналичные&quot;, 4 - &quot;зачет аванса&quot;, 5 - &quot;постоплата&quot;, 6 - &quot;взаимозачет&quot;
+
+```ПризнакСпособаРасчетаПоУмолчанию``` - Тип Строка, Определяет на какой признак способа расчета установить документ, если ему явно этот признак не передан, например &quot;ЗаказПокупателя&quot;, по умолчанию относится к &quot;ПРЕДОПЛАТА&quot;.
+Возможные значения: &quot;ПРЕДОПЛАТА&quot;, &quot;ПЕРЕДАЧА&quot;, &quot;ОПЛАТАКРЕДИТА&quot;,&quot;НЕЗАДАН&quot;, либо пустая строка, при пустой строке признака способа расчета будет проигнорирован, при признаке &quot;НЕЗАДАН&quot;, настройки распределения обработки этого признака очистятся.
+
+```ТабличнаяЧасть``` - тип Строка. Применяется для кассовых и товарных документов.
+</code></pre></div>
+
+<p>Указывает, для кассового, где расположена табличная часть с документам сделки, а для товарного - наименования таблиц с товарами.
+ Например, для "Приходного кассового ордера" табличная  - "РасшифровкаПлатежа". Если несколько табличных частей, то они записываются через символ |, Например "Товары|Услуги"</p>
+<div class="codehilite"><pre><span></span><code>```ЭтоТоварныйДокумент``` - Тип Булево, используется в редких случаях для определения информации для оплаты, ярким примером является документ &quot;Реализация товаров услуг&quot; в последних типовых конфигурациях 1С, в нем появилась табличная часть с кассовыми документами, из нее можно получить информацию о том, какие оплаты по нему проходили. Если же мы хотим проигнорировать данную информацию, то нужно поставить этот признак в значение ```ЛОЖЬ```
+
+```НеЗаполнятьПозиции``` - тип Булево, указывает заполнять ли информацию о товаре средствами основной программы. Использовать, если необходимо реализовать собственный алгоритм заполнения товара.
+
+```НеЗаполнятьОплату``` - тип Булево, указывает заполнять ли информацию об оплате средствами основной программы. Использовать, если необходимо реализовать собственный алгоритм заполнения оплаты.
+</code></pre></div>
+
+<h4 id="_19">МассивПриоритетовОпределенияТоварногоДокумента<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>МассивПриоритетовОпределенияТоварногоДокумента</code> - выполняется в момент определения документа сделки для кассового документа. Возвращает массив, содержащий наименования возможных реквизитов документа, что содержат данные о документе сделки, в порядке от наиболее приоритетного к наименее. По умолчанию, принят такой порядок реквизитов:</li>
+</ul>
+<p>```bsl
+    МассивПриоритетов = Новый Массив;</p>
+<p>МассивПриоритетов.Добавить("СчетНаОплату");
+ МассивПриоритетов.Добавить("ДокументРасчетовСКонтрагентом");
+ МассивПриоритетов.Добавить("РеализацияТоваров");
+ МассивПриоритетов.Добавить("ДокументОснованиеЧекаККМ");
+ МассивПриоритетов.Добавить("Сделка");
+ МассивПриоритетов.Добавить("ДокументОснование");
+ МассивПриоритетов.Добавить("КредитныйДокумент");
+ МассивПриоритетов.Добавить("ОтчетОРозничныхПродажах");
+ МассивПриоритетов.Добавить("СубконтоДТ3");
+    <div class="highlight"><pre><span></span><code>Если же необходимо, чтобы программа брала данные из &quot;документа основания&quot;, а не &quot;сделки&quot;, то этот порядок можно переопределить таким образом:
+
+```bsl
+Функция МассивПриоритетовОпределенияТоварногоДокумента(СсылкаНаДокумент) Экспорт
+    МассивПриоритетов = Новый Массив;
+    МассивПриоритетов.Добавить(&quot;ДокументОснование&quot;);
+    МассивПриоритетов.Добавить(&quot;Сделка&quot;);
+    Возврат МассивПриоритетов; 
+КонецФункции
+</code></pre></div></p>
+<h4 id="_20">ПослеФормированииТаблицыЧека<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><code>ПослеФормированииТаблицыЧека</code> - процедура, Выполняется после заполнения таблицы чека по стандартному алгоритму обработки, но до фискализации и открытия формы проверки печати. На данном этапе уже заполнена информация по оплатам и позициям, но не произошло разбиение общего списка товара по отдельным чекам и не применены шаблоны. Предполагается, что разработчик здесь может полностью переопределить сформированную таблицу для печати, либо поменять отдельные реквизиты: признаки расчета, наименование товара, фискальный регистратор, ставку ндс, и многое другое.
+    Параметры:</p>
+<p><code>пТаблицаЧека</code> - тип ТаблицаЗначений, содержит строки будущего чека, с дополнительными служебными полями, что могут быть использованы в алгоритме заполнения чека. Какие колонки содержит данная таблица можно посмотреть вызвав <code>ОсновнаяОбработка.мМодульККТОбщий.ККТ_ПолучитьПустуюТаблицуСДанными()</code> или посмотрев ее код в форме <code>МодульОбщий</code></p>
+<p><code>пПараметры</code> - тип Структура, Параметры обработки, см. <code>мПараметрыУстройства</code></p>
+<p><em>Пример</em>,</p>
+<div class="highlight"><pre><span></span><code><span class="k">Процедура</span> <span class="nf">ПослеФормированииТаблицыЧека</span><span class="p">(</span><span class="nv">пТаблицаЧека</span><span class="p">,</span> <span class="nv">пПараметры</span><span class="p">)</span> <span class="k">Экспорт</span>
+
+    <span class="c1">//Заполнение email контрагента перед печатью чека</span>
+    <span class="nv">Контрагент</span> <span class="o">=</span> <span class="nv">ОсновнаяОбработка</span><span class="o">.</span><span class="nv">мОбщиеПараметры</span><span class="o">.</span><span class="nv">ДокументОснование</span><span class="o">.</span><span class="nv">Контрагент</span><span class="p">;</span>
+    <span class="k">Если</span> <span class="nf">ЗаполненEmail</span><span class="p">(</span><span class="nv">Контрагент</span><span class="p">)</span> <span class="k">Тогда</span>
+        <span class="nv">ОсновнаяОбработка</span><span class="o">.</span><span class="nv">мОбщиеПараметры</span><span class="o">.</span><span class="nv">Электронно</span> <span class="o">=</span> <span class="kc">Истина</span><span class="p">;</span>
+        <span class="nv">ОсновнаяОбработка</span><span class="o">.</span><span class="nv">мОбщиеПараметры</span><span class="o">.</span><span class="nv">ПокупательEmail</span> <span class="o">=</span> <span class="nv">Контрагент</span><span class="o">.</span><span class="nv">АдресЭП</span><span class="p">;</span>
+    <span class="k">КонецЕсли</span><span class="p">;</span> 
+
+    <span class="c1">//Удаление НДС из чека</span>
+    <span class="k">Для</span> <span class="k">Каждого</span> <span class="nv">СтрокаЧека</span> <span class="k">Из</span> <span class="nv">пТаблицаЧека</span> <span class="k">Цикл</span>
+     <span class="nv">СтрокаЧека</span><span class="o">.</span><span class="nv">СтавкаНДС</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">;</span>
+     <span class="nv">СтрокаЧека</span><span class="o">.</span><span class="nv">СуммаНДС</span> <span class="o">=</span> <span class="m">0</span><span class="p">;</span>
+    <span class="k">КонецЦикла</span><span class="p">;</span>
+
+    <span class="c1">//Установка собственного номера таможенной декларации.</span>
+    <span class="k">Для</span> <span class="k">Каждого</span> <span class="nv">СтрокаЧека</span> <span class="k">Из</span> <span class="nv">пТаблицаЧека</span> <span class="k">Цикл</span>
+     <span class="nv">СтрокаЧека</span><span class="o">.</span><span class="nv">НомерТаможеннойДекларации</span> <span class="o">=</span> <span class="nf">НомерДекларацииИзНоменклатуры</span><span class="p">(</span><span class="nv">СтрокаЧека</span><span class="o">.</span><span class="nv">Номенклатура</span><span class="p">);</span>
+    <span class="k">КонецЦикла</span><span class="p">;</span> 
+
+<span class="k">КонецПроцедуры</span>
+</code></pre></div>
+</li>
+</ul>
+<h4 id="_21">МассивНетиповыхДокументов<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><code>МассивНетиповыхДокументов</code> - Выполняется единожды при запуске обработки для определения списка поддерживаемых документов. Типовой список документов содержится в макете "Список поддерживаемых документов" основной обработки. <img alt="Список поддерживаемых документов" src="../media/%D1%81%D0%BF%D0%B8%D1%81%D0%BE%D0%BA_%D0%BF%D0%BE%D0%B4%D0%B4%D0%B5%D1%80%D0%B6%D0%B8%D0%B2%D0%B0%D0%B5%D0%BC%D1%8B%D1%85_%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%BE%D0%B2.png" /> Данная функция позволяет добавить, либо переопределить уже существующие документы. В отличие от передачи схожего параметра в функцию <a href="#обработатьуниверсальныйдок">"ОбработатьУниверсальныйДок"</a>, здесь значение определяется единожды и в последствие не меняется, его удобно использовать, если нужно просто изменить поддерживаемый документ, без каких либо условий.</p>
+<p>Возвращает значение: тип Массив, содержит структуры <a href="#данныенетиповогодокумента">"ДанныеНетиповогоДокумента"</a>, в которых расположена информация по переопределению.</p>
+<p>Например, в текущей конфигурации документ "Приходный кассовый ордер" (ПКО) содержит табличную часть "Товары" и приходует товар - в типовом же варианте ПКО имеет табличную часть "РасшифровкаПлатежа" и приходует деньги, это можно поправить:</p>
+<div class="highlight"><pre><span></span><code><span class="k">Функция</span> <span class="nf">МассивНетиповыхДокументов</span><span class="p">()</span> <span class="k">Экспорт</span>
+    <span class="nv">МассивНетиповыхДокументов</span> <span class="o">=</span> <span class="k">Новый</span> <span class="nv">Массив</span><span class="p">;</span>
+
+    <span class="c1">//ПЕРЕОПРЕДЕЛЕНИЕ ПРИХОДНОГО КАССОВОГО ОРДЕРА</span>
+    <span class="nv">ДанныеНовогоДокумента</span> <span class="o">=</span> <span class="nf">ДанныеНетиповогоДокумента</span><span class="p">();</span>
+    <span class="nv">ДанныеНовогоДокумента</span><span class="o">.</span><span class="nv">ПолноеИмя</span> <span class="o">=</span> <span class="s">&quot;Документ.ПриходныйКассовыйОрдер&quot;</span><span class="p">;</span>
+    <span class="nv">ДанныеНовогоДокумента</span><span class="o">.</span><span class="nv">ТабличнаяЧасть</span> <span class="o">=</span> <span class="s">&quot;Товары&quot;</span><span class="p">;</span>
+    <span class="nv">ДанныеНовогоДокумента</span><span class="o">.</span><span class="nv">ЭтоКассовыйДокумент</span> <span class="o">=</span> <span class="kc">Ложь</span><span class="p">;</span>
+    <span class="nv">МассивНетиповыхДокументов</span><span class="o">.</span><span class="nf">Добавить</span><span class="p">(</span><span class="nv">ДанныеНовогоДокумента</span><span class="p">);</span>
+
+    <span class="k">Возврат</span> <span class="nv">МассивНетиповыхДокументов</span><span class="p">;</span>
+<span class="k">КонецФункции</span>
+</code></pre></div>
+<p>Другое пример, необходимо добавить документ "Акт списания ЕГАИС" с табличной часть "Товары", чтобы он делал расход по кассе:</p>
+<div class="highlight"><pre><span></span><code><span class="k">Функция</span> <span class="nf">МассивНетиповыхДокументов</span><span class="p">()</span> <span class="k">Экспорт</span>
+    <span class="nv">МассивНетиповыхДокументов</span> <span class="o">=</span> <span class="k">Новый</span> <span class="nv">Массив</span><span class="p">;</span>
+
+    <span class="c1">//ДОБАВЛЕНИЕ ДОКУМЕНТА &quot;АКТ СПИСАНИЯ ЕГАИС&quot;</span>
+    <span class="nv">ДанныеНовогоДокумента</span> <span class="o">=</span> <span class="nf">ДанныеНетиповогоДокумента</span><span class="p">();</span>
+    <span class="nv">ДанныеНовогоДокумента</span><span class="o">.</span><span class="nv">ТипРасчетаПоУмолчанию</span> <span class="o">=</span> <span class="m">3</span><span class="p">;</span> <span class="c1">//Расход</span>
+    <span class="nv">ДанныеНовогоДокумента</span><span class="o">.</span><span class="nv">ПолноеИмя</span> <span class="o">=</span> <span class="s">&quot;Документ.АктСписанияЕГАИС&quot;</span><span class="p">;</span>
+    <span class="nv">ДанныеНовогоДокумента</span><span class="o">.</span><span class="nv">ТабличнаяЧасть</span> <span class="o">=</span> <span class="s">&quot;Товары&quot;</span><span class="p">;</span>
+    <span class="nv">МассивНетиповыхДокументов</span><span class="o">.</span><span class="nf">Добавить</span><span class="p">(</span><span class="nv">ДанныеНовогоДокумента</span><span class="p">);</span>
+
+    <span class="k">Возврат</span> <span class="nv">МассивНетиповыхДокументов</span><span class="p">;</span>
+<span class="k">КонецФункции</span>
+</code></pre></div>
+</li>
+</ul>
+<h4 id="_22">ДанныеНетиповогоДокумента<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><code>ДанныеНетиповогоДокумента</code> - функция, возвращает структуру следующего вида:</p>
+<div class="highlight"><pre><span></span><code><span class="k">Функция</span> <span class="nf">ДанныеНетиповогоДокумента</span><span class="p">()</span>
+    <span class="nv">СтруктураДокумента</span> <span class="o">=</span> <span class="nf">ДанныеДляПечатиЧекаДокумента</span><span class="p">();</span> 
+    <span class="nv">СтруктураДокумента</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;ПолноеИмя&quot;</span><span class="p">);</span>
+    <span class="k">Возврат</span> <span class="nv">СтруктураДокумента</span><span class="p">;</span>
+<span class="k">КонецФункции</span>  
+</code></pre></div>
+<p>Используется в функции <a href="#массивнетиповыхдокументов">МассивНетиповыхДокументов</a> для переопределения параметров поддерживаемых документов. По факту это расширение структуры <a href="#данныедляпечатичекадокумента">ДанныеДляПечатиЧекаДокумента</a> с добавлением поля "ПолноеИмя", в котором содержится полное наименование метаданных поддерживаемого объекта, например "Документ.ПриходныйКассовыйОрдер".</p>
+</li>
+</ul>
+<h4 id="_">ПолучитьПредставлениеПоляЗапроса_Универсальное<a class="headerlink" href="#_" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><code>ПолучитьПредставлениеПоляЗапроса_Универсальное</code> - используется для переопределения механизма динамического формирования запросов к базе данных. Функционал программы универсальный, и потому получение данных о контрагенте, кассире, пробитом товаре основано на динамическом сформированном запросе, через эту функцию разработчик может повлиять на этот запрос. Обратите внимание, что результат такого динамического формирования кэшируется по виду документа как только инициализируется данные запроса, поэтому подменять запрос в зависимости от вида операции документа не получится</p>
+<p><em>Параметры</em>:</p>
+<p><code>пИмяПоля</code> - тип Строка, имя предопределенного поля, для которого программа пытается построить запрос. Например, это может быть поле "ПОЛУЧАТЕЛЬ", "ИННПОЛУЧАТЕЛЯ", "ЦЕНА", "НОМЕНКЛАТУРА" и т.д. Обратите внимание, что имя поля передается в верхнему регистре. Общий список полей доступных для определения можно посмотреть, открыв в конфигураторе основную обработку, форму "МодульРаботаСЗапросами" функцию "СписокИзмененныхПолей".
+<img alt="список измененных полей" src="../media/%D1%81%D0%BF%D0%B8%D1%81%D0%BE%D0%BA_%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%BD%D1%8B%D1%85_%D0%BF%D0%BE%D0%BB%D0%B5%D0%B9.png" /></p>
+<p><code>ИмяОбъекта1С</code> - тип Строка, имя объекта 1С, для которого определяется поле запроса, например, мы может для объекта "Номенклатура", искать поле "ВИДНОМЕНКЛАТУРЫ", или, например, для "РеализацияТоваровУслуг", искать поле "ОРГАНИЗАЦИЯ". Имя объекта передается в <em>CamelCase</em></p>
+<p><code>пТабличнаяЧасть</code> - тип Строка, имя табличной части объекта 1С, в которой находится предполагаемое поле, если табличная часть не используется, то она будет пустой строкой.</p>
+<p><code>пТаблицаЗапроса</code> - тип Строки, служебное поле, содержит информацию представления объекта для построения запроса, к примеру, имеет запрос вида</p>
+<div class="highlight"><pre><span></span><code><span class="s">&quot;ВЫБРАТЬ </span>
+<span class="s">| Объект.Организация КАК Организация</span>
+<span class="s">| ИЗ Документ.РеализацияТоваровИУслуг КАК Объект&quot;</span>
+</code></pre></div>
+<p>здесь конструкция "Объект." будет как раз в <code>пТаблицаЗапроса</code>, таким образом, чтобы в функции "ПолучитьПредставлениеПоляЗапроса_Универсальное" вернуть необходимое значение реквизита, то нужно возвращать так</p>
+<div class="highlight"><pre><span></span><code><span class="k">Возврат</span> <span class="nv">пТаблицаЗапроса</span> <span class="o">+</span> <span class="s">&quot;ИмяВашегоРеквизита&quot;</span><span class="p">;</span>
+</code></pre></div>
+<p><code>пТиповоеПоле</code> - тип Строка, значение поля запроса, которое будет использовано, если его разработчик его не подменит.</p>
+<p><em>Пример</em></p>
+<div class="highlight"><pre><span></span><code><span class="k">Функция</span> <span class="nf">ПолучитьПредставлениеПоляЗапроса_Универсальное</span><span class="p">(</span><span class="nv">пИмяПоля</span><span class="p">,</span> <span class="nv">ИмяОбъекта1С</span><span class="p">,</span> <span class="nv">пТабличнаяЧасть</span><span class="p">,</span> <span class="nv">пТаблицаЗапроса</span><span class="p">,</span> <span class="nv">пТиповоеПоле</span><span class="p">)</span> <span class="k">Экспорт</span>
+    <span class="k">Если</span> <span class="nv">пИмяПоля</span> <span class="o">=</span> <span class="s">&quot;ЦЕНА&quot;</span> <span class="k">Тогда</span>
+        <span class="k">Возврат</span> <span class="nv">пТаблицаЗапроса</span> <span class="o">+</span> <span class="s">&quot;ЦенаДоставки&quot;</span><span class="p">;</span>
+    <span class="k">КонецЕсли</span><span class="p">;</span>
+
+    <span class="k">Возврат</span> <span class="nv">пТиповоеПоле</span><span class="p">;</span>
+<span class="k">КонецФункции</span>
+</code></pre></div>
+</li>
+</ul>
+<h2 id="_23">Примеры коды<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h2>
+<h3 id="_24">Программное переопределение параметров агента и поставщика<a class="headerlink" href="#_24" title="Permanent link">&para;</a></h3>
+<p>Суть задачи это подменить данные агента или поставщика перед формированием самого чека в механизме распределения, а в настройках мы оперируем только наименованием, наиболее удобно это сделать в процедуре "ПослеФормированииТаблицыЧека"</p>
+<div class="highlight"><pre><span></span><code><span class="k">Процедура</span> <span class="nf">ПослеФормированииТаблицыЧека</span><span class="p">(</span><span class="nv">пТаблицаЧека</span><span class="p">,</span> <span class="nv">пПараметры</span><span class="p">)</span> <span class="k">Экспорт</span>
+    <span class="c1">//ОПИСАНИЕ: https://github.com/andrei-karpov/1c_kkt_54fz/blob/main/for_programmers.md#послеформированиитаблицычека</span>
+
+    <span class="nv">НаименованиеАгента</span> <span class="o">=</span> <span class="s">&quot;Комиссионер &lt;автоматически&gt;&quot;</span><span class="p">;</span>
+    <span class="nf">ДобавитьДанныеАгентаВТаблицу</span><span class="p">(</span><span class="nv">НаименованиеАгента</span><span class="p">);</span>
+    <span class="nv">КатегорияКоммиссионныйТовар</span> <span class="o">=</span> <span class="nc">Справочники</span><span class="o">.</span><span class="nv">КатегорииОбъектов</span><span class="o">.</span><span class="nf">НайтиПоНаименованию</span><span class="p">(</span><span class="s">&quot;Комиссионный товар&quot;</span><span class="p">);</span>
+    <span class="nv">СвойствоПроизводитель</span> <span class="o">=</span> <span class="nc">ПланыВидовХарактеристик</span><span class="o">.</span><span class="nv">СвойстваОбъектов</span><span class="o">.</span><span class="nf">НайтиПоНаименованию</span><span class="p">(</span><span class="s">&quot;Производитель&quot;</span><span class="p">);</span>
+    <span class="k">Для</span> <span class="k">Каждого</span> <span class="nv">Строка</span> <span class="k">Из</span> <span class="nv">пТаблицаЧека</span> <span class="k">Цикл</span>
+        <span class="k">Если</span> <span class="k">НЕ</span> <span class="nf">НоменклатураКомиссионная</span><span class="p">(</span><span class="nv">Строка</span><span class="o">.</span><span class="nv">Номенклатура</span><span class="p">,</span> <span class="nv">КатегорияКоммиссионныйТовар</span><span class="p">)</span> <span class="k">Тогда</span>
+            <span class="k">Продолжить</span><span class="p">;</span>
+        <span class="k">КонецЕсли</span><span class="p">;</span>  
+
+        <span class="nv">ДанныеПоставщика</span> <span class="o">=</span> <span class="nf">ДанныеПоставщика</span><span class="p">(</span><span class="nv">Строка</span><span class="o">.</span><span class="nv">Номенклатура</span><span class="p">,</span> <span class="nv">СвойствоПроизводитель</span><span class="p">);</span>
+        <span class="k">Если</span> <span class="nv">ДанныеПоставщика</span> <span class="o">=</span> <span class="kc">Неопределено</span> <span class="k">Тогда</span>
+            <span class="k">Продолжить</span><span class="p">;</span>
+        <span class="k">КонецЕсли</span><span class="p">;</span> 
+
+        <span class="nf">ДобавитьДанныеПоставщикаВТаблицу</span><span class="p">(</span><span class="nv">ДанныеПоставщика</span><span class="p">);</span>
+        <span class="nv">Строка</span><span class="o">.</span><span class="nv">ПоставщикАгента</span> <span class="o">=</span> <span class="nv">ДанныеПоставщика</span><span class="o">.</span><span class="nv">Наименование</span><span class="p">;</span>
+        <span class="nv">Строка</span><span class="o">.</span><span class="nv">ПоставщикАгентаПоПозициям</span> <span class="o">=</span> <span class="nv">ДанныеПоставщика</span><span class="o">.</span><span class="nv">Наименование</span><span class="p">;</span>
+        <span class="nv">Строка</span><span class="o">.</span><span class="nv">ДоговорАгента</span> <span class="o">=</span> <span class="nv">НаименованиеАгента</span><span class="p">;</span>
+        <span class="nv">Строка</span><span class="o">.</span><span class="nv">ДоговорАгентаПоПозициям</span> <span class="o">=</span> <span class="nv">НаименованиеАгента</span><span class="p">;</span>
+
+    <span class="k">КонецЦикла</span><span class="p">;</span>     
+
+<span class="k">КонецПроцедуры</span>
+</code></pre></div>
+<p>добавление реквизитов агента в обработку:</p>
+<div class="highlight"><pre><span></span><code><span class="k">Процедура</span> <span class="nf">ДобавитьДанныеАгентаВТаблицу</span><span class="p">(</span><span class="nv">НаименованиеАгента</span><span class="p">)</span>
+
+    <span class="nv">мПараметрыУстройства</span> <span class="o">=</span> <span class="nv">ОсновнаяОбработка</span><span class="o">.</span><span class="nv">мПараметрыУстройства</span><span class="p">;</span>
+    <span class="nv">ДанныеРаспределения</span> <span class="o">=</span> <span class="nv">мПараметрыУстройства</span><span class="o">.</span><span class="nv">T_СоответствиеПоПризнакамАгента</span><span class="p">;</span>
+
+    <span class="k">Если</span> <span class="nb">ТипЗнч</span><span class="p">(</span><span class="nv">ДанныеРаспределения</span><span class="p">)</span> <span class="o">=</span> <span class="nb">Тип</span><span class="p">(</span><span class="s">&quot;Структура&quot;</span><span class="p">)</span> <span class="k">Тогда</span>   
+        <span class="nv">ТаблицаДоговоров</span> <span class="o">=</span> <span class="nv">ДанныеРаспределения</span><span class="o">.</span><span class="nv">ТаблицаДоговоров</span><span class="p">;</span>        
+    <span class="k">Иначе</span>
+        <span class="nv">ТаблицаДоговоров</span> <span class="o">=</span> <span class="k">Новый</span> <span class="nv">ТаблицаЗначений</span><span class="p">;</span>
+        <span class="nv">ТаблицаДоговоров</span><span class="o">.</span><span class="nv">Колонки</span><span class="o">.</span><span class="nf">Добавить</span><span class="p">(</span><span class="s">&quot;НаименованиеДоговора&quot;</span><span class="p">,</span> <span class="k">Новый</span> <span class="nf">ОписаниеТипов</span><span class="p">(</span><span class="s">&quot;Строка&quot;</span><span class="p">));</span>
+        <span class="nv">ТаблицаДоговоров</span><span class="o">.</span><span class="nv">Колонки</span><span class="o">.</span><span class="nf">Добавить</span><span class="p">(</span><span class="s">&quot;Договор&quot;</span><span class="p">,</span> <span class="k">Новый</span> <span class="nf">ОписаниеТипов</span><span class="p">(</span><span class="s">&quot;Строка&quot;</span><span class="p">));</span>
+
+        <span class="nv">ДанныеРаспределения</span> <span class="o">=</span> <span class="k">Новый</span> <span class="nv">Структура</span><span class="p">;</span>
+        <span class="nv">ДанныеРаспределения</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;ТаблицаДоговоров&quot;</span><span class="p">,</span> <span class="nv">ТаблицаДоговоров</span><span class="p">);</span>
+        <span class="nv">ДанныеРаспределения</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;Соответствие&quot;</span><span class="p">,</span> <span class="k">Новый</span> <span class="nv">Соответствие</span><span class="p">);</span>
+        <span class="nv">мПараметрыУстройства</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;T_СоответствиеПоПризнакамАгента&quot;</span><span class="p">,</span> <span class="nv">ДанныеРаспределения</span><span class="p">);</span>
+    <span class="k">КонецЕсли</span><span class="p">;</span>  
+
+    <span class="nv">ДанныеРаспределенияПоПозициям</span> <span class="o">=</span> <span class="nv">мПараметрыУстройства</span><span class="o">.</span><span class="nv">T_СоответствиеПоПризнакамАгентаПоПозициям</span><span class="p">;</span>
+    <span class="k">Если</span> <span class="k">НЕ</span> <span class="nb">ТипЗнч</span><span class="p">(</span><span class="nv">ДанныеРаспределенияПоПозициям</span><span class="p">)</span> <span class="o">=</span> <span class="nb">Тип</span><span class="p">(</span><span class="s">&quot;Структура&quot;</span><span class="p">)</span> <span class="k">Тогда</span>
+        <span class="nv">ДанныеРаспределенияПоПозициям</span> <span class="o">=</span> <span class="k">Новый</span> <span class="nv">Структура</span><span class="p">;</span>
+        <span class="nv">ДанныеРаспределенияПоПозициям</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;ТаблицаДоговоров&quot;</span><span class="p">,</span> <span class="nv">ТаблицаДоговоров</span><span class="p">);</span>
+        <span class="nv">ДанныеРаспределенияПоПозициям</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;Соответствие&quot;</span><span class="p">,</span> <span class="k">Новый</span> <span class="nv">Соответствие</span><span class="p">);</span>
+        <span class="nv">мПараметрыУстройства</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;T_СоответствиеПоПризнакамАгентаПоПозициям&quot;</span><span class="p">,</span> <span class="nv">ДанныеРаспределенияПоПозициям</span><span class="p">);</span>
+    <span class="k">КонецЕсли</span><span class="p">;</span>
+
+    <span class="k">Если</span> <span class="nv">ТаблицаДоговоров</span><span class="o">.</span><span class="nf">Найти</span><span class="p">(</span><span class="nv">НаименованиеАгента</span><span class="p">,</span> <span class="s">&quot;НаименованиеДоговора&quot;</span><span class="p">)</span> <span class="o">&lt;&gt;</span> <span class="kc">Неопределено</span> <span class="k">Тогда</span>
+        <span class="k">Возврат</span><span class="p">;</span>
+    <span class="k">КонецЕсли</span><span class="p">;</span> 
+
+    <span class="nv">ДанныеАгента</span> <span class="o">=</span> <span class="k">Новый</span> <span class="nf">Структура</span><span class="p">(</span><span class="s">&quot;ПризнакАгента,ОперацияПлатежногоАгента,ТелефонПлатежногоАгента,</span>
+                  <span class="s">|НаименованиеОператораПеревода,ТелефонОператораПеревода,АдресОператораПеревода,</span>
+                  <span class="s">|ИННОператораПеревода,ТелефонОператораПоПриемуПлатежей&quot;</span><span class="p">);</span> 
+    <span class="nv">ДанныеАгента</span><span class="o">.</span><span class="nv">ПризнакАгента</span> <span class="o">=</span> <span class="s">&quot;Комиссионер&quot;</span><span class="p">;</span>
+    <span class="nv">ДанныеАгента</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;Наименование&quot;</span><span class="p">,</span> <span class="nv">НаименованиеАгента</span><span class="p">);</span>
+
+
+    <span class="nv">НоваяСтрока</span> <span class="o">=</span> <span class="nv">ТаблицаДоговоров</span><span class="o">.</span><span class="nf">Добавить</span><span class="p">();</span>
+    <span class="nv">НоваяСтрока</span><span class="o">.</span><span class="nv">НаименованиеДоговора</span> <span class="o">=</span> <span class="nv">НаименованиеАгента</span><span class="p">;</span>
+    <span class="nv">НоваяСтрока</span><span class="o">.</span><span class="nv">Договор</span> <span class="o">=</span> <span class="nv">ОсновнаяОбработка</span><span class="o">.</span><span class="nf">ККТ_ПреобразоватьДанныеВСтроку</span><span class="p">(</span><span class="nv">ДанныеАгента</span><span class="p">);</span>
+
+    <span class="nv">ДанныеРаспределенияПоПозициям</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;ТаблицаДоговоров&quot;</span><span class="p">,</span> <span class="nv">ТаблицаДоговоров</span><span class="p">);</span>
+
+<span class="k">КонецПроцедуры</span>
+</code></pre></div>
+<p>добавление реквизитов поставщика в обработку:</p>
+<div class="highlight"><pre><span></span><code><span class="k">Процедура</span> <span class="nf">ДобавитьДанныеПоставщикаВТаблицу</span><span class="p">(</span><span class="nv">ДанныеПоставщикаТекущие</span><span class="p">)</span>
+
+    <span class="nv">НаименованиеПоставщика</span> <span class="o">=</span> <span class="nv">ДанныеПоставщикаТекущие</span><span class="o">.</span><span class="nv">Наименование</span><span class="p">;</span>
+    <span class="nv">мПараметрыУстройства</span> <span class="o">=</span> <span class="nv">ОсновнаяОбработка</span><span class="o">.</span><span class="nv">мПараметрыУстройства</span><span class="p">;</span>
+    <span class="nv">ДанныеРаспределения</span> <span class="o">=</span> <span class="nv">мПараметрыУстройства</span><span class="o">.</span><span class="nv">T_СоответствиеПоПризнакамПоставщика</span><span class="p">;</span>
+
+    <span class="k">Если</span> <span class="nb">ТипЗнч</span><span class="p">(</span><span class="nv">ДанныеРаспределения</span><span class="p">)</span> <span class="o">=</span> <span class="nb">Тип</span><span class="p">(</span><span class="s">&quot;Структура&quot;</span><span class="p">)</span> <span class="k">Тогда</span>
+        <span class="nv">ТаблицаПоставщиков</span> <span class="o">=</span> <span class="nv">ДанныеРаспределения</span><span class="o">.</span><span class="nv">ТаблицаПоставщиков</span><span class="p">;</span>
+    <span class="k">Иначе</span>
+        <span class="nv">ТаблицаПоставщиков</span> <span class="o">=</span> <span class="k">Новый</span> <span class="nv">ТаблицаЗначений</span><span class="p">;</span>
+        <span class="nv">ТаблицаПоставщиков</span><span class="o">.</span><span class="nv">Колонки</span><span class="o">.</span><span class="nf">Добавить</span><span class="p">(</span><span class="s">&quot;НаименованиеПоставщика&quot;</span><span class="p">,</span> <span class="k">Новый</span> <span class="nf">ОписаниеТипов</span><span class="p">(</span><span class="s">&quot;Строка&quot;</span><span class="p">));</span>
+        <span class="nv">ТаблицаПоставщиков</span><span class="o">.</span><span class="nv">Колонки</span><span class="o">.</span><span class="nf">Добавить</span><span class="p">(</span><span class="s">&quot;Поставщик&quot;</span><span class="p">,</span> <span class="k">Новый</span> <span class="nf">ОписаниеТипов</span><span class="p">(</span><span class="s">&quot;Строка&quot;</span><span class="p">));</span>
+
+        <span class="nv">ДанныеРаспределения</span> <span class="o">=</span> <span class="k">Новый</span> <span class="nv">Структура</span><span class="p">;</span>
+        <span class="nv">ДанныеРаспределения</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;ТаблицаПоставщиков&quot;</span><span class="p">,</span> <span class="nv">ТаблицаПоставщиков</span><span class="p">);</span>
+        <span class="nv">ДанныеРаспределения</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;Соответствие&quot;</span><span class="p">,</span> <span class="k">Новый</span> <span class="nv">Соответствие</span><span class="p">);</span>
+
+        <span class="nv">мПараметрыУстройства</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;T_СоответствиеПоПризнакамПоставщика&quot;</span><span class="p">,</span> <span class="nv">ДанныеРаспределения</span><span class="p">);</span>
+    <span class="k">КонецЕсли</span><span class="p">;</span>  
+
+    <span class="nv">ДанныеРаспределенияПоПозициям</span> <span class="o">=</span> <span class="nv">мПараметрыУстройства</span><span class="o">.</span><span class="nv">T_СоответствиеПоПризнакамПоставщикаПоПозициям</span><span class="p">;</span>
+    <span class="k">Если</span> <span class="k">НЕ</span> <span class="nb">ТипЗнч</span><span class="p">(</span><span class="nv">ДанныеРаспределенияПоПозициям</span><span class="p">)</span> <span class="o">=</span> <span class="nb">Тип</span><span class="p">(</span><span class="s">&quot;Структура&quot;</span><span class="p">)</span> <span class="k">Тогда</span>
+        <span class="nv">ДанныеРаспределенияПоПозициям</span> <span class="o">=</span> <span class="k">Новый</span> <span class="nv">Структура</span><span class="p">;</span>
+        <span class="nv">ДанныеРаспределенияПоПозициям</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;ТаблицаПоставщиков&quot;</span><span class="p">,</span> <span class="nv">ТаблицаПоставщиков</span><span class="p">);</span>
+        <span class="nv">ДанныеРаспределенияПоПозициям</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;Соответствие&quot;</span><span class="p">,</span> <span class="k">Новый</span> <span class="nv">Соответствие</span><span class="p">);</span>
+        <span class="nv">мПараметрыУстройства</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;T_СоответствиеПоПризнакамПоставщикаПоПозициям&quot;</span><span class="p">,</span> <span class="nv">ДанныеРаспределенияПоПозициям</span><span class="p">);</span>
+    <span class="k">КонецЕсли</span><span class="p">;</span>  
+
+    <span class="nv">ДанныеПоставщика</span> <span class="o">=</span> <span class="k">Новый</span> <span class="nv">Структура</span><span class="p">;</span>
+    <span class="nv">ДанныеПоставщика</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;Наименование&quot;</span><span class="p">,</span> <span class="nv">НаименованиеПоставщика</span><span class="p">);</span>
+    <span class="nv">ДанныеПоставщика</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;Поставщик&quot;</span><span class="p">,</span> <span class="nv">ДанныеПоставщикаТекущие</span><span class="o">.</span><span class="nv">Наименование</span><span class="p">);</span>
+    <span class="nv">ДанныеПоставщика</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;ТелефонПоставщика&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">);</span> 
+    <span class="nv">ДанныеПоставщика</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;ИННПоставщика&quot;</span><span class="p">,</span> <span class="nv">ДанныеПоставщикаТекущие</span><span class="o">.</span><span class="nv">ИНН</span><span class="p">);</span>
+
+    <span class="nv">СтрокаПоставщика</span> <span class="o">=</span> <span class="nv">ТаблицаПоставщиков</span><span class="o">.</span><span class="nf">Найти</span><span class="p">(</span><span class="nv">НаименованиеПоставщика</span><span class="p">,</span> <span class="s">&quot;НаименованиеПоставщика&quot;</span><span class="p">);</span>
+    <span class="k">Если</span> <span class="nv">СтрокаПоставщика</span> <span class="o">=</span> <span class="kc">Неопределено</span> <span class="k">Тогда</span>
+        <span class="nv">СтрокаПоставщика</span> <span class="o">=</span> <span class="nv">ТаблицаПоставщиков</span><span class="o">.</span><span class="nf">Добавить</span><span class="p">();</span>   
+    <span class="k">КонецЕсли</span><span class="p">;</span> 
+    <span class="nv">СтрокаПоставщика</span><span class="o">.</span><span class="nv">НаименованиеПоставщика</span> <span class="o">=</span> <span class="nv">НаименованиеПоставщика</span><span class="p">;</span>
+    <span class="nv">СтрокаПоставщика</span><span class="o">.</span><span class="nv">Поставщик</span> <span class="o">=</span> <span class="nv">ОсновнаяОбработка</span><span class="o">.</span><span class="nf">ККТ_ПреобразоватьДанныеВСтроку</span><span class="p">(</span><span class="nv">ДанныеПоставщика</span><span class="p">);</span>
+    <span class="nv">ДанныеРаспределенияПоПозициям</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;ТаблицаПоставщиков&quot;</span><span class="p">,</span> <span class="nv">ТаблицаПоставщиков</span><span class="p">);</span>
+
+<span class="k">КонецПроцедуры</span>
+</code></pre></div>
+<p><a href="../bin/%D0%97%D0%B0%D0%BF%D0%BE%D0%BB%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85%20%D0%BF%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D1%89%D0%B8%D0%BA%D0%B0%20%D0%B8%20%D0%B0%D0%B3%D0%B5%D0%BD%D1%82%D0%B0%20%D1%87%D0%B5%D1%80%D0%B5%D0%B7%20%D0%B4%D0%BE%D0%BF%20%D0%BE%D0%B1%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%87%D0%B8%D0%BA.epf">пример самой обработки</a></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+        
+      
+      <nav class="md-footer__inner md-grid" aria-label="Нижний колонтитул" >
+        
+          
+          <a href="../mechanism_distribution/" class="md-footer__link md-footer__link--prev" aria-label="Назад: Механизм распределения">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              <div class="md-ellipsis">
+                Механизм распределения
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../licensing/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Лицензирование">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              <div class="md-ellipsis">
+                Лицензирование
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections", "navigation.footer", "navigation.tabs", "navigation.tabs.sticky", "content.tooltips", "content.code.copy", "search.highlight", "toc.follow"], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      
+        <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
+      
+        <script src="../_javascript/tablesort.js"></script>
+      
+        <script src="../_javascript/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

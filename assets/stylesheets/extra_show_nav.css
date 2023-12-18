@@ -1,0 +1,22 @@
+.md-content {
+  margin-right: 0;
+}
+
+.md-sidebar--secondary {
+  margin-left: 0.1rem;
+  order: 0;
+}
+
+.md-typeset__table {
+  padding: 0;
+}
+
+.md-typeset table:not([class]) {
+  font-size: 0.75rem;
+}
+
+.md-header__button.md-logo {
+  height: 2rem;
+  margin: 0;
+  padding: 0;
+}

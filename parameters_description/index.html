@@ -1,0 +1,1386 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Инструкция по работе с программой "ККТ-ОНЛАЙН 54-ФЗ: Обработка для  работы фискальных регистраторов" 1С.">
+      
+      
+        <meta name="author" content="Андрей Карпов">
+      
+      
+        <link rel="canonical" href="https://andrei-karpov.github.io/1c_kkt_54fz/parameters_description/">
+      
+      
+        <link rel="prev" href="../rarus_connecting/">
+      
+      
+        <link rel="next" href="../instruction/">
+      
+      
+      <link rel="icon" href="../assets/images/logo.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.2">
+    
+    
+      
+        <title>Описание параметров - ККТ ОНЛАЙН 54-ФЗ: Решение для онлайн касс</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.50c56a3b.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href=".." title="ККТ ОНЛАЙН 54-ФЗ: Решение для онлайн касс" class="md-header__button md-logo" aria-label="ККТ ОНЛАЙН 54-ФЗ: Решение для онлайн касс" data-md-component="logo">
+      
+  <img src="../assets/images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ККТ ОНЛАЙН 54-ФЗ: Решение для онлайн касс
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Описание параметров
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="teal"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1M8 13h8v-2H8v2m9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1 0 1.71-1.39 3.1-3.1 3.1h-4V17h4a5 5 0 0 0 5-5 5 5 0 0 0-5-5Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/andrei-karpov/1c_kkt_54fz" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    andrei-karpov/1c_kkt_54fz
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Главная
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../connecting/" class="md-tabs__link">
+          
+  
+  Подключение
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+    
+  
+  Описание параметров
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../instruction/" class="md-tabs__link">
+          
+  
+  Документация
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../for_programmers/" class="md-tabs__link">
+        
+  
+    
+  
+  Для программистов
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../licensing/" class="md-tabs__link">
+        
+  
+    
+  
+  Лицензирование
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../components/" class="md-tabs__link">
+          
+  
+  Дополнительно
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="ККТ ОНЛАЙН 54-ФЗ: Решение для онлайн касс" class="md-nav__button md-logo" aria-label="ККТ ОНЛАЙН 54-ФЗ: Решение для онлайн касс" data-md-component="logo">
+      
+  <img src="../assets/images/logo.png" alt="logo">
+
+    </a>
+    ККТ ОНЛАЙН 54-ФЗ: Решение для онлайн касс
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/andrei-karpov/1c_kkt_54fz" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    andrei-karpov/1c_kkt_54fz
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Главная
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Подключение
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Подключение
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../connecting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Описание
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rarus_connecting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Рарус
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Описание параметров
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Описание параметров
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Системные параметры
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Основные параметры
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Дополнительные параметры
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      ЕНВД, УСН, Нефискальные чеки
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Параметры драйвера
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Параметры документов
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Параметры для ФФД
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      Маркировка
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      Служебное
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ручное управление
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Документация
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Документация
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../instruction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Общая информация
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../marking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Маркировка
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../management_distribution/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Рассылка
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../form_check_and_check_correction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Форма проверки чека
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../template_document/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Шаблон чека
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mechanism_distribution/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Механизм распределения
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../for_programmers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Для программистов
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../licensing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Лицензирование
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Дополнительно
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Дополнительно
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../components/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Компоненты
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../useful_links/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Полезные ссылки
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../errors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Возможные ошибки
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Системные параметры
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Основные параметры
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Дополнительные параметры
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      ЕНВД, УСН, Нефискальные чеки
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Параметры драйвера
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Параметры документов
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Параметры для ФФД
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      Маркировка
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      Служебное
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ручное управление
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="_1">Параметры обработки<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p><strong>Важно</strong>: при изменении параметров обработки, необходимо перезапускать 1С, чтобы настройки обновились.
+Параметры обработки, до закладки <strong>Основные параметры</strong> являются настройками компоненты оборудования, и меняются в зависимости от выбранного оборудования и версии драйверов к ним, обработка на них не может повлиять, и настройки для них необходимо смотреть на сайте у производителя выбранного оборудования</p>
+</blockquote>
+<h2 id="_2">Системные параметры<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p><img alt="Системные параметры" src="../media/system_settings.png" /></p>
+<p><strong>Ревизия</strong> - версия формата работы, который поддерживает компонента оборудования, а значит и сама программа. Подробнее об этом на сайте <a href="https://its.1c.ru/db/metod8dev/content/4829/hdoc">ИТС</a>. Сейчас наиболее актуальной является ревизия <em>3003</em>, однако не все компоненты и конфигурации ее поддерживают.</p>
+<p><strong>Версия обработки</strong> - выводит текущую версию, используемой программы</p>
+<p><strong>Версия драйвера</strong> - выводит информации о версии установленного драйвера оборудования, либо версии используемой компоненты.</p>
+<p><strong>Наименование</strong> - наименование компоненты оборудования.</p>
+<p><strong>Описание</strong> - более подробная информация о компоненте оборудования. Например, для оборудования ВикиПринт в этом поле отображается историяи изменений компоненты оборудования.</p>
+<h2 id="_3">Основные параметры<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p><img alt="Основные параметры" src="../media/19e9e48aa4d1d183354d16697ea0b837.png" /></p>
+<p><strong>«Путь к ключу лицензирования»</strong> - путь к лицензии на обработку. Заполняется, в случае использования режима «<strong>Лицензия</strong>» (см. <a href="../licensing/">«Лицензирование»</a>). Для использования обработки в режиме «<strong>Демо</strong>» заполнение не требуется.</p>
+<p><strong>«Лицензирование»</strong> - определяет режим использования обработки, Возможны следующие варианты «<strong>Демо</strong>», «<strong>Лицензия</strong>» или «<strong>Ферма RDP-серверов</strong>». См. <a href="../licensing/">«Лицензирование»</a></p>
+<p><strong>«Путь к файлу технической поддержки»</strong> - путь к файлу технической поддержки. Файл указывает, какая именно версия обработки доступна. Необходимо сформировать, если компьютер отключен от интернета или имеет нестабильный интернет. см. <a href="../licensing/">«Лицензирование»</a></p>
+<p><strong>«Система налогообложения»</strong> - данное поле обязательно для заполнения, отвечает, какая система налогообложения будет передана на печать. Является <strong>системой налогообложения по умолчанию</strong> при использовании функционала <a href="../mechanism_distribution/#распределение-по-системам-налогообложения">«Распределение СНО»</a>.</p>
+<p><strong>«Распределение по секциям»</strong> - позволяет настроить использование разных секций налогового учета в чеке, в том числе в разрезе складов. <a href="../mechanism_distribution/#распределение-по-номерам-секций">«Распределение по секциям»</a></p>
+<p><strong>«Дополнительное оборудование»</strong> - позволяет указать параметры подключения дополнительных фискальных регистраторов к данной обработке (см. <a href="../connecting/#подключение-дополнительного-оборудования">«Подключение дополнительного оборудования»).</a>)</p>
+<p><strong>«Шаблон документа»</strong> - позволяет напечатать внутри фискального чека собственный текст. Для каждого типа документа задается собственный шаблон. Можно задать шаблон для строки номенклатуры (см. <a href="../template_document/#шаблон-документа-печати">«Шаблон документа печати»</a>).</p>
+<p><strong>«Шаблон строки основания</strong> - позволяет заменить строку, которая формируется вместо фискальной при Авансовых платежах, на собственную. (см. <a href="../template_document/#шаблон-строки-основания">«Шаблон строки основания»</a>).</p>
+<p><strong>«Распределение по СНО»</strong> - позволяет задать условия использования разных систем налогообложения в одном чеке (см. <a href="../mechanism_distribution/#распределение-по-системам-налогообложения">«Распределение СНО»</a>).</p>
+<p><strong>«Настройка открытия формы проверки печати» -</strong> позволяет задать, открывать для выбранного документа <a href="../form_check_and_check_correction/#форма-проверки-печати-рабочее-место-кассира">«Форму проверки печати»</a>, либо не открывать. По умолчанию, форма открывается всегда (см. <a href="../form_check_and_check_correction/#настройка-открытия-формы-проверки-печати">«Настройка открытия формы»</a>).</p>
+<p><strong>«Ставка НДС \&lt;По умолчанию&gt;»</strong> - позволяет задать, какую ставку НДС использовать при заполнении чека, нужно использовать, если не устраивает стандартный способ заполнения. Для настройки см. <a href="../mechanism_distribution/#настройка-ставки-ндс-по-умолчанию">Механизм распределения</a></p>
+<p><strong>«Путь до собственного обработчика»</strong> - путь до внешней обработки, в которой реализован дополнительный функционал для печати. Например, можно задать собственный способ для печати. Сама обработка лежит в архиве с основной, также
+записано несколько <a href="https://www.youtube.com/watch?list=PLv043XNq9i-4GdAZ521a7GR_ft1Me9OWP&amp;v=5t4pye9cRd8">видео по разработке</a></p>
+<h2 id="_4">Дополнительные параметры<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p><img alt="Дополнительные параметры" src="../media/4b0b763e8e0408b1e99cfc64bb55eee7.png" /></p>
+<p><strong>«Куда сохранять чек»</strong> - путь к папке на компьютере, куда обработка может сохранять сформированные чеки, либо то, что необходимо отправить на email клиенту или по смс.</p>
+<p><strong>«Рассылка чеков EMAIL средствами 1С»</strong> - определяет параметры отправки чеков на EMAIL из 1С через встроенные механизмы (см. «<a href="../management_distribution/#рассылка-чеков-средствами-1с-по-email">Рассылка чеков средствами 1С по Email</a>»).</p>
+<p><strong>«Рассылка чеков SMS средствами 1С»</strong> - определяет параметры отправки чеков по SMS из 1С через встроенные механизмы (см. «<a href="../management_distribution/#рассылка-чеков-по-sms">Рассылка чеков средствами 1С по SMS</a>»).</p>
+<p><strong>«Email отправителя»</strong> - содержит Email вашей организации. Передается в ОФД вместе с печатью чека. Заполнять, необязательно.</p>
+<p><strong>«Ограничение времени продажи»</strong> - позволяет настроить временной интервал продажи товара. Например, ограничение на продажу алкоголя.</p>
+<p><strong>«Настройка формы проверки печати»</strong> - позволяет выборочно настраивать доступность элементов формы проверки печати (см. «<a href="../form_check_and_check_correction/#настройка-формы-проверки-печати">Настройка формы проверки печати</a>»).</p>
+<p><strong>«Брать информацию о кассире из»</strong> - позволяет определить откуда необходимо брать информацию о кассире в чеке. Возможные варианты:</p>
+<ul>
+<li>Реквизит «Ответственный» - если в документе есть поле «Ответственный», либо аналогичные ему, то информация будет взята из документа. Однако при открытии и закрытии смены будет использован текущий пользователь;</li>
+<li>Текущий пользователь – система сама попытается определить текущего пользователя информационной базы</li>
+<li>Указать вручную – данные о кассире будут взяты из параметров обработки:</li>
+<li><strong>«Кассир»</strong> - имя кассира, которое будет отображаться в чеке. Если оно не заполнено, то будет передано имя текущего пользователя 1С.</li>
+<li><strong>«ИНН Кассира»</strong> - ИНН кассира, которое будет передаваться в ОФД. Если не заполнен, то обработка попытается определить ИНН кассира самостоятельно: проверит, есть ли у пользователя или прописанного этому пользователю физлица реквизит ИНН, либо указана информация в поле комментарий, либо дополнительное свойство «ИНН».</li>
+<li><strong>«Должность кассира»</strong> - должность кассира, которая будет отображаться в чеке</li>
+</ul>
+<h2 id="_5">ЕНВД, УСН, Нефискальные чеки<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p><img alt="ЕНВД, УСН, Нефискальные чеки" src="../media/40a2d817e02bc9d121f40ce923ad26e5.png" /></p>
+<p><strong>«Печатать вместо номенклатуры одно наименование»</strong> - применяется для организаций, где не нужно учитывать проданный товар. При включении на печать выводится только одна строка, где количество равно одному, а цена равна сумме платежа. Текст для печати выбирается в параметрах <strong>«Номенклатура по умолчанию»</strong>.</p>
+<p><strong>«Номенклатура по умолчанию»</strong> - содержит текст, который будет напечатан в чеке, если включен параметр <strong>«Печатать вместо номенклатуры одно наименование»</strong>.</p>
+<p><strong>«Условие подмены номенклатуры»</strong> - позволят настроить условие, когда можно подменить одну номенклатуру на другую. См. <a href="../mechanism_distribution/#подмена-номенклатуры">Задать условие подмены номенклатуры</a></p>
+<p><strong>«Считать «НДС0%» как «БЕЗ НДС»</strong> - указывает на то, как рассматривать нулевую ставку НДС при печати чека, по умолчанию данный параметр включен.</p>
+<p><strong>«Наименование организации»</strong> - пока не задействован, используется для печати не фискальных чеков. Данные не передается в ОФД.</p>
+<p><strong>«ИНН»</strong> - пока не задействован, используется для печати не фискальных чеков. Данные не передается в ОФД.</p>
+<p><strong>«КПП»</strong> - пока не задействован, используется для печати не фискальных чеков. Данные не передается в ОФД.</p>
+<p><strong>«Наименование магазина»</strong> - пока не задействован, используется для печати не фискальных чеков. Данные не передается в ОФД.</p>
+<p><strong>«Наименование ОФД»</strong> - наименование ОФД, которое будет отображаться в копии чека.</p>
+<h2 id="_6">Параметры драйвера<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p><img alt="Параметры драйвера" src="../media/08d6897e1cdcd4b40175d547042e01d8.png" /></p>
+<p><strong>«Указывать номер или Email клиента»</strong> - влияет на то, будет ли открываться окно для ввода Email и номера телефона клиента при формировании чека.</p>
+<p><strong>«Автоматически заполнять email по данным контрагента»</strong> - при включенном параметре, программа будет пытаться определить email контрагента автоматически.</p>
+<p><strong>«Аппарат без фискального накопителя»</strong> - позволяет печатать чеки для тех фискальных регистраторов, что не имеют фискального накопителя и переключены в режим печати «ЕНВД».</p>
+<p><strong>«Копии чека»</strong> - позволяет настроить печать копии чека на обычный принтер. См. <a href="../instruction/#печать-копии-чека">«Печать копии чека»</a></p>
+<p><strong>«Передавать чеки в ОФД без печати»</strong> - если передается email или номер телефона клиента, то чек не будет напечатан, а только будет передан в ОФД.</p>
+<p><strong>«Авт. открывать\закрывать смену»</strong> - если параметр включен, то при печати чека обработка проверяет статус смены, если смена превысила 24-часа, то она автоматически закроет и откроет ее заново. Работает только если обработка подключена как <strong>«Фискальный регистратор»</strong></p>
+<p><strong>«Открывать ден. ящик из 1С»</strong> - если у фискального регистратора есть денежный ящик, то он будет открываться из 1С при печати фискального чека.</p>
+<p><strong>«Пробивать чек при «Открытии чека»</strong> - используется, если обработка подключена как «<strong>Фискальный регистратор</strong>», позволяет пробивать чека, не при операции «Закрытии чека», а при «Открытии чека», проблема связана с тем, что на более
+современных конфигурациях, убрали отмену чека при ошибке во время закрытия чека, поэтому если у вас проводятся чеки, даже если закончилась бумага на Фискальном регистраторе, то вам нужно включить данный параметр.</p>
+<p><strong>«Эквайринговые терминалы»</strong> - позволяет указать параметры подключения эквайринговых терминалов к данной обработке (см. <a href="../connecting/#подключение-эквайринговых-терминалов">Подключение эквайринговых терминалов</a>)</p>
+<p><strong>«Не открывать окно эквайрингового терминала при печати» -</strong> данный параметр отключает открытие окна с суммой, что будет пробита на эквайринговом терминале, также в этом окне можно указать ссылочный номер пробитого чека на эквайринге, необходим при возвратах.</p>
+<p><strong>«Задержка перед печатью слип-чека, сек» -</strong> позволяет увеличивать задержку перед печатью слип-чека на эквайринге, что полезно, если на фискальном регистраторе нет автоматической отрезки. Работает, если печать происходит через фискальный регистратор. Максимальное время задержки 40 секунд.</p>
+<h2 id="_7">Параметры документов<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p><img alt="Параметры документов" src="../media/06e1ab7a04ea6eb8051c5fa41d18e54d.png" /></p>
+<p><strong>«Ограничить количество фискальных строк»</strong> - исправление ошибки оборудования «Переполнение буфера», связанной с нехваткой оперативной памяти аппарата. При заданном ограничении чек будет разбит на несколько маленьких. <strong>Важно</strong>: при
+таком варианте будет несколько фискальных чеков. Не используется, если значение 0.</p>
+<p><strong>«Ограничить длину номенклатуры»</strong> - исправление ошибки оборудования, связанной со слишком большой длиной фискальной строки. При заданном ограничении текст фискальной строки будет обрезан до заданной длины. Не используется, если
+значение 0.</p>
+<p><strong>«Заменить ставку НДС 18% на 20%»</strong> - заменяет переданную ставку НДС 18% на 20%, подходит для старых конфигураций, не поддерживающих новую ставку.</p>
+<p><strong>«Аппарат не воспринимает ставку НДС 20%»</strong> - необходимо включить, если при печати чека с НДС 20% фискальный регистратор выдает ошибку. Тогда обработка передаст на оборудование ставку 18%, но с суммой НДС равной НДС 20%.</p>
+<p><strong>«Смещать дату чека коррекции»</strong> - необходимо включить, если при печати чека коррекции дата основания смещается на день.</p>
+<p><strong>«Подсчитывать номер чека средствами обработки»</strong> - необходимо включить, если нумерация чеков не начинается с 1 в начале смены, а передается сквозная.</p>
+<p><strong>«Отключить окно выбора документа»</strong> - если обработка не сможет определить документ перед печатью чека, то появится окно с выбором документа вручную, данная настройка позволяет его отключить, однако все равно нужно переопределить функционал печати через доп обработчик.</p>
+<p><strong>«Предварительно проверять пробитие чека»</strong> - перед пробитием чека обработка дополнительно проверяет пробит ли чек ранее по этому документу, такой параметр стал актуален на новых конфигурациях на обычных формах, в них убрали данную проверку.</p>
+<p><strong>«Отключить заполнение с учетом признаков способа расчета»</strong> - отключает алгоритм заполнения с учетом признаков способа расчета, когда признак способа расчета "Аванс" заменяется на единую строку платежа, когда позиции по признаку способа расчета "Предоплата" учитываются не как "Товар", а как "Платеж"</p>
+<p><strong>«Отключить типовой механизм работы со сканерами»</strong> - отключает механизм работы с торговым оборудованием, когда сканер штрихкодов уже подключен к 1С через типовой функционал, такой механизм есть в конфигурациях Управление торговлей 10.3, Управление производственным предприятием 1.3, и т.д. При этом будет использован функционал, которые заложен в самой обработке.</p>
+<p><strong>«Записывать информацию по маркировки в лог»</strong> - после сканирования маркировки дополнительно сохраняет содержимое марки в файл лога, если <a href="#служебное">логирование</a> включено.</p>
+<p><strong>«Печатать «ОСНОВАНИЕ» в Кассовых документах»</strong> - позволяет вначале документа напечатать текстовую строку «Основания». Например, <strong>«Контрагент такой-то Основание документа такое-то».</strong> Строка основания будет напечатана, если в тексте нет фискальных строк с тем же самым текстом. Есть возможность задать <a href="../template_document/#шаблон-строки-основания">собственный шаблон</a> формирования такой строки</p>
+<p><strong>«Источником ставки НДС в чеке будет»</strong> - данный параметр определяет какая ставка НДС будет проставляться в кассовые документы: по документу основания, либо по текущему документу. Возможны варианты: «Кассовый документ» или «Документ основания». При этом если будет выбран параметр "Кассовый документ", то при формировании чека программа фильтрует строки чека с учетом именно ставки кассового документа, товары с другой ставкой в чек не попадут.</p>
+<p><strong>«Игнорировать данные Фронт-кассира»</strong> - используется для конфигураций Рарус, если включен, то при печати через форму «фронт кассира» или «фронт менеджера», несмотря на указанные в ней товары, данные для печати будут взяты прямо из документа основания, однако суммы оплаты будут все равно взяты и фронт кассира.</p>
+<h2 id="_8">Параметры для ФФД<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<p><img alt="Параметры для ФФД" src="../media/072e7c320aa2ae43f9ff6ea33e9f367a.png" /></p>
+<p><strong>«Распределение, когда оплата частичная»</strong> - данная настройка определяет, как обойтись с разницей между суммой платежа и суммой документа. Можно задать несколько условий:</p>
+<ul>
+<li>
+<p>«РАСПРЕДЕЛЯТЬ СТРОКИ» - при печати автоматически «строка распределения» уменьшит количество в чеке, так чтобы оно подходило под данную сумму, возможны дробные значения для штучного товара;</p>
+</li>
+<li>
+<p>«ЗАМЕНИТЬ НА АВАНС» - заменяет все фискальные строки на текст «Оплата по документу основание» и признак способа расчета «Аванс» и признак предмета расчета «Платеж», если используется НДС, то ставка ндс будет заменена на ее эквивалент для авансовых платежей вида 20/120%</p>
+</li>
+<li>
+<p>«ЗАМЕНИТЬ НА ЧАСТИЧНУЮ ОПЛАТУ» - в каждой фискальной строке количество становится равно 1, цена становится равна сумме фактической оплаты в поле Признак предмета расчета устанавливается "Платеж", в поле "Признак способа расчета" - "Предоплата частичная", если используется НДС, то будет заменен на его эквивалент для авансовых платежей, вида НДС 20/120%</p>
+</li>
+<li>
+<p>«ЗАМЕНИТЬ НА "НОМЕНКЛАТУРА ПО УМОЛЧАНИЮ"» - заменяет все фискальные строки на текст из реквизита «Номенклатура по умолчанию», Признак предмета расчета «Передача с полной оплатой» и признак предмета расчета «Товар»</p>
+</li>
+<li>
+<p>«СТАНДАРТНО» - оставляет стандартный вариант распределения, когда если используется передача с частичной оплате передается весь чек, однако в поле оплаты появляется дополнительный вид оплаты «Постоплата» или «Зачет аванса» с разницей между фактической оплатой и общей суммой документа.</p>
+</li>
+</ul>
+<p><strong>«Признак Агента»</strong> - позволяет настроить условие, когда и какой признак агента, и данные по агентскому договору необходимо заполнять в чеке. См. <a href="../mechanism_distribution/#распределение-по-договорам-агента">«Распределение по договорам Агента»</a></p>
+<p><strong>«Поставщик агента»</strong> - позволяет указать данные поставщика агента, которые будут выводиться в чеке. См. «<a href="../mechanism_distribution/#настройка-поставщика-агента">Настройка поставщика агента</a>»</p>
+<p><strong>«Признаки предмета расчета»</strong> - позволяет настроить условие, когда и какой признак предмета расчета необходимо заполнять в чеке. См. <a href="../mechanism_distribution/#настройка-признаков-предмета-расчета">«Настройка признаков предмета расчета»</a></p>
+<p><strong>«Признаки способов расчета»</strong> - позволяет настроить условие, когда и какой признак способов расчета необходимо заполнять в чеке. См. <a href="../mechanism_distribution/#настройка-признаков-способа-расчета">«Настройка признаков способа расчета»</a></p>
+<p><strong>«Адрес Магазина»</strong> - для формата обмена ФФД 1.05, ФФД 1.1 и ФФД 1.2, содержит Адрес магазина, который будет передан в ОФД, также может быть использован для печати не фискальных чеков.</p>
+<p><strong>«Место расчетов»</strong> - для формата обмена ФФД 1.05, ФФД 1.1 и ФФД 1.2, содержит место расчетов, которое будет передано в ОФД.</p>
+<p><strong>«Номер ГТД и Страна»</strong> - позволяет задать условие передавать информацию о Номере таможенной декларации и коде страны происхождения товара. См. <a href="../mechanism_distribution/#настройка-печати-реквизитов-гтд-и-страна">«Настройка печати реквизитов ГТД и Страны»</a></p>
+<p><strong>«Данные о получателе»</strong> - позволяет задать условие передавать информацию о покупателе или нет в чек. См. <a href="../mechanism_distribution/#настройка-печати-получателя-и-его-инн">«Настройка печати получателя и его ИНН»</a></p>
+<h2 id="_9">Маркировка<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<p><img alt="Маркировка" src="../media/fa544b670cbe2b71f43eac5247662ea1.png" /></p>
+<p><strong>«Использовать маркировку лекарств»</strong> - специальная настройка для использования продажи лекарств. При ее включении становится доступно использование льгот и рецептов при продаже лекарств, дробная продажа упаковки лекарств, а также при
+этом будут автоматически заполняться теги 1084, 1085, 1191.</p>
+<p><strong>«Идентификатор места деятельности МДЛП»</strong> - идентификатор места продажи, передается в составе тега 1085, является обязательном при продажи лекарств.</p>
+<p><strong>«Типы маркировок»</strong> - позволяет настроить условие, когда и какой тип маркировки необходимо заполнять в чеке. Используется для маркировочной продукции: Табак, алкоголь, лекарства и т.д. См. <a href="../marking/#настройка-типов-маркировки">Настройка типа маркировки</a></p>
+<p><strong>«Не пробивать чек без указания маркировки «ПРОДАЖА»»</strong> - если в чеке используется продукция с маркировкой, то чек на Приход не будет пробит, если какая-то позиция не будет заполнена.</p>
+<p><strong>«Не пробивать чек без указания маркировки «ВОЗВРАТ»»</strong> - если в чеке используется продукция с маркировкой, то чек на Возврат не будет пробит.</p>
+<p><strong>Проверять корректность маркировки перед пробитием чека</strong> - если используемая компонента для оборудования имеет ревизию <em>3004</em>, а версия фискального накопителя ФФД 1.2 или выше, и пробивается маркированный товар, то перед фискализацией чека будет открыта специальная форма, где можно запустить проверку корректности маркировки в Честном Знаке средствами ККТ.</p>
+<h2 id="_10">Служебное<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<p><img alt="Служебное" src="../media/7e2b3e9676420be7d5b2b4cb60827fb5.png" /></p>
+<p><strong>«Дополнительные параметры»</strong> - позволяет указать собственные параметры, которые можно использовать в коде доп обработчика. См. <a href="../for_programmers/#дополнительные-параметры">«Дополнительные параметры»</a></p>
+<p><strong>«Оборудование»</strong> - указывает на то, какую компоненту для работы с оборудованием будет использовать обработка.</p>
+<p><strong>«Путь до компоненты ТО»</strong> - путь к папке на компьютере, где находятся компоненты для работы с торговым оборудованием. Должен быть всегда заполнен.</p>
+<p><strong>«Использовать COM Обертку над NATIVE»</strong> - данный параметр влияет на то, нужно ли использовать специальную компоненту для работы с компонентами Native, это нужно, если у вас платформы 8.1, либо у вас возникли сложности при стандартном
+подключении. Компонента называется Universal Native Wrapper и лежит с остальными компонентами.</p>
+<p><strong>«Использовать логирование ККТ»</strong> - указывает нужно ли вести подробную запись действий с фискальным регистратором. Нужен для отладки и проверки механизма печати. Работает, если заполнен параметр «<strong>Путь папки лога</strong>».</p>
+<p><strong>«Путь папки лога»</strong> - путь до папки на компьютере, где будет храниться лог действий пользователя. Лог сохраняется в файл Log54FZ.txt, с указанием текущего дня. Работает, если включен параметр «<strong>Использовать логирование ККТ</strong>».</p>
+<p><strong>«Подключение кассы» -</strong> параметр может принимать два состояния:</p>
+<ul>
+<li>
+<p>"СТАНДАРТНО" – при такой настройке оборудование всегда будет находиться в состоянии подключено, при разрывах соединения с кассой могут быть ошибки, этот параметр значительно увеличивает скорость печати.</p>
+</li>
+<li>
+<p>"НЕСКОЛЬКО РАБОЧИХ МЕСТ НА КАССЕ" - используется, если на фискальный регистратор одновременно могут печатать несколько компьютеров, что-то вроде очереди печати</p>
+<blockquote>
+<p>Для конфигураций Рарус, этот параметр включен всегда, из-за особенностей самого механизма работы с торговым оборудованием</p>
+</blockquote>
+</li>
+</ul>
+<p>«<strong>Время ожидания переподключения</strong>» - используется, когда параметр <strong>«Подключение кассы»</strong> установлен как <strong>"НЕСКОЛЬКО РАБОЧИХ МЕСТ НА КАССЕ"</strong>, обозначает время, при котором обработка будет ждать подключения, если при печати
+касса оказалась занята на другом рабочем месте.</p>
+<p><strong>«Прокси» -</strong> позволяет настроить отправку http запросов обработки через прокси-сервер, например это необходимо для передачи данных на сервер sms-рассылки, или для работы сервера лицензирования. См. <a href="../instruction/#подключение-через-прокси">настройка подключения прокси</a></p>
+<h2 id="_11">Ручное управление<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<p><img alt="Ручное управление" src="../media/48a23ad1014bbcba6443c159a494b686.png" /></p>
+<p><strong>«Открыть смену»</strong> - открывает смену на данном фискальном регистраторе.</p>
+<p><strong>«Закрыть смену»</strong> - закрывает смену на данном фискальном регистраторе. Отличается от типовой процедуры тем, что не формирует документ отчет о продажах.</p>
+<p><strong>«Внесение»</strong> - позволяет внести денежные средства в кассу.</p>
+<p><strong>«Выемка» -</strong> позволяет сделать выемку денежных средств из кассы.</p>
+<p><strong>«Получить текущее состояние»</strong> - отображает информацию о фискальном регистраторе: Номер смены, Номер текущего документа, Статус смены, Количество непереданных фискальных документов, Номер первого непереданного фискальных документов, Дата первого непереданного фискального документа.</p>
+<p><strong>«Отчет о состоянии расчетов»</strong> - формирует фискальный документ «Отчет о состоянии расчетов».</p>
+<p>«<strong>X-Отчет»</strong> - формирует отчет без гашения (x-отчет) на фискальном регистраторе.</p>
+<p><strong>«Чек коррекции»</strong> - открывает форму для формирования чека коррекции, данную кнопку нужно использовать, если ваша конфигурация не содержит документ «Чек коррекции»</p>
+<p><strong>«Открыть денежный ящик»</strong> - открывает денежный ящик на данном фискальном регистраторе.</p>
+<p><strong>«Параметры фискализации»</strong> - открывает форму с регистрационными данными вашего фискального регистратора. Например, можно узнать какой формат обмена с налоговой данный поддерживает аппарат.</p>
+<p><strong>«Сохранить настройки в файл»</strong> - позволяет сохранить параметры обработки в файл для последующего восстановления. Можно переносить настройки с одного рабочего места на другое.</p>
+<p><strong>«Восстановить настройки из файла»</strong> - позволяет восстановить ранее сохраненные параметры обработки.</p>
+<p><strong>«Лицензирование»</strong> - открывает форму лицензирования, где можно активировать или деактивировать лицензию на обработку.</p>
+<p><strong>«Скачать обработку»</strong> - открывает окно, где можно скачать последнюю доступную версию программы.</p>
+<p><strong>«Дополнительные покупки»</strong> - открывает окно, где можно приобрести дополнительные лицензии, или продлить тех поддержку.</p>
+<p><strong>«Написать разработчику»</strong> - открывает форму, где можно отправить <a href="../licensing/#написать-разработчику">письмо разработчику</a> (не используя почтовую рассылку), сообщить об ошибке, либо высказать пожелания о доработке.</p>
+<p><strong>«О программе»</strong> - Выводит на экран информацию о текущей версии программы, ее дате выхода, и получения актуальной версии программы.</p>
+<p><img alt="О программе" src="../media/about.png" /></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+        
+      
+      <nav class="md-footer__inner md-grid" aria-label="Нижний колонтитул" >
+        
+          
+          <a href="../rarus_connecting/" class="md-footer__link md-footer__link--prev" aria-label="Назад: Рарус">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              <div class="md-ellipsis">
+                Рарус
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../instruction/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Общая информация">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              <div class="md-ellipsis">
+                Общая информация
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections", "navigation.footer", "navigation.tabs", "navigation.tabs.sticky", "content.tooltips", "content.code.copy", "search.highlight", "toc.follow"], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      
+        <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
+      
+        <script src="../_javascript/tablesort.js"></script>
+      
+        <script src="../_javascript/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
