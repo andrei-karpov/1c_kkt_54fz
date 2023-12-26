@@ -8,8 +8,8 @@ VikiPKKT_NATIVE_2002_32_VikiP.dll | ВИКИ ПРИНТ\ ПИРИТ | 32x | 3004
 VikiPKKT_NATIVE_2002_64_VikiP.dll | ВИКИ ПРИНТ\ ПИРИТ | 64x | 3004 | 1.6.0.7
 SHTRIHMKKT_NATIVE_32_SMDrvFR1C34.dll | ШТРИХ М | 32x | 3004 | 5.16.0.874
 SHTRIHMKKT_NATIVE_64_SMDrvFR1C34.dll | ШТРИХ М | 64x | 3004 | 5.16.0.874
-ATOLSERVICE_FILE_81.dll | АТОЛ ВЕБ-СЕРВИС | 32x | 3002 | 1.31
-ATOLSERVICE_FILE_82.dll | АТОЛ ВЕБ-СЕРВИС | 32x-64x | 3002 | 1.31
+ATOLSERVICE_FILE_81.dll | АТОЛ ВЕБ-СЕРВИС | 32x | 3004 | 1.36
+ATOLSERVICE_FILE_82.dll | АТОЛ ВЕБ-СЕРВИС | 32x-64x | 3004 | 1.36
 SHTRIHMKKT_FILE_81.dll | ШТРИХ М | 32x | 3002 | 1.0.1
 MERCURIIKKT_NATIVE_32_INCOTEX_KKT.dll | Меркурий-115\119\130\180\185 | 32x | 3003 | 2.0.0.29
 MERCURIIKKT_NATIVE_64_INCOTEX_KKT.dll | Меркурий-115\119\130\180\185 | 64x | 3003 | 2.0.0.29
@@ -44,6 +44,6 @@ K1FKKT_NATIVE_2002_64_VT_KKT_V2.so | АМС-100Ф\К1Ф | 64x | 3002 | 2.0.0.57
 EmulatorKKT_FILE_82.so | Эмулятор | 32x-64x | 3002 | 1.13
 ATOLKKT10_NATIVE_2002_64_ATOL_KKT_1C83_V10.so | АТОЛ | 64x | 3004 | 10.9.0.9
 ATOLKKT10_NATIVE_2002_32_ATOL_KKT_1C83_V10.so | АТОЛ | 32x | 3004 | 10.9.0.9
-ATOLSERVICE_FILE_82.so | АТОЛ ВЕБ-СЕРВИС | 32x-64x | 3002 | 1.31
+ATOLSERVICE_FILE_82.so | АТОЛ ВЕБ-СЕРВИС | 32x-64x | 3004 | 1.36
 WNJIKKT_NATIVE_32_WnjiFiscalPrinter.dll | WNJI 003Ф | 32x | 3003 | 1.3.30
 WNJIKKT_NATIVE_64_WnjiFiscalPrinter.dll | WNJI 003Ф | 64x | 3003 | 1.3.30
