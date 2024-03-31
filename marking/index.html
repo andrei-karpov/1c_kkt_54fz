@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../assets/images/logo.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.16">
     
     
       
@@ -30,7 +30,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.50c56a3b.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.bcfcd587.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
@@ -414,20 +414,20 @@
     
     
     
-    
-    
       
-      
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -525,14 +525,17 @@
     
     
     
-    
-    
+      
+        
+        
       
       
+        
+      
+    
     
     <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
-        
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
@@ -635,6 +638,30 @@
       Требования к поддержке маркировки
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#разрешительный-режим-продажи-маркировки" class="md-nav__link">
+    <span class="md-ellipsis">
+      Разрешительный режим продажи маркировки
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Разрешительный режим продажи маркировки">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#как-это-работает" class="md-nav__link">
+    <span class="md-ellipsis">
+      Как это работает
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -898,20 +925,20 @@
     
     
     
-    
-    
       
-      
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1031,6 +1058,30 @@
       Требования к поддержке маркировки
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#разрешительный-режим-продажи-маркировки" class="md-nav__link">
+    <span class="md-ellipsis">
+      Разрешительный режим продажи маркировки
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Разрешительный режим продажи маркировки">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#как-это-работает" class="md-nav__link">
+    <span class="md-ellipsis">
+      Как это работает
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1175,6 +1226,28 @@
 <li>обновлены <a href="../connecting/#компоненты-оборудования">компоненты</a> для работы с оборудованием</li>
 </ul>
 <p><a href="https://youtu.be/LAiJ1Bf3z3U?t=317">Видео-описание</a></p>
+<h2 id="разрешительный-режим-продажи-маркировки">Разрешительный режим продажи маркировки<a class="headerlink" href="#разрешительный-режим-продажи-маркировки" title="Permanent link">&para;</a></h2>
+<p>Для использования разрешительного режима ваша касса должна использовать: 
+1. формат фискальных данных <strong>ФФД 1.2</strong>.
+2. Иметь актуальную версию драйвера и прошивки вашего фискального регистратора.
+3. Версию данной программы не ниже <strong>3.79</strong>
+4. Наличие интернета на рабочем месте кассира.</p>
+<p>Для того, чтобы включить поддержку <strong>"Разрешительного режим продажи"</strong> в данной программе необходимо в параметрах в разделе "Маркировка" найти "Разрешительный режим". <img alt="Настройка разрешительного режима" src="../media/access_mode.png" /></p>
+<p>Здесь можно указать:
+- <strong>Ключ доступа (по умолчанию)</strong> - Токен доступа к серверу Честного Знака, его можно получить по следующей инструкции <a href="https://www.markirovka.ru/knowledge/tovarnye-gruppy/legkaya-promishlennost/kak-poluchit-klyuch-dostupa-dlya-razreshitelnogo-rezhima-proverok-na-kkt">следующей инструкции</a>
+- <strong>ИНН организации для проверки марки (по умолчанию)</strong> - ИНН организации, которой принадлежит токен доступа, его нужно указывать, так как ИНН используется в качестве параметра запроса на проверку марки в Честном Знаке.
+- <strong>Разрешить продажу при ошибке в разрешительном режиме</strong> - позволяет пропустить проверку в разрешительном режиме в случае ошибки, при этом программа вначале попытается проверить через Честный Знак, а затем предложит пропустить проверку. Данная настройка не отключает механизм проверки через ККТ. </p>
+<blockquote>
+<p><strong>Обратите внимание</strong>, что пропускать проверку товара в разрешительном режиме можно только при недоступности сервера Честного знака.
+- Заполнение ключа доступа в разрезе организаций - требуется в том случае, если на одном рабочем месте чеки могут формироваться по разным организациям, и на каждой свой ключ доступа, здесь также можно указать ИНН для отправки запросов, если он не заполнен, то программа попытается получить ИНН из карточки организации.
+- Настройка использования типа маркировки для разрешительного режима, здесь можно указать какая маркировка подлежит проверки и какой даты.</p>
+<p><strong>ВАЖНО</strong>, без этой настройки даже если будет заполнен ключ доступа маркировка не будет проверяться, нужно обязательно здесь указать нужную маркировку. Например, с 01 апреля 2024 года требуется проверять "Табачную продукцию" и "Пиво", для этого в этой таблице мы указываем нужный тип маркировкаи, а в поле "<strong>Дата начала использования</strong>" указать 01.04.2024.</p>
+</blockquote>
+<h3 id="как-это-работает">Как это работает<a class="headerlink" href="#как-это-работает" title="Permanent link">&para;</a></h3>
+<p>После выполнения настроек выше, при продаже товара в разрешительном режиме в форме проверки маркированного товара появится дополнительная колонка "Статус проверки в разрешительном режиме".
+<img alt="Форма проверки маркировки" src="../media/check_access_mode_marking.png" />
+Перед непосредственной фискализацией обработка самостоятельно отправляет запрос в Честный знак и получает статус продажи марки, если товар недоступен к продаже, то в указанном поле дополнительно появится текст ошибки. </p>
+<p>При успешном выполнении информация о времени проверки статуса, и идентификатор этого запроса будет прописан в отраслевой реквизит будущего чека. По сути проверка в разрешительном режиме только дополняет стандартную проверку через ККТ.</p>
 <h2 id="настройка-типов-маркировки">Настройка типов маркировки<a class="headerlink" href="#настройка-типов-маркировки" title="Permanent link">&para;</a></h2>
 <p><img alt="Настройка типов маркировки" src="../media/92af4dbe4067cf44b0f178f96edc22cf.png" /></p>
 <p>Чтобы указать программе, какой товар является маркированным, необходимо указать это условие в параметре <strong>"Типы маркировок"</strong>. Как задается такое условие описано в разделе инструкции <a href="../mechanism_distribution/">Механизм распределения</a>. Таким образом можно указать, что пробиваемый товар является обувью, табаком, лекарствами или другими группами маркированного товара.</p>
@@ -1356,10 +1429,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections", "navigation.footer", "navigation.tabs", "navigation.tabs.sticky", "content.tooltips", "content.code.copy", "search.highlight", "toc.follow"], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections", "navigation.footer", "navigation.tabs", "navigation.tabs.sticky", "content.tooltips", "content.code.copy", "search.highlight", "toc.follow"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      <script src="../assets/javascripts/bundle.bd41221c.min.js"></script>
       
         <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
       
