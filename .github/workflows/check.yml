@@ -3,7 +3,8 @@ name: Регулярный запуск на проверку, каждые 30 �
 on:
   schedule:
     - cron: '*/30 * * * *'
-
+  workflow_dispatch:
+  
 jobs:
   build:
     runs-on: ubuntu-latest
