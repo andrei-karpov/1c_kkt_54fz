@@ -21,6 +21,7 @@ jobs:
           URL: ${{ secrets.URL_CHECK }}
         run: |
           RESPONSE=$(curl -u $USERNAME:$PASSWORD $URL)
+          echo "$RESPONSE"
           STATUS_CODE=$(echo "$RESPONSE" | awk '{print $1}')
           if [ "$STATUS_CODE" != "200" ]; then
             echo "Error: HTTP status code is $STATUS_CODE"
