@@ -1,0 +1,27 @@
+name: Регулярный запуск на проверку, каждые 30 минут
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Установка cURL
+        run: sudo apt-get install curl
+
+      - name: CHECK URL
+        env:
+          USERNAME: ${{ secrets.USERNAME_CHECK }}
+          PASSWORD: ${{ secrets.PASSWORD_CHECK }}
+          URL: ${{ secrets.URL_CHECK }}
+        run: |
+          RESPONSE=$(curl -u $USERNAME:$PASSWORD $URL)
+          if [ "$RESPONSE" != "" ]; then
+            echo "Error: HTTP status code is $RESPONSE"
+            exit 1
+          fi
