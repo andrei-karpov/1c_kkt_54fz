@@ -40,6 +40,14 @@ theme:
     - search.highlight
     - toc.follow
 
+plugins:
+    - with-pdf:
+        cover: true
+        cover_title: ККТ ОНЛАЙН 54-ФЗ: Решение для онлайн касс
+        cover_subtitle: версия для PDF
+        toc_title: Оглавление
+        toc_level: 3
+        output_path: ./instruction.pdf
 
   palette:
     - media: "(prefers-color-scheme: light)"
