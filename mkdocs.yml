@@ -40,7 +40,6 @@ theme:
     - search.highlight
     - toc.follow
 
-
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
@@ -60,6 +59,15 @@ theme:
     text: Roboto
     code: Roboto Mono
 
+plugins:
+    - with-pdf:
+        cover: true
+        cover_title: 'ККТ ОНЛАЙН 54-ФЗ: Решение для онлайн касс'
+        cover_subtitle: 'версия для PDF'
+        toc_title: 'Оглавление'
+        toc_level: 3
+        output_path: ./Инструкция ККТ ОНЛАЙН 54-ФЗ.pdf
+        
 extra:
   search:
     language: 'ru'
