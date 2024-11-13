@@ -59,9 +59,9 @@ theme:
     text: Roboto
     code: Roboto Mono
 
-  extra:
-    search:
-      language: 'ru'
+extra:
+  search:
+    language: 'ru'
     
 plugins:
     - with-pdf:
