@@ -59,6 +59,10 @@ theme:
     text: Roboto
     code: Roboto Mono
 
+  extra:
+    search:
+      language: 'ru'
+    
 plugins:
     - with-pdf:
         cover: true
@@ -67,10 +71,6 @@ plugins:
         toc_title: 'Оглавление'
         toc_level: 3
         output_path: ./Инструкция ККТ ОНЛАЙН 54-ФЗ.pdf
-        
-extra:
-  search:
-    language: 'ru'
 
 markdown_extensions:
   - abbr
