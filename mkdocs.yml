@@ -40,7 +40,6 @@ theme:
     - search.highlight
     - toc.follow
 
-
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
