@@ -40,7 +40,6 @@ theme:
     - search.highlight
     - toc.follow
 
-
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
@@ -63,7 +62,7 @@ theme:
 extra:
   search:
     language: 'ru'
-
+        
 markdown_extensions:
   - abbr
   - admonition
