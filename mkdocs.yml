@@ -64,7 +64,6 @@ extra:
   search:
     language: 'ru'
   social:
-    image: assets/images/logo.png
     description: 'Инструкция по работе с программой "ККТ-ОНЛАЙН 54-ФЗ".'
     type: website
   analytics:
@@ -81,8 +80,6 @@ plugins:
         toc_title: 'Оглавление'
         toc_level: 3
         output_path: ./Инструкция ККТ ОНЛАЙН 54-ФЗ.pdf
-        page_numbers: true
-        margins: 10mm
      
 markdown_extensions:
   - abbr
@@ -90,9 +87,6 @@ markdown_extensions:
   - attr_list
   - footnotes
   - md_in_html
-  - codehilite:
-      guess_lang: false
-      linenums: true
   - toc:
       permalink: true
       slugify: !!python/object/apply:pymdownx.slugs.slugify
