@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://andrei-karpov.github.io/1c_kkt_54fz/sitemap.xml

@@ -65,7 +65,7 @@ extra:
     language: 'ru'
   analytics:
     provider: google
-    tracking_id: G-CFJS7X0PH9
+    property: G-CFJS7X0PH9
 
 plugins:
     - search
