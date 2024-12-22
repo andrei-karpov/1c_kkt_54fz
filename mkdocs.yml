@@ -39,6 +39,7 @@ theme:
     - content.code.copy
     - search.highlight
     - toc.follow
+    - navigation.instant
 
   palette:
     - media: "(prefers-color-scheme: light)"
@@ -62,6 +63,13 @@ theme:
 extra:
   search:
     language: 'ru'
+  social:
+    image: assets/images/logo.png
+    description: 'Инструкция по работе с программой "ККТ-ОНЛАЙН 54-ФЗ".'
+    type: website
+  analytics:
+    provider: google
+    tracking_id: G-CFJS7X0PH9
 
 plugins:
     - search:
@@ -72,7 +80,12 @@ plugins:
         cover_subtitle: 'версия для PDF'
         toc_title: 'Оглавление'
         toc_level: 3
-        output_path: ./Инструкция ККТ ОНЛАЙН 54-ФЗ.pdf 
+        output_path: ./Инструкция ККТ ОНЛАЙН 54-ФЗ.pdf
+        page_numbers: true
+        margins: 10mm
+    - sitemap:
+        changefreq: daily
+        priority: 0.5
      
 markdown_extensions:
   - abbr
@@ -80,6 +93,9 @@ markdown_extensions:
   - attr_list
   - footnotes
   - md_in_html
+  - codehilite:
+      guess_lang: false
+      linenums: true
   - toc:
       permalink: true
       slugify: !!python/object/apply:pymdownx.slugs.slugify
@@ -120,6 +136,7 @@ markdown_extensions:
 
 extra_css:
   - assets/stylesheets/extra.css
+  - assets/stylesheets/animations.css
 
 extra_javascript:
   - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
