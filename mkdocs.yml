@@ -63,16 +63,12 @@ theme:
 extra:
   search:
     language: 'ru'
-  social:
-    description: 'Инструкция по работе с программой "ККТ-ОНЛАЙН 54-ФЗ".'
-    type: website
   analytics:
     provider: google
     tracking_id: G-CFJS7X0PH9
 
 plugins:
-    - search:
-        language: 'ru'
+    - search
     - with-pdf:
         cover: true
         cover_title: 'ККТ ОНЛАЙН 54-ФЗ: Решение для онлайн касс'
