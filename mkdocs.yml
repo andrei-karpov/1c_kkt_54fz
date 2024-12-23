@@ -106,6 +106,8 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.keys
   - pymdownx.mark
+  - pymdownx.tabbed:
+      alternate_style: true
   - pymdownx.smartsymbols
   - pymdownx.snippets:
       auto_append:
