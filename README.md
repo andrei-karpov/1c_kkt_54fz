@@ -4,6 +4,15 @@
 
 В разделе [issues](https://github.com/andrei-karpov/1c_kkt_54fz/issues), можно добавить свои пожелания или задать вопросы по работе программы.
 
+## Как приобрести программу? ##
+
+1. если ранее не приобретали, то заказ можно сформировать так:
+  - Продлить период **обновлений**. [Приобрести](https://forms.gle/ZPSraH5tKXQSjuj46)
+  - Лицензия на одно рабочее место. [Приобрести](https://forms.gle/8YrLT58BuHikQCG76)
+  - Лицензия на **RDP**. [Приобрести](https://forms.gle/YcyHRpGYdz42NsVL6)
+2. через [Инфостарт](https://infostart.ru/marketplace/590993?ref=1050)
+3. через [MoscowSoft](https://moscowsoft.com/catalog/otchety_i_obrabotki_1s_predpriyatie/kkt_online_54_fz_obrabotka/)
+
 ## Что умеет ##
 
 - Поддерживает [несколько систем налогообложения](docs/mechanism_distribution.md#распределение-по-системам-налогообложения) в одном документе 1С
