@@ -57,8 +57,6 @@
     
       <link rel="stylesheet" href="../assets/stylesheets/extra.css">
     
-      <link rel="stylesheet" href="../assets/stylesheets/animations.css">
-    
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -1286,10 +1284,62 @@
 <p>данный код, закэширует параметры печати чека, и передаст их в обработку.</p>
 <p><img alt="Рарус фронт кассира пробитие чека" src="../media/%D0%B4%D0%BE%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0_%D1%80%D0%B0%D1%80%D1%83%D1%81_%D1%84%D1%80%D0%BE%D0%BD%D1%82_%D0%BA%D0%B0%D1%81%D0%B8%D1%80%D0%B0_%D0%BF%D1%80%D0%BE%D0%B1%D0%B8%D1%82%D0%B8%D0%B5_%D1%87%D0%B5%D0%BA%D0%B0.png" />
   - если в вашей конфигурации уже поддерживается работа с чеком коррекции, то во ФронтКассира можно попробовать найти еще функцию <code>ПробитьЧекКоррекции</code> и доработать ее также, но код нужно вставить перед процедурой <code>ВыполнитьКомандуОборудования("ФР",GUID_ФР,"ПробитьЧекКоррекции"</code></p>
-<p><img alt="Рарус фронт кассира чек коррекции" src="../media/%D0%B4%D0%BE%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0_%D1%80%D0%B0%D1%80%D1%83%D1%81_%D1%84%D1%80%D0%BE%D0%BD%D1%82_%D0%BA%D0%B0%D1%81%D0%B8%D1%80%D0%B0_%D1%87%D0%B5%D0%BA_%D0%BA%D0%BE%D1%80%D1%80%D0%B5%D0%BA%D1%86%D0%B8%D0%B8.png" /></p>
-</li>
-<li>
-<p>в модуле объекта обработки "ЗакрытиеСмены" заменим глобальную переменную <code>глРарус_Компонента</code> на <code>глРарус_КомпонентаТО</code>, изменения будут только в области инициализации модуля</p>
+<p><img alt="Рарус фронт кассира чек коррекции" src="../media/%D0%B4%D0%BE%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0_%D1%80%D0%B0%D1%80%D1%83%D1%81_%D1%84%D1%80%D0%BE%D0%BD%D1%82_%D0%BA%D0%B0%D1%81%D0%B8%D1%80%D0%B0_%D1%87%D0%B5%D0%BA_%D0%BA%D0%BE%D1%80%D1%80%D0%B5%D0%BA%D1%86%D0%B8%D0%B8.png" />
+  - Для Альфа-авто 5 современных версий, нужно также закомментировать механизм проверки маркировки - так как он выполняется в самой обработке непосредственно.
+Нужно в процедуре  <code>ДействиеПробить</code> закомментировать вызов запуска проверки маркировки:</p>
+<p><em>до</em></p>
+<div class="highlight"><pre><span></span><code><span class="c1">//ПРОБИТИЕ ЧЕКА</span>
+    <span class="k">Если</span> <span class="nv">КодыМаркировки</span><span class="o">.</span><span class="nf">Количество</span><span class="p">()</span> <span class="o">=</span> <span class="m">0</span> <span class="k">Тогда</span>
+        <span class="nv">СтруктураВозвратныхПараметров</span><span class="o">=</span><span class="k">Новый</span> <span class="nc">Структура</span><span class="p">;</span>
+        <span class="k">Если</span> <span class="k">НЕ</span> <span class="nf">ПробитьЧек</span><span class="p">(</span><span class="nv">СообщениеОбОшибке</span><span class="p">,</span><span class="nv">СтруктураВозвратныхПараметров</span><span class="p">)</span> <span class="k">Тогда</span>
+            <span class="nf">ОткрытьДиалог</span><span class="p">(</span><span class="s">&quot;ПРИ ПРОБИТИИ ЧЕКА ОБНАРУЖЕНЫ ОШИБКИ:&quot;</span><span class="o">+</span><span class="nv">Символы</span><span class="o">.</span><span class="nv">ПС</span><span class="o">+</span><span class="nv">СообщениеОбОшибке</span><span class="p">,</span> <span class="nv">СтатусСообщения</span><span class="o">.</span><span class="nv">ОченьВажное</span><span class="p">,</span> <span class="m">0</span><span class="p">);</span>
+            <span class="nv">Товары</span><span class="o">.</span><span class="nf">Загрузить</span><span class="p">(</span><span class="nv">ТоварыБезПодарков</span><span class="p">);</span>
+            <span class="k">Возврат</span><span class="p">;</span>
+        <span class="k">КонецЕсли</span><span class="p">;</span> 
+    <span class="k">Иначе</span>
+        <span class="nv">СтруктураВозвратныхПараметров</span><span class="o">=</span><span class="k">Новый</span> <span class="nc">Структура</span><span class="p">;</span>
+        <span class="nv">ФормаПроверкиКодовМаркировки</span> <span class="o">=</span> <span class="nf">ПолучитьФормуФронта</span><span class="p">(</span><span class="s">&quot;ФормаПроверкиКодовМаркировки&quot;</span><span class="p">,</span> <span class="nv">ЭтаФорма</span><span class="p">);</span>
+        <span class="nv">ФормаПроверкиКодовМаркировки</span><span class="o">.</span><span class="nv">АвтоматическаяПроверкаКодовМаркировки</span> <span class="o">=</span> <span class="kc">Истина</span><span class="p">;</span>
+        <span class="nv">ФормаПроверкиКодовМаркировки</span><span class="o">.</span><span class="nv">АвтоматическоеПробитиеЧека</span> <span class="o">=</span> <span class="kc">Истина</span><span class="p">;</span>
+        <span class="nv">РезультатПробитияЧека</span> <span class="o">=</span> <span class="nf">ОткрытьФормуВыбора</span><span class="p">(</span><span class="nv">ФормаПроверкиКодовМаркировки</span><span class="p">,</span> <span class="p">,</span> <span class="s">&quot;ФормаПроверкиКодовМаркировки&quot;</span><span class="p">);</span>
+        <span class="k">Если</span> <span class="nb">ТипЗнч</span><span class="p">(</span><span class="nv">РезультатПробитияЧека</span><span class="p">)</span> <span class="o">=</span> <span class="nb">Тип</span><span class="p">(</span><span class="s">&quot;Структура&quot;</span><span class="p">)</span> <span class="k">Тогда</span> 
+            <span class="k">Если</span> <span class="k">НЕ</span> <span class="nv">РезультатПробитияЧека</span><span class="o">.</span><span class="nv">РезультатПробитияЧека</span> <span class="k">Тогда</span> 
+                <span class="nf">ОткрытьДиалог</span><span class="p">(</span><span class="s">&quot;ПРИ ПРОБИТИИ ЧЕКА ОБНАРУЖЕНЫ ОШИБКИ:&quot;</span><span class="o">+</span><span class="nv">Символы</span><span class="o">.</span><span class="nv">ПС</span><span class="o">+</span><span class="nv">СообщениеОбОшибке</span><span class="p">,</span> <span class="nv">СтатусСообщения</span><span class="o">.</span><span class="nv">ОченьВажное</span><span class="p">,</span> <span class="m">0</span><span class="p">);</span>
+                <span class="nv">Товары</span><span class="o">.</span><span class="nf">Загрузить</span><span class="p">(</span><span class="nv">ТоварыБезПодарков</span><span class="p">);</span>
+                <span class="k">Возврат</span><span class="p">;</span>
+            <span class="k">КонецЕсли</span><span class="p">;</span>
+        <span class="k">Иначе</span> 
+            <span class="k">Возврат</span><span class="p">;</span>
+        <span class="k">КонецЕсли</span><span class="p">;</span>
+    <span class="k">КонецЕсли</span><span class="p">;</span>
+</code></pre></div>
+<p><em>после</em></p>
+<p><div class="highlight"><pre><span></span><code>    <span class="c1">//ПРОБИТИЕ ЧЕКА</span>
+    <span class="c1">//Если КодыМаркировки.Количество() = 0 Тогда</span>
+        <span class="nv">СтруктураВозвратныхПараметров</span><span class="o">=</span><span class="k">Новый</span> <span class="nc">Структура</span><span class="p">;</span>
+        <span class="k">Если</span> <span class="k">НЕ</span> <span class="nf">ПробитьЧек</span><span class="p">(</span><span class="nv">СообщениеОбОшибке</span><span class="p">,</span><span class="nv">СтруктураВозвратныхПараметров</span><span class="p">)</span> <span class="k">Тогда</span>
+            <span class="nf">ОткрытьДиалог</span><span class="p">(</span><span class="s">&quot;ПРИ ПРОБИТИИ ЧЕКА ОБНАРУЖЕНЫ ОШИБКИ:&quot;</span><span class="o">+</span><span class="nv">Символы</span><span class="o">.</span><span class="nv">ПС</span><span class="o">+</span><span class="nv">СообщениеОбОшибке</span><span class="p">,</span> <span class="nv">СтатусСообщения</span><span class="o">.</span><span class="nv">ОченьВажное</span><span class="p">,</span> <span class="m">0</span><span class="p">);</span>
+            <span class="nv">Товары</span><span class="o">.</span><span class="nf">Загрузить</span><span class="p">(</span><span class="nv">ТоварыБезПодарков</span><span class="p">);</span>
+            <span class="k">Возврат</span><span class="p">;</span>
+        <span class="k">КонецЕсли</span><span class="p">;</span> 
+    <span class="c1">//Иначе</span>
+        <span class="c1">//СтруктураВозвратныхПараметров=Новый Структура;</span>
+        <span class="c1">//ФормаПроверкиКодовМаркировки = ПолучитьФормуФронта(&quot;ФормаПроверкиКодовМаркировки&quot;, ЭтаФорма);</span>
+        <span class="c1">//ФормаПроверкиКодовМаркировки.АвтоматическаяПроверкаКодовМаркировки = Истина;</span>
+        <span class="c1">//ФормаПроверкиКодовМаркировки.АвтоматическоеПробитиеЧека = Истина;</span>
+        <span class="c1">//РезультатПробитияЧека = ОткрытьФормуВыбора(ФормаПроверкиКодовМаркировки, , &quot;ФормаПроверкиКодовМаркировки&quot;);</span>
+        <span class="c1">//Если ТипЗнч(РезультатПробитияЧека) = Тип(&quot;Структура&quot;) Тогда </span>
+        <span class="c1">//  Если НЕ РезультатПробитияЧека.РезультатПробитияЧека Тогда </span>
+        <span class="c1">//      ОткрытьДиалог(&quot;ПРИ ПРОБИТИИ ЧЕКА ОБНАРУЖЕНЫ ОШИБКИ:&quot;+Символы.ПС+СообщениеОбОшибке, СтатусСообщения.ОченьВажное, 0);</span>
+        <span class="c1">//      Товары.Загрузить(ТоварыБезПодарков);</span>
+        <span class="c1">//      Возврат;</span>
+        <span class="c1">//  КонецЕсли;</span>
+        <span class="c1">//Иначе </span>
+        <span class="c1">//  Возврат;</span>
+        <span class="c1">//КонецЕсли;</span>
+    <span class="c1">//КонецЕсли;</span>
+</code></pre></div>
+- в модуле объекта обработки "ЗакрытиеСмены" заменим глобальную переменную <code>глРарус_Компонента</code> на <code>глРарус_КомпонентаТО</code>, изменения будут только в области инициализации модуля</p>
 <p><img alt="Рарус закрытие смены модуль объекта" src="../media/%D0%B4%D0%BE%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0_%D1%80%D0%B0%D1%80%D1%83%D1%81_%D0%B7%D0%B0%D0%BA%D1%80%D1%8B%D1%82%D0%B8%D0%B5_%D1%81%D0%BC%D0%B5%D0%BD%D1%8B.png" /></p>
 </li>
 <li>
@@ -1438,13 +1488,7 @@
     
       <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
       
-        <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
-      
-        <script src="../_javascript/tablesort.js"></script>
-      
-        <script src="../_javascript/mathjax.js"></script>
-      
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
