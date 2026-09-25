@@ -1746,17 +1746,17 @@
 </li>
 <li>
 <p>Найдите все упоминания строки <code>ПолучитьСерверТО().ОплатитьПлатежнойКартой</code>. Перед найденной строкой добавьте такой код:</p>
-<div class="highlight"><pre><span></span><code><span class="nf">СохранитьЗначение</span><span class="p">(</span><span class="s">&quot;ДокументПечатиККТ&quot;</span><span class="p">,</span> <span class="nv">Ссылка</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="nf">СохранитьЗначение</span><span class="p">(</span><span class="s">"ДокументПечатиККТ"</span><span class="p">,</span> <span class="nv">Ссылка</span><span class="p">);</span>
 </code></pre></div>
 </li>
 <li>
 <p>Найдите все упоминания строки <code>ПолучитьСерверТО().ПечатьЧека</code>. Перед найденной строкой добавьте такой код:</p>
-<div class="highlight"><pre><span></span><code><span class="nf">СохранитьЗначение</span><span class="p">(</span><span class="s">&quot;ДокументПечатиККТ&quot;</span><span class="p">,</span> <span class="nv">Ссылка</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="nf">СохранитьЗначение</span><span class="p">(</span><span class="s">"ДокументПечатиККТ"</span><span class="p">,</span> <span class="nv">Ссылка</span><span class="p">);</span>
 </code></pre></div>
 </li>
 <li>
 <p>Для конфигурации <strong>Розница 1</strong>, найдите упоминания <code>ПолучитьСерверТО().ОткрытьЧек;</code> в документе "Чек ККМ". Перед найденной строкой добавьте такой код:</p>
-<div class="highlight"><pre><span></span><code><span class="nf">СохранитьЗначение</span><span class="p">(</span><span class="s">&quot;ДокументПечатиККТ&quot;</span><span class="p">,</span> <span class="nv">Ссылка</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="nf">СохранитьЗначение</span><span class="p">(</span><span class="s">"ДокументПечатиККТ"</span><span class="p">,</span> <span class="nv">Ссылка</span><span class="p">);</span>
 </code></pre></div>
 </li>
 <li>
@@ -1765,7 +1765,7 @@
 </ol>
 <h2 id="дополнительные-параметры">Дополнительные параметры<a class="headerlink" href="#дополнительные-параметры" title="Permanent link">&para;</a></h2>
 <p>Если при разработке шаблона чека, или доработке функционала программы требуется ссылка на объект в базе, то ее можно явно прописать в параметрах обработки, а затем вызывать в коде таким образом.</p>
-<div class="highlight"><pre><span></span><code><span class="nv">ЗначениеПараметра</span> <span class="o">=</span> <span class="nv">ОсновнаяОбработка</span><span class="o">.</span><span class="nf">ККТ_ЗначениеДополнительногоПараметра</span><span class="p">(</span><span class="s">&quot;ИмяПараметра&quot;</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="nv">ЗначениеПараметра</span> <span class="o">=</span> <span class="nv">ОсновнаяОбработка</span><span class="o">.</span><span class="nf">ККТ_ЗначениеДополнительногоПараметра</span><span class="p">(</span><span class="s">"ИмяПараметра"</span><span class="p">);</span>
 </code></pre></div>
 <p>Форму добавления дополнительных параметров, расположена в поле параметров программы</p>
 <p><img alt="Вызов дополнительные параметры" src="../media/%D0%B2%D1%8B%D0%B7%D0%BE%D0%B2_%D0%B4%D0%BE%D0%BF_%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80%D1%8B.png" /></p>
@@ -1792,7 +1792,7 @@
 <p><code>мПараметрыУстройства</code> - тип Структура, содержит общие параметры программы, как они были заданы пользователем.</p>
 </li>
 <li>
-<p>Также доступны специальные <strong><em>формы-модули</em></strong>, через которые можно выполнять экспортный методы. Например, заполнение чека по умолчанию, можно вызвать через <code>ОсновнаяОбработка.мМодульККТОбщий.ПараметрыОперацииФискализацииЧека()</code>. Содержимое модулей можно увидеть, открыв основную программу в конфигураторе, каждый модуль это отдельная форма обработки. В общей сложности доступны следующие модули:</p>
+<p>Также доступны специальные <em><strong>формы-модули</strong></em>, через которые можно выполнять экспортный методы. Например, заполнение чека по умолчанию, можно вызвать через <code>ОсновнаяОбработка.мМодульККТОбщий.ПараметрыОперацииФискализацииЧека()</code>. Содержимое модулей можно увидеть, открыв основную программу в конфигураторе, каждый модуль это отдельная форма обработки. В общей сложности доступны следующие модули:</p>
 </li>
 <li>
 <p><code>мМодульККТОбщий</code> - форма "МодульОбщий"</p>
@@ -1856,10 +1856,10 @@
    ИмяДокумента = пДок.Метаданные().Имя;
    СтруктураДокумента = Неопределено;
 
-   Если ИмяДокумента = &quot;ПриходныйКассовыйОрдер&quot; Тогда
+   Если ИмяДокумента = "ПриходныйКассовыйОрдер" Тогда
        СтруктураДокумента = Новый Структура();
        СтруктураДокумента.ЭтоКассовыйДокумент = Ложь;
-       СтруктураДокумента.ТабличнаяЧасть = &quot;Товары|Услуги&quot;;
+       СтруктураДокумента.ТабличнаяЧасть = "Товары|Услуги";
    КонецЕсли;
 
    Возврат ОсновнаяОбработка.ОбработатьУниверсальныйДок(СсылкаНаДокумент, СписокЧеков, ПараметрыОбработки, СуммаБезНал, СуммаНал, СтруктураДокумента);
@@ -1892,13 +1892,13 @@
 <p><code>ВходныеПараметры</code> - необязательный, тип Массив, можно передать входные параметры для выполнения операции, например, Имя и ИНН кассира.</p>
 <p>Возвращает структуру, вида:</p>
 <div class="highlight"><pre><span></span><code>    <span class="nv">ДанныеОтвета</span> <span class="o">=</span> <span class="k">Новый</span> <span class="nc">Структура</span><span class="p">;</span>
-    <span class="nv">ДанныеОтвета</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;Успешно&quot;</span><span class="p">,</span> <span class="kc">Ложь</span><span class="p">);</span>
-    <span class="nv">ДанныеОтвета</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;ТекстОшибки&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">);</span>
-    <span class="nv">ДанныеОтвета</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;ВыходныеПараметры&quot;</span><span class="p">);</span>
+    <span class="nv">ДанныеОтвета</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">"Успешно"</span><span class="p">,</span> <span class="kc">Ложь</span><span class="p">);</span>
+    <span class="nv">ДанныеОтвета</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">"ТекстОшибки"</span><span class="p">,</span> <span class="s">""</span><span class="p">);</span>
+    <span class="nv">ДанныеОтвета</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">"ВыходныеПараметры"</span><span class="p">);</span>
 </code></pre></div>
 <p><code>ВыходныеПараметры</code> заполняются, при их наличии</p>
 <p><em>Пример</em>,</p>
-<div class="highlight"><pre><span></span><code><span class="nv">ОсновнаяОбработка</span><span class="o">.</span><span class="nv">мМодульККТСобственная</span><span class="o">.</span><span class="nf">ВыполнитьОсновнуюКомандуОборудования</span><span class="p">(</span><span class="s">&quot;ДополнительныйФР&quot;</span><span class="p">,</span> <span class="s">&quot;ОткрытьДенежныйЯщик&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="nv">ОсновнаяОбработка</span><span class="o">.</span><span class="nv">мМодульККТСобственная</span><span class="o">.</span><span class="nf">ВыполнитьОсновнуюКомандуОборудования</span><span class="p">(</span><span class="s">"ДополнительныйФР"</span><span class="p">,</span> <span class="s">"ОткрытьДенежныйЯщик"</span><span class="p">)</span>
 </code></pre></div>
 </li>
 </ul>
@@ -1911,13 +1911,13 @@
 <p><code>ИмяДополнительнойКоманды</code> - тип Строка, наименование дополнительной команды, как она прописана в описании драйвера, например, <code>PrintChooseReceiptCopy</code></p>
 <p>Возвращает структуру, вида:</p>
 <div class="highlight"><pre><span></span><code>    <span class="nv">ДанныеОтвета</span> <span class="o">=</span> <span class="k">Новый</span> <span class="nc">Структура</span><span class="p">;</span>
-    <span class="nv">ДанныеОтвета</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;Успешно&quot;</span><span class="p">,</span> <span class="kc">Ложь</span><span class="p">);</span>
-    <span class="nv">ДанныеОтвета</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;ТекстОшибки&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">);</span>
-    <span class="nv">ДанныеОтвета</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;ВыходныеПараметры&quot;</span><span class="p">);</span>
+    <span class="nv">ДанныеОтвета</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">"Успешно"</span><span class="p">,</span> <span class="kc">Ложь</span><span class="p">);</span>
+    <span class="nv">ДанныеОтвета</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">"ТекстОшибки"</span><span class="p">,</span> <span class="s">""</span><span class="p">);</span>
+    <span class="nv">ДанныеОтвета</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">"ВыходныеПараметры"</span><span class="p">);</span>
 </code></pre></div>
 <p><code>ВыходныеПараметры</code> заполняются, при их наличии</p>
 <p><em>Пример</em>,</p>
-<div class="highlight"><pre><span></span><code><span class="nv">ОсновнаяОбработка</span><span class="o">.</span><span class="nv">мМодульККТСобственная</span><span class="o">.</span><span class="nf">ВыполнитьДополнительнуюКомандуОборудования</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">,</span> <span class="s">&quot;PrintChooseReceiptCopy&quot;</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="nv">ОсновнаяОбработка</span><span class="o">.</span><span class="nv">мМодульККТСобственная</span><span class="o">.</span><span class="nf">ВыполнитьДополнительнуюКомандуОборудования</span><span class="p">(</span><span class="s">""</span><span class="p">,</span> <span class="s">"PrintChooseReceiptCopy"</span><span class="p">);</span>
 </code></pre></div>
 </li>
 </ul>
@@ -1931,9 +1931,9 @@
 <p><code>ВходныеПараметры</code> - необязательный, тип Массив, можно передать входные параметры для выполнения операции.</p>
 <p>Возвращает структуру, вида:</p>
 <div class="highlight"><pre><span></span><code>    <span class="nv">ДанныеОтвета</span> <span class="o">=</span> <span class="k">Новый</span> <span class="nc">Структура</span><span class="p">;</span>
-    <span class="nv">ДанныеОтвета</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;Успешно&quot;</span><span class="p">,</span> <span class="kc">Ложь</span><span class="p">);</span>
-    <span class="nv">ДанныеОтвета</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;ТекстОшибки&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">);</span>
-    <span class="nv">ДанныеОтвета</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;ВыходныеПараметры&quot;</span><span class="p">);</span>
+    <span class="nv">ДанныеОтвета</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">"Успешно"</span><span class="p">,</span> <span class="kc">Ложь</span><span class="p">);</span>
+    <span class="nv">ДанныеОтвета</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">"ТекстОшибки"</span><span class="p">,</span> <span class="s">""</span><span class="p">);</span>
+    <span class="nv">ДанныеОтвета</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">"ВыходныеПараметры"</span><span class="p">);</span>
 </code></pre></div>
 <p><code>ВыходныеПараметры</code> заполняются, при их наличии</p>
 <p><em>Пример</em>,</p>
@@ -1950,13 +1950,13 @@
 <p><code>ИмяДополнительнойКоманды</code> - тип Строка, наименование дополнительной команды, как она прописана в описании драйвера, например, <code>PrintChooseReceiptCopy</code></p>
 <p>Возвращает структуру, вида:</p>
 <div class="highlight"><pre><span></span><code>    <span class="nv">ДанныеОтвета</span> <span class="o">=</span> <span class="k">Новый</span> <span class="nc">Структура</span><span class="p">;</span>
-    <span class="nv">ДанныеОтвета</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;Успешно&quot;</span><span class="p">,</span> <span class="kc">Ложь</span><span class="p">);</span>
-    <span class="nv">ДанныеОтвета</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;ТекстОшибки&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">);</span>
-    <span class="nv">ДанныеОтвета</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;ВыходныеПараметры&quot;</span><span class="p">);</span>
+    <span class="nv">ДанныеОтвета</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">"Успешно"</span><span class="p">,</span> <span class="kc">Ложь</span><span class="p">);</span>
+    <span class="nv">ДанныеОтвета</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">"ТекстОшибки"</span><span class="p">,</span> <span class="s">""</span><span class="p">);</span>
+    <span class="nv">ДанныеОтвета</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">"ВыходныеПараметры"</span><span class="p">);</span>
 </code></pre></div>
 <p><code>ВыходныеПараметры</code> заполняются, при их наличии</p>
 <p><em>Пример</em>,</p>
-<div class="highlight"><pre><span></span><code><span class="nv">ОсновнаяОбработка</span><span class="o">.</span><span class="nv">мМодульККТСобственная</span><span class="o">.</span><span class="nf">ВыполнитьДополнительнуюКомандуЭквайринга</span><span class="p">(</span><span class="s">&quot;Наш эквайринг&quot;</span><span class="p">,</span> <span class="s">&quot;Test&quot;</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="nv">ОсновнаяОбработка</span><span class="o">.</span><span class="nv">мМодульККТСобственная</span><span class="o">.</span><span class="nf">ВыполнитьДополнительнуюКомандуЭквайринга</span><span class="p">(</span><span class="s">"Наш эквайринг"</span><span class="p">,</span> <span class="s">"Test"</span><span class="p">);</span>
 </code></pre></div>
 </li>
 </ul>
@@ -1981,16 +1981,16 @@
 
     <span class="nv">ИмяДокумента</span> <span class="o">=</span> <span class="nv">СсылкаНаДокумент</span><span class="o">.</span><span class="nf">Метаданные</span><span class="p">()</span><span class="o">.</span><span class="nv">Имя</span><span class="p">;</span>
     <span class="nv">СтруктураДокумента</span> <span class="o">=</span> <span class="kc">Неопределено</span><span class="p">;</span>
-    <span class="k">Если</span> <span class="nv">ИмяДокумента</span> <span class="o">=</span> <span class="s">&quot;ПлатежноеПоручениеВходящее&quot;</span> <span class="k">Тогда</span>
+    <span class="k">Если</span> <span class="nv">ИмяДокумента</span> <span class="o">=</span> <span class="s">"ПлатежноеПоручениеВходящее"</span> <span class="k">Тогда</span>
         <span class="nv">СтруктураДокумента</span> <span class="o">=</span> <span class="k">Новый</span> <span class="nc">Структура</span><span class="p">();</span>
         <span class="nv">СтруктураДокумента</span><span class="o">.</span><span class="nv">ЭтоКассовыйДокумент</span> <span class="o">=</span> <span class="kc">Истина</span><span class="p">;</span>
         <span class="nv">СтруктураДокумента</span><span class="o">.</span><span class="nv">Электронно</span> <span class="o">=</span> <span class="kc">Истина</span><span class="p">;</span>
-        <span class="nv">СтруктураДокумента</span><span class="o">.</span><span class="nv">ТабличнаяЧасть</span> <span class="o">=</span> <span class="s">&quot;РасшифровкаПлатежа&quot;</span><span class="p">;</span>
-    <span class="k">ИначеЕсли</span> <span class="nv">ИмяДокумента</span> <span class="o">=</span> <span class="s">&quot;РасходныйКассовыйОрдер&quot;</span> <span class="k">Тогда</span> 
+        <span class="nv">СтруктураДокумента</span><span class="o">.</span><span class="nv">ТабличнаяЧасть</span> <span class="o">=</span> <span class="s">"РасшифровкаПлатежа"</span><span class="p">;</span>
+    <span class="k">ИначеЕсли</span> <span class="nv">ИмяДокумента</span> <span class="o">=</span> <span class="s">"РасходныйКассовыйОрдер"</span> <span class="k">Тогда</span> 
         <span class="nv">СтруктураДокумента</span> <span class="o">=</span> <span class="k">Новый</span> <span class="nc">Структура</span><span class="p">();</span>
         <span class="nv">СтруктураДокумента</span><span class="o">.</span><span class="nv">ЭтоКассовыйДокумент</span> <span class="o">=</span> <span class="kc">Истина</span><span class="p">;</span>
         <span class="nv">СтруктураДокумента</span><span class="o">.</span><span class="nv">ТипРасчетаПоУмолчанию</span> <span class="o">=</span> <span class="m">3</span><span class="p">;</span>
-        <span class="nv">СтруктураДокумента</span><span class="o">.</span><span class="nv">ТабличнаяЧасть</span> <span class="o">=</span> <span class="s">&quot;РасшифровкаПлатежа&quot;</span><span class="p">;</span>
+        <span class="nv">СтруктураДокумента</span><span class="o">.</span><span class="nv">ТабличнаяЧасть</span> <span class="o">=</span> <span class="s">"РасшифровкаПлатежа"</span><span class="p">;</span>
     <span class="k">КонецЕсли</span><span class="p">;</span> 
 
     <span class="k">Возврат</span> <span class="nv">ОсновнаяОбработка</span><span class="o">.</span><span class="nf">ОбработатьУниверсальныйДок</span><span class="p">(</span><span class="nv">СсылкаНаДокумент</span><span class="p">,</span> <span class="nv">СписокЧеков</span><span class="p">,</span> <span class="nv">ПараметрыОбработки</span><span class="p">,</span> <span class="nv">СуммаБезНал</span><span class="p">,</span> <span class="nv">СуммаНал</span><span class="p">,</span> <span class="nv">СтруктураДокумента</span><span class="p">);</span>
@@ -2004,7 +2004,7 @@
 </ul>
 <p>ПараметрыОбработки.T_БезПечати = Истина;
  ОсновнаяОбработка.мОбщиеПараметры.Электронно = Истина;</p>
-<div class="codehilite"><pre><span></span><code>    Возврат &quot;&quot;;
+<div class="codehilite"><pre><span></span><code>    Возврат "";
 
 КонецФункции
 
@@ -2016,32 +2016,32 @@
 <li>
 <p><code>ДанныеДляПечатиЧекаДокумента</code> - функция, возвращает структуру следующего вида:</p>
 <div class="highlight"><pre><span></span><code>    <span class="nv">ПараметрыДокумента</span> <span class="o">=</span> <span class="k">Новый</span> <span class="nc">Структура</span><span class="p">();</span>
-    <span class="nv">ПараметрыДокумента</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;ТипРасчетаПоУмолчанию&quot;</span><span class="p">,</span> <span class="m">1</span><span class="p">);</span>
-    <span class="nv">ПараметрыДокумента</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;ЭтоКассовыйДокумент&quot;</span><span class="p">,</span> <span class="kc">Ложь</span><span class="p">);</span>
-    <span class="nv">ПараметрыДокумента</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;ВидОплатыПоУмолчанию&quot;</span><span class="p">,</span> <span class="m">0</span><span class="p">);</span>
-    <span class="nv">ПараметрыДокумента</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;ПризнакСпособаРасчетаПоУмолчанию&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">);</span>
-    <span class="nv">ПараметрыДокумента</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;ТабличнаяЧасть&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">);</span>
-    <span class="nv">ПараметрыДокумента</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;ЭтоТоварныйДокумент&quot;</span><span class="p">,</span> <span class="kc">Ложь</span><span class="p">);</span>
-    <span class="nv">ПараметрыДокумента</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;НеЗаполнятьПозиции&quot;</span><span class="p">,</span> <span class="kc">Ложь</span><span class="p">);</span>
-    <span class="nv">ПараметрыДокумента</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;НеЗаполнятьОплату&quot;</span><span class="p">,</span> <span class="kc">Ложь</span><span class="p">);</span>
+    <span class="nv">ПараметрыДокумента</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">"ТипРасчетаПоУмолчанию"</span><span class="p">,</span> <span class="m">1</span><span class="p">);</span>
+    <span class="nv">ПараметрыДокумента</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">"ЭтоКассовыйДокумент"</span><span class="p">,</span> <span class="kc">Ложь</span><span class="p">);</span>
+    <span class="nv">ПараметрыДокумента</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">"ВидОплатыПоУмолчанию"</span><span class="p">,</span> <span class="m">0</span><span class="p">);</span>
+    <span class="nv">ПараметрыДокумента</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">"ПризнакСпособаРасчетаПоУмолчанию"</span><span class="p">,</span> <span class="s">""</span><span class="p">);</span>
+    <span class="nv">ПараметрыДокумента</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">"ТабличнаяЧасть"</span><span class="p">,</span> <span class="s">""</span><span class="p">);</span>
+    <span class="nv">ПараметрыДокумента</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">"ЭтоТоварныйДокумент"</span><span class="p">,</span> <span class="kc">Ложь</span><span class="p">);</span>
+    <span class="nv">ПараметрыДокумента</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">"НеЗаполнятьПозиции"</span><span class="p">,</span> <span class="kc">Ложь</span><span class="p">);</span>
+    <span class="nv">ПараметрыДокумента</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">"НеЗаполнятьОплату"</span><span class="p">,</span> <span class="kc">Ложь</span><span class="p">);</span>
 </code></pre></div>
 </li>
 </ul>
 <p>Ее можно использовать как образец для заполнения полей, которые необходимо переопределить при использовании функции <a href="#обработатьуниверсальныйдок"><code>ОбработатьУниверсальныйДок</code></a>.</p>
 <p><code>ТипРасчетаПоУмолчанию</code> - Тип Число, отвечает за то, на какой тип расчета будет отнесен документ, если программе не удастся его определить по виду операции. Возможные значения: 1 - "Приход", 2 - "Возврат прихода", 3 - "Расход", 4 - "Возврат расхода"</p>
-<div class="codehilite"><pre><span></span><code>```ЭтоКассовыйДокумент``` - Тип Булево, определяет является ли документ кассовым. Ярким примером является, например, документ &quot;Приходный кассовый ордер&quot;. Для кассовых документов применяется особый механизм заполнения: программа пытается определить документ сделки, который содержит данные о товаре, это может быть документ расчетов с контрагентами, заказ, документ основания и т.д. У кассовых документов может быть несколько документов сделки с товарами. Также, если не устраивает типовой алгоритм определения сделки, например, нужно брать информацию по товарам из документа основания, а не из документа расчетов, то нужно переопределить еще эту функцию [```МассивПриоритетовОпределенияТоварногоДокумента```](#массивприоритетовопределениятоварногодокумента)
+<div class="codehilite"><pre><span></span><code>```ЭтоКассовыйДокумент``` - Тип Булево, определяет является ли документ кассовым. Ярким примером является, например, документ "Приходный кассовый ордер". Для кассовых документов применяется особый механизм заполнения: программа пытается определить документ сделки, который содержит данные о товаре, это может быть документ расчетов с контрагентами, заказ, документ основания и т.д. У кассовых документов может быть несколько документов сделки с товарами. Также, если не устраивает типовой алгоритм определения сделки, например, нужно брать информацию по товарам из документа основания, а не из документа расчетов, то нужно переопределить еще эту функцию [```МассивПриоритетовОпределенияТоварногоДокумента```](#массивприоритетовопределениятоварногодокумента)
 
-```ВидОплатыПоУмолчанию``` - тип Число, определяет, куда относить по умолчанию данные об оплате, если программе не удастся определить эту информация автоматически. Возможные значения: 0 - &quot;Наличные&quot;, 1 - &quot;Безналичные&quot;, 4 - &quot;зачет аванса&quot;, 5 - &quot;постоплата&quot;, 6 - &quot;взаимозачет&quot;
+```ВидОплатыПоУмолчанию``` - тип Число, определяет, куда относить по умолчанию данные об оплате, если программе не удастся определить эту информация автоматически. Возможные значения: 0 - "Наличные", 1 - "Безналичные", 4 - "зачет аванса", 5 - "постоплата", 6 - "взаимозачет"
 
-```ПризнакСпособаРасчетаПоУмолчанию``` - Тип Строка, Определяет на какой признак способа расчета установить документ, если ему явно этот признак не передан, например &quot;ЗаказПокупателя&quot;, по умолчанию относится к &quot;ПРЕДОПЛАТА&quot;.
-Возможные значения: &quot;ПРЕДОПЛАТА&quot;, &quot;ПЕРЕДАЧА&quot;, &quot;ОПЛАТАКРЕДИТА&quot;,&quot;НЕЗАДАН&quot;, либо пустая строка, при пустой строке признака способа расчета будет проигнорирован, при признаке &quot;НЕЗАДАН&quot;, настройки распределения обработки этого признака очистятся.
+```ПризнакСпособаРасчетаПоУмолчанию``` - Тип Строка, Определяет на какой признак способа расчета установить документ, если ему явно этот признак не передан, например "ЗаказПокупателя", по умолчанию относится к "ПРЕДОПЛАТА".
+Возможные значения: "ПРЕДОПЛАТА", "ПЕРЕДАЧА", "ОПЛАТАКРЕДИТА","НЕЗАДАН", либо пустая строка, при пустой строке признака способа расчета будет проигнорирован, при признаке "НЕЗАДАН", настройки распределения обработки этого признака очистятся.
 
 ```ТабличнаяЧасть``` - тип Строка. Применяется для кассовых и товарных документов.
 </code></pre></div>
 
 <p>Указывает, для кассового, где расположена табличная часть с документам сделки, а для товарного - наименования таблиц с товарами.
  Например, для "Приходного кассового ордера" табличная  - "РасшифровкаПлатежа". Если несколько табличных частей, то они записываются через символ |, Например "Товары|Услуги"</p>
-<div class="codehilite"><pre><span></span><code>```ЭтоТоварныйДокумент``` - Тип Булево, используется в редких случаях для определения информации для оплаты, ярким примером является документ &quot;Реализация товаров услуг&quot; в последних типовых конфигурациях 1С, в нем появилась табличная часть с кассовыми документами, из нее можно получить информацию о том, какие оплаты по нему проходили. Если же мы хотим проигнорировать данную информацию, то нужно поставить этот признак в значение ```ЛОЖЬ```
+<div class="codehilite"><pre><span></span><code>```ЭтоТоварныйДокумент``` - Тип Булево, используется в редких случаях для определения информации для оплаты, ярким примером является документ "Реализация товаров услуг" в последних типовых конфигурациях 1С, в нем появилась табличная часть с кассовыми документами, из нее можно получить информацию о том, какие оплаты по нему проходили. Если же мы хотим проигнорировать данную информацию, то нужно поставить этот признак в значение ```ЛОЖЬ```
 
 ```НеЗаполнятьПозиции``` - тип Булево, указывает заполнять ли информацию о товаре средствами основной программы. Использовать, если необходимо реализовать собственный алгоритм заполнения товара.
 
@@ -2063,13 +2063,13 @@
  МассивПриоритетов.Добавить("КредитныйДокумент");
  МассивПриоритетов.Добавить("ОтчетОРозничныхПродажах");
  МассивПриоритетов.Добавить("СубконтоДТ3");
-    <div class="highlight"><pre><span></span><code>Если же необходимо, чтобы программа брала данные из &quot;документа основания&quot;, а не &quot;сделки&quot;, то этот порядок можно переопределить таким образом:
+    <div class="highlight"><pre><span></span><code>Если же необходимо, чтобы программа брала данные из "документа основания", а не "сделки", то этот порядок можно переопределить таким образом:
 
 ```bsl
 Функция МассивПриоритетовОпределенияТоварногоДокумента(СсылкаНаДокумент) Экспорт
     МассивПриоритетов = Новый Массив;
-    МассивПриоритетов.Добавить(&quot;ДокументОснование&quot;);
-    МассивПриоритетов.Добавить(&quot;Сделка&quot;);
+    МассивПриоритетов.Добавить("ДокументОснование");
+    МассивПриоритетов.Добавить("Сделка");
     Возврат МассивПриоритетов; 
 КонецФункции
 </code></pre></div></p>
@@ -2092,7 +2092,7 @@
 
     <span class="c1">//Удаление НДС из чека</span>
     <span class="k">Для</span> <span class="k">Каждого</span> <span class="nv">СтрокаЧека</span> <span class="k">Из</span> <span class="nv">пТаблицаЧека</span> <span class="k">Цикл</span>
-     <span class="nv">СтрокаЧека</span><span class="o">.</span><span class="nv">СтавкаНДС</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">;</span>
+     <span class="nv">СтрокаЧека</span><span class="o">.</span><span class="nv">СтавкаНДС</span> <span class="o">=</span> <span class="s">""</span><span class="p">;</span>
      <span class="nv">СтрокаЧека</span><span class="o">.</span><span class="nv">СуммаНДС</span> <span class="o">=</span> <span class="m">0</span><span class="p">;</span>
     <span class="k">КонецЦикла</span><span class="p">;</span>
 
@@ -2116,8 +2116,8 @@
 
     <span class="c1">//ПЕРЕОПРЕДЕЛЕНИЕ ПРИХОДНОГО КАССОВОГО ОРДЕРА</span>
     <span class="nv">ДанныеНовогоДокумента</span> <span class="o">=</span> <span class="nf">ДанныеНетиповогоДокумента</span><span class="p">();</span>
-    <span class="nv">ДанныеНовогоДокумента</span><span class="o">.</span><span class="nv">ПолноеИмя</span> <span class="o">=</span> <span class="s">&quot;Документ.ПриходныйКассовыйОрдер&quot;</span><span class="p">;</span>
-    <span class="nv">ДанныеНовогоДокумента</span><span class="o">.</span><span class="nv">ТабличнаяЧасть</span> <span class="o">=</span> <span class="s">&quot;Товары&quot;</span><span class="p">;</span>
+    <span class="nv">ДанныеНовогоДокумента</span><span class="o">.</span><span class="nv">ПолноеИмя</span> <span class="o">=</span> <span class="s">"Документ.ПриходныйКассовыйОрдер"</span><span class="p">;</span>
+    <span class="nv">ДанныеНовогоДокумента</span><span class="o">.</span><span class="nv">ТабличнаяЧасть</span> <span class="o">=</span> <span class="s">"Товары"</span><span class="p">;</span>
     <span class="nv">ДанныеНовогоДокумента</span><span class="o">.</span><span class="nv">ЭтоКассовыйДокумент</span> <span class="o">=</span> <span class="kc">Ложь</span><span class="p">;</span>
     <span class="nv">МассивНетиповыхДокументов</span><span class="o">.</span><span class="nf">Добавить</span><span class="p">(</span><span class="nv">ДанныеНовогоДокумента</span><span class="p">);</span>
 
@@ -2128,11 +2128,11 @@
 <div class="highlight"><pre><span></span><code><span class="k">Функция</span> <span class="nf">МассивНетиповыхДокументов</span><span class="p">()</span> <span class="k">Экспорт</span>
     <span class="nv">МассивНетиповыхДокументов</span> <span class="o">=</span> <span class="k">Новый</span> <span class="nc">Массив</span><span class="p">;</span>
 
-    <span class="c1">//ДОБАВЛЕНИЕ ДОКУМЕНТА &quot;АКТ СПИСАНИЯ ЕГАИС&quot;</span>
+    <span class="c1">//ДОБАВЛЕНИЕ ДОКУМЕНТА "АКТ СПИСАНИЯ ЕГАИС"</span>
     <span class="nv">ДанныеНовогоДокумента</span> <span class="o">=</span> <span class="nf">ДанныеНетиповогоДокумента</span><span class="p">();</span>
     <span class="nv">ДанныеНовогоДокумента</span><span class="o">.</span><span class="nv">ТипРасчетаПоУмолчанию</span> <span class="o">=</span> <span class="m">3</span><span class="p">;</span> <span class="c1">//Расход</span>
-    <span class="nv">ДанныеНовогоДокумента</span><span class="o">.</span><span class="nv">ПолноеИмя</span> <span class="o">=</span> <span class="s">&quot;Документ.АктСписанияЕГАИС&quot;</span><span class="p">;</span>
-    <span class="nv">ДанныеНовогоДокумента</span><span class="o">.</span><span class="nv">ТабличнаяЧасть</span> <span class="o">=</span> <span class="s">&quot;Товары&quot;</span><span class="p">;</span>
+    <span class="nv">ДанныеНовогоДокумента</span><span class="o">.</span><span class="nv">ПолноеИмя</span> <span class="o">=</span> <span class="s">"Документ.АктСписанияЕГАИС"</span><span class="p">;</span>
+    <span class="nv">ДанныеНовогоДокумента</span><span class="o">.</span><span class="nv">ТабличнаяЧасть</span> <span class="o">=</span> <span class="s">"Товары"</span><span class="p">;</span>
     <span class="nv">МассивНетиповыхДокументов</span><span class="o">.</span><span class="nf">Добавить</span><span class="p">(</span><span class="nv">ДанныеНовогоДокумента</span><span class="p">);</span>
 
     <span class="k">Возврат</span> <span class="nv">МассивНетиповыхДокументов</span><span class="p">;</span>
@@ -2146,7 +2146,7 @@
 <p><code>ДанныеНетиповогоДокумента</code> - функция, возвращает структуру следующего вида:</p>
 <div class="highlight"><pre><span></span><code><span class="k">Функция</span> <span class="nf">ДанныеНетиповогоДокумента</span><span class="p">()</span>
     <span class="nv">СтруктураДокумента</span> <span class="o">=</span> <span class="nf">ДанныеДляПечатиЧекаДокумента</span><span class="p">();</span> 
-    <span class="nv">СтруктураДокумента</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;ПолноеИмя&quot;</span><span class="p">);</span>
+    <span class="nv">СтруктураДокумента</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">"ПолноеИмя"</span><span class="p">);</span>
     <span class="k">Возврат</span> <span class="nv">СтруктураДокумента</span><span class="p">;</span>
 <span class="k">КонецФункции</span>  
 </code></pre></div>
@@ -2163,18 +2163,18 @@
 <p><code>ИмяОбъекта1С</code> - тип Строка, имя объекта 1С, для которого определяется поле запроса, например, мы может для объекта "Номенклатура", искать поле "ВИДНОМЕНКЛАТУРЫ", или, например, для "РеализацияТоваровУслуг", искать поле "ОРГАНИЗАЦИЯ". Имя объекта передается в <em>CamelCase</em></p>
 <p><code>пТабличнаяЧасть</code> - тип Строка, имя табличной части объекта 1С, в которой находится предполагаемое поле, если табличная часть не используется, то она будет пустой строкой.</p>
 <p><code>пТаблицаЗапроса</code> - тип Строки, служебное поле, содержит информацию представления объекта для построения запроса, к примеру, имеет запрос вида</p>
-<div class="highlight"><pre><span></span><code><span class="s">&quot;</span><span class="kd">ВЫБРАТЬ</span> 
+<div class="highlight"><pre><span></span><code><span class="s">"</span><span class="kd">ВЫБРАТЬ</span> 
 <span class="s">|</span> <span class="nv">Объект</span><span class="o">.</span><span class="nv">Организация</span> <span class="kd">КАК</span> <span class="nv">Организация</span>
-<span class="s">|</span> <span class="kd">ИЗ</span> <span class="nn">Документ</span><span class="o">.</span><span class="nc">РеализацияТоваровИУслуг</span> <span class="kd">КАК</span> <span class="nv">Объект</span><span class="s">&quot;</span>
+<span class="s">|</span> <span class="kd">ИЗ</span> <span class="nn">Документ</span><span class="o">.</span><span class="nc">РеализацияТоваровИУслуг</span> <span class="kd">КАК</span> <span class="nv">Объект</span><span class="s">"</span>
 </code></pre></div>
 <p>здесь конструкция "Объект." будет как раз в <code>пТаблицаЗапроса</code>, таким образом, чтобы в функции "ПолучитьПредставлениеПоляЗапроса_Универсальное" вернуть необходимое значение реквизита, то нужно возвращать так</p>
-<div class="highlight"><pre><span></span><code><span class="k">Возврат</span> <span class="nv">пТаблицаЗапроса</span> <span class="o">+</span> <span class="s">&quot;ИмяВашегоРеквизита&quot;</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">Возврат</span> <span class="nv">пТаблицаЗапроса</span> <span class="o">+</span> <span class="s">"ИмяВашегоРеквизита"</span><span class="p">;</span>
 </code></pre></div>
 <p><code>пТиповоеПоле</code> - тип Строка, значение поля запроса, которое будет использовано, если его разработчик его не подменит.</p>
 <p><em>Пример</em></p>
 <div class="highlight"><pre><span></span><code><span class="k">Функция</span> <span class="nf">ПолучитьПредставлениеПоляЗапроса_Универсальное</span><span class="p">(</span><span class="nv">пИмяПоля</span><span class="p">,</span> <span class="nv">ИмяОбъекта1С</span><span class="p">,</span> <span class="nv">пТабличнаяЧасть</span><span class="p">,</span> <span class="nv">пТаблицаЗапроса</span><span class="p">,</span> <span class="nv">пТиповоеПоле</span><span class="p">)</span> <span class="k">Экспорт</span>
-    <span class="k">Если</span> <span class="nv">пИмяПоля</span> <span class="o">=</span> <span class="s">&quot;ЦЕНА&quot;</span> <span class="k">Тогда</span>
-        <span class="k">Возврат</span> <span class="nv">пТаблицаЗапроса</span> <span class="o">+</span> <span class="s">&quot;ЦенаДоставки&quot;</span><span class="p">;</span>
+    <span class="k">Если</span> <span class="nv">пИмяПоля</span> <span class="o">=</span> <span class="s">"ЦЕНА"</span> <span class="k">Тогда</span>
+        <span class="k">Возврат</span> <span class="nv">пТаблицаЗапроса</span> <span class="o">+</span> <span class="s">"ЦенаДоставки"</span><span class="p">;</span>
     <span class="k">КонецЕсли</span><span class="p">;</span>
 
     <span class="k">Возврат</span> <span class="nv">пТиповоеПоле</span><span class="p">;</span>
@@ -2188,10 +2188,10 @@
 <div class="highlight"><pre><span></span><code><span class="k">Процедура</span> <span class="nf">ПослеФормированииТаблицыЧека</span><span class="p">(</span><span class="nv">пТаблицаЧека</span><span class="p">,</span> <span class="nv">пПараметры</span><span class="p">)</span> <span class="k">Экспорт</span>
     <span class="c1">//ОПИСАНИЕ: https://github.com/andrei-karpov/1c_kkt_54fz/blob/main/for_programmers.md#послеформированиитаблицычека</span>
 
-    <span class="nv">НаименованиеАгента</span> <span class="o">=</span> <span class="s">&quot;Комиссионер &lt;автоматически&gt;&quot;</span><span class="p">;</span>
+    <span class="nv">НаименованиеАгента</span> <span class="o">=</span> <span class="s">"Комиссионер &lt;автоматически&gt;"</span><span class="p">;</span>
     <span class="nf">ДобавитьДанныеАгентаВТаблицу</span><span class="p">(</span><span class="nv">НаименованиеАгента</span><span class="p">);</span>
-    <span class="nv">КатегорияКоммиссионныйТовар</span> <span class="o">=</span> <span class="nn">Справочники</span><span class="o">.</span><span class="nc">КатегорииОбъектов</span><span class="o">.</span><span class="nf">НайтиПоНаименованию</span><span class="p">(</span><span class="s">&quot;Комиссионный товар&quot;</span><span class="p">);</span>
-    <span class="nv">СвойствоПроизводитель</span> <span class="o">=</span> <span class="nn">ПланыВидовХарактеристик</span><span class="o">.</span><span class="nc">СвойстваОбъектов</span><span class="o">.</span><span class="nf">НайтиПоНаименованию</span><span class="p">(</span><span class="s">&quot;Производитель&quot;</span><span class="p">);</span>
+    <span class="nv">КатегорияКоммиссионныйТовар</span> <span class="o">=</span> <span class="nn">Справочники</span><span class="o">.</span><span class="nc">КатегорииОбъектов</span><span class="o">.</span><span class="nf">НайтиПоНаименованию</span><span class="p">(</span><span class="s">"Комиссионный товар"</span><span class="p">);</span>
+    <span class="nv">СвойствоПроизводитель</span> <span class="o">=</span> <span class="nn">ПланыВидовХарактеристик</span><span class="o">.</span><span class="nc">СвойстваОбъектов</span><span class="o">.</span><span class="nf">НайтиПоНаименованию</span><span class="p">(</span><span class="s">"Производитель"</span><span class="p">);</span>
     <span class="k">Для</span> <span class="k">Каждого</span> <span class="nv">Строка</span> <span class="k">Из</span> <span class="nv">пТаблицаЧека</span> <span class="k">Цикл</span>
         <span class="k">Если</span> <span class="k">НЕ</span> <span class="nf">НоменклатураКомиссионная</span><span class="p">(</span><span class="nv">Строка</span><span class="o">.</span><span class="nv">Номенклатура</span><span class="p">,</span> <span class="nv">КатегорияКоммиссионныйТовар</span><span class="p">)</span> <span class="k">Тогда</span>
             <span class="k">Продолжить</span><span class="p">;</span>
@@ -2218,43 +2218,43 @@
     <span class="nv">мПараметрыУстройства</span> <span class="o">=</span> <span class="nv">ОсновнаяОбработка</span><span class="o">.</span><span class="nv">мПараметрыУстройства</span><span class="p">;</span>
     <span class="nv">ДанныеРаспределения</span> <span class="o">=</span> <span class="nv">мПараметрыУстройства</span><span class="o">.</span><span class="nv">T_СоответствиеПоПризнакамАгента</span><span class="p">;</span>
 
-    <span class="k">Если</span> <span class="nb">ТипЗнч</span><span class="p">(</span><span class="nv">ДанныеРаспределения</span><span class="p">)</span> <span class="o">=</span> <span class="nb">Тип</span><span class="p">(</span><span class="s">&quot;Структура&quot;</span><span class="p">)</span> <span class="k">Тогда</span>   
+    <span class="k">Если</span> <span class="nb">ТипЗнч</span><span class="p">(</span><span class="nv">ДанныеРаспределения</span><span class="p">)</span> <span class="o">=</span> <span class="nb">Тип</span><span class="p">(</span><span class="s">"Структура"</span><span class="p">)</span> <span class="k">Тогда</span>   
         <span class="nv">ТаблицаДоговоров</span> <span class="o">=</span> <span class="nv">ДанныеРаспределения</span><span class="o">.</span><span class="nv">ТаблицаДоговоров</span><span class="p">;</span>        
     <span class="k">Иначе</span>
         <span class="nv">ТаблицаДоговоров</span> <span class="o">=</span> <span class="k">Новый</span> <span class="nc">ТаблицаЗначений</span><span class="p">;</span>
-        <span class="nv">ТаблицаДоговоров</span><span class="o">.</span><span class="nv">Колонки</span><span class="o">.</span><span class="nf">Добавить</span><span class="p">(</span><span class="s">&quot;НаименованиеДоговора&quot;</span><span class="p">,</span> <span class="k">Новый</span> <span class="nc">ОписаниеТипов</span><span class="p">(</span><span class="s">&quot;Строка&quot;</span><span class="p">));</span>
-        <span class="nv">ТаблицаДоговоров</span><span class="o">.</span><span class="nv">Колонки</span><span class="o">.</span><span class="nf">Добавить</span><span class="p">(</span><span class="s">&quot;Договор&quot;</span><span class="p">,</span> <span class="k">Новый</span> <span class="nc">ОписаниеТипов</span><span class="p">(</span><span class="s">&quot;Строка&quot;</span><span class="p">));</span>
+        <span class="nv">ТаблицаДоговоров</span><span class="o">.</span><span class="nv">Колонки</span><span class="o">.</span><span class="nf">Добавить</span><span class="p">(</span><span class="s">"НаименованиеДоговора"</span><span class="p">,</span> <span class="k">Новый</span> <span class="nc">ОписаниеТипов</span><span class="p">(</span><span class="s">"Строка"</span><span class="p">));</span>
+        <span class="nv">ТаблицаДоговоров</span><span class="o">.</span><span class="nv">Колонки</span><span class="o">.</span><span class="nf">Добавить</span><span class="p">(</span><span class="s">"Договор"</span><span class="p">,</span> <span class="k">Новый</span> <span class="nc">ОписаниеТипов</span><span class="p">(</span><span class="s">"Строка"</span><span class="p">));</span>
 
         <span class="nv">ДанныеРаспределения</span> <span class="o">=</span> <span class="k">Новый</span> <span class="nc">Структура</span><span class="p">;</span>
-        <span class="nv">ДанныеРаспределения</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;ТаблицаДоговоров&quot;</span><span class="p">,</span> <span class="nv">ТаблицаДоговоров</span><span class="p">);</span>
-        <span class="nv">ДанныеРаспределения</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;Соответствие&quot;</span><span class="p">,</span> <span class="k">Новый</span> <span class="nc">Соответствие</span><span class="p">);</span>
-        <span class="nv">мПараметрыУстройства</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;T_СоответствиеПоПризнакамАгента&quot;</span><span class="p">,</span> <span class="nv">ДанныеРаспределения</span><span class="p">);</span>
+        <span class="nv">ДанныеРаспределения</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">"ТаблицаДоговоров"</span><span class="p">,</span> <span class="nv">ТаблицаДоговоров</span><span class="p">);</span>
+        <span class="nv">ДанныеРаспределения</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">"Соответствие"</span><span class="p">,</span> <span class="k">Новый</span> <span class="nc">Соответствие</span><span class="p">);</span>
+        <span class="nv">мПараметрыУстройства</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">"T_СоответствиеПоПризнакамАгента"</span><span class="p">,</span> <span class="nv">ДанныеРаспределения</span><span class="p">);</span>
     <span class="k">КонецЕсли</span><span class="p">;</span>  
 
     <span class="nv">ДанныеРаспределенияПоПозициям</span> <span class="o">=</span> <span class="nv">мПараметрыУстройства</span><span class="o">.</span><span class="nv">T_СоответствиеПоПризнакамАгентаПоПозициям</span><span class="p">;</span>
-    <span class="k">Если</span> <span class="k">НЕ</span> <span class="nb">ТипЗнч</span><span class="p">(</span><span class="nv">ДанныеРаспределенияПоПозициям</span><span class="p">)</span> <span class="o">=</span> <span class="nb">Тип</span><span class="p">(</span><span class="s">&quot;Структура&quot;</span><span class="p">)</span> <span class="k">Тогда</span>
+    <span class="k">Если</span> <span class="k">НЕ</span> <span class="nb">ТипЗнч</span><span class="p">(</span><span class="nv">ДанныеРаспределенияПоПозициям</span><span class="p">)</span> <span class="o">=</span> <span class="nb">Тип</span><span class="p">(</span><span class="s">"Структура"</span><span class="p">)</span> <span class="k">Тогда</span>
         <span class="nv">ДанныеРаспределенияПоПозициям</span> <span class="o">=</span> <span class="k">Новый</span> <span class="nc">Структура</span><span class="p">;</span>
-        <span class="nv">ДанныеРаспределенияПоПозициям</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;ТаблицаДоговоров&quot;</span><span class="p">,</span> <span class="nv">ТаблицаДоговоров</span><span class="p">);</span>
-        <span class="nv">ДанныеРаспределенияПоПозициям</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;Соответствие&quot;</span><span class="p">,</span> <span class="k">Новый</span> <span class="nc">Соответствие</span><span class="p">);</span>
-        <span class="nv">мПараметрыУстройства</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;T_СоответствиеПоПризнакамАгентаПоПозициям&quot;</span><span class="p">,</span> <span class="nv">ДанныеРаспределенияПоПозициям</span><span class="p">);</span>
+        <span class="nv">ДанныеРаспределенияПоПозициям</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">"ТаблицаДоговоров"</span><span class="p">,</span> <span class="nv">ТаблицаДоговоров</span><span class="p">);</span>
+        <span class="nv">ДанныеРаспределенияПоПозициям</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">"Соответствие"</span><span class="p">,</span> <span class="k">Новый</span> <span class="nc">Соответствие</span><span class="p">);</span>
+        <span class="nv">мПараметрыУстройства</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">"T_СоответствиеПоПризнакамАгентаПоПозициям"</span><span class="p">,</span> <span class="nv">ДанныеРаспределенияПоПозициям</span><span class="p">);</span>
     <span class="k">КонецЕсли</span><span class="p">;</span>
 
-    <span class="k">Если</span> <span class="nv">ТаблицаДоговоров</span><span class="o">.</span><span class="nf">Найти</span><span class="p">(</span><span class="nv">НаименованиеАгента</span><span class="p">,</span> <span class="s">&quot;НаименованиеДоговора&quot;</span><span class="p">)</span> <span class="o">&lt;&gt;</span> <span class="kc">Неопределено</span> <span class="k">Тогда</span>
+    <span class="k">Если</span> <span class="nv">ТаблицаДоговоров</span><span class="o">.</span><span class="nf">Найти</span><span class="p">(</span><span class="nv">НаименованиеАгента</span><span class="p">,</span> <span class="s">"НаименованиеДоговора"</span><span class="p">)</span> <span class="o">&lt;&gt;</span> <span class="kc">Неопределено</span> <span class="k">Тогда</span>
         <span class="k">Возврат</span><span class="p">;</span>
     <span class="k">КонецЕсли</span><span class="p">;</span> 
 
-    <span class="nv">ДанныеАгента</span> <span class="o">=</span> <span class="k">Новый</span> <span class="nc">Структура</span><span class="p">(</span><span class="s">&quot;ПризнакАгента,ОперацияПлатежногоАгента,ТелефонПлатежногоАгента,</span>
+    <span class="nv">ДанныеАгента</span> <span class="o">=</span> <span class="k">Новый</span> <span class="nc">Структура</span><span class="p">(</span><span class="s">"ПризнакАгента,ОперацияПлатежногоАгента,ТелефонПлатежногоАгента,</span>
                   <span class="s">|НаименованиеОператораПеревода,ТелефонОператораПеревода,АдресОператораПеревода,</span>
-                  <span class="s">|ИННОператораПеревода,ТелефонОператораПоПриемуПлатежей&quot;</span><span class="p">);</span> 
-    <span class="nv">ДанныеАгента</span><span class="o">.</span><span class="nv">ПризнакАгента</span> <span class="o">=</span> <span class="s">&quot;Комиссионер&quot;</span><span class="p">;</span>
-    <span class="nv">ДанныеАгента</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;Наименование&quot;</span><span class="p">,</span> <span class="nv">НаименованиеАгента</span><span class="p">);</span>
+                  <span class="s">|ИННОператораПеревода,ТелефонОператораПоПриемуПлатежей"</span><span class="p">);</span> 
+    <span class="nv">ДанныеАгента</span><span class="o">.</span><span class="nv">ПризнакАгента</span> <span class="o">=</span> <span class="s">"Комиссионер"</span><span class="p">;</span>
+    <span class="nv">ДанныеАгента</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">"Наименование"</span><span class="p">,</span> <span class="nv">НаименованиеАгента</span><span class="p">);</span>
 
 
     <span class="nv">НоваяСтрока</span> <span class="o">=</span> <span class="nv">ТаблицаДоговоров</span><span class="o">.</span><span class="nf">Добавить</span><span class="p">();</span>
     <span class="nv">НоваяСтрока</span><span class="o">.</span><span class="nv">НаименованиеДоговора</span> <span class="o">=</span> <span class="nv">НаименованиеАгента</span><span class="p">;</span>
     <span class="nv">НоваяСтрока</span><span class="o">.</span><span class="nv">Договор</span> <span class="o">=</span> <span class="nv">ОсновнаяОбработка</span><span class="o">.</span><span class="nf">ККТ_ПреобразоватьДанныеВСтроку</span><span class="p">(</span><span class="nv">ДанныеАгента</span><span class="p">);</span>
 
-    <span class="nv">ДанныеРаспределенияПоПозициям</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;ТаблицаДоговоров&quot;</span><span class="p">,</span> <span class="nv">ТаблицаДоговоров</span><span class="p">);</span>
+    <span class="nv">ДанныеРаспределенияПоПозициям</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">"ТаблицаДоговоров"</span><span class="p">,</span> <span class="nv">ТаблицаДоговоров</span><span class="p">);</span>
 
 <span class="k">КонецПроцедуры</span>
 </code></pre></div>
@@ -2265,41 +2265,41 @@
     <span class="nv">мПараметрыУстройства</span> <span class="o">=</span> <span class="nv">ОсновнаяОбработка</span><span class="o">.</span><span class="nv">мПараметрыУстройства</span><span class="p">;</span>
     <span class="nv">ДанныеРаспределения</span> <span class="o">=</span> <span class="nv">мПараметрыУстройства</span><span class="o">.</span><span class="nv">T_СоответствиеПоПризнакамПоставщика</span><span class="p">;</span>
 
-    <span class="k">Если</span> <span class="nb">ТипЗнч</span><span class="p">(</span><span class="nv">ДанныеРаспределения</span><span class="p">)</span> <span class="o">=</span> <span class="nb">Тип</span><span class="p">(</span><span class="s">&quot;Структура&quot;</span><span class="p">)</span> <span class="k">Тогда</span>
+    <span class="k">Если</span> <span class="nb">ТипЗнч</span><span class="p">(</span><span class="nv">ДанныеРаспределения</span><span class="p">)</span> <span class="o">=</span> <span class="nb">Тип</span><span class="p">(</span><span class="s">"Структура"</span><span class="p">)</span> <span class="k">Тогда</span>
         <span class="nv">ТаблицаПоставщиков</span> <span class="o">=</span> <span class="nv">ДанныеРаспределения</span><span class="o">.</span><span class="nv">ТаблицаПоставщиков</span><span class="p">;</span>
     <span class="k">Иначе</span>
         <span class="nv">ТаблицаПоставщиков</span> <span class="o">=</span> <span class="k">Новый</span> <span class="nc">ТаблицаЗначений</span><span class="p">;</span>
-        <span class="nv">ТаблицаПоставщиков</span><span class="o">.</span><span class="nv">Колонки</span><span class="o">.</span><span class="nf">Добавить</span><span class="p">(</span><span class="s">&quot;НаименованиеПоставщика&quot;</span><span class="p">,</span> <span class="k">Новый</span> <span class="nc">ОписаниеТипов</span><span class="p">(</span><span class="s">&quot;Строка&quot;</span><span class="p">));</span>
-        <span class="nv">ТаблицаПоставщиков</span><span class="o">.</span><span class="nv">Колонки</span><span class="o">.</span><span class="nf">Добавить</span><span class="p">(</span><span class="s">&quot;Поставщик&quot;</span><span class="p">,</span> <span class="k">Новый</span> <span class="nc">ОписаниеТипов</span><span class="p">(</span><span class="s">&quot;Строка&quot;</span><span class="p">));</span>
+        <span class="nv">ТаблицаПоставщиков</span><span class="o">.</span><span class="nv">Колонки</span><span class="o">.</span><span class="nf">Добавить</span><span class="p">(</span><span class="s">"НаименованиеПоставщика"</span><span class="p">,</span> <span class="k">Новый</span> <span class="nc">ОписаниеТипов</span><span class="p">(</span><span class="s">"Строка"</span><span class="p">));</span>
+        <span class="nv">ТаблицаПоставщиков</span><span class="o">.</span><span class="nv">Колонки</span><span class="o">.</span><span class="nf">Добавить</span><span class="p">(</span><span class="s">"Поставщик"</span><span class="p">,</span> <span class="k">Новый</span> <span class="nc">ОписаниеТипов</span><span class="p">(</span><span class="s">"Строка"</span><span class="p">));</span>
 
         <span class="nv">ДанныеРаспределения</span> <span class="o">=</span> <span class="k">Новый</span> <span class="nc">Структура</span><span class="p">;</span>
-        <span class="nv">ДанныеРаспределения</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;ТаблицаПоставщиков&quot;</span><span class="p">,</span> <span class="nv">ТаблицаПоставщиков</span><span class="p">);</span>
-        <span class="nv">ДанныеРаспределения</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;Соответствие&quot;</span><span class="p">,</span> <span class="k">Новый</span> <span class="nc">Соответствие</span><span class="p">);</span>
+        <span class="nv">ДанныеРаспределения</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">"ТаблицаПоставщиков"</span><span class="p">,</span> <span class="nv">ТаблицаПоставщиков</span><span class="p">);</span>
+        <span class="nv">ДанныеРаспределения</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">"Соответствие"</span><span class="p">,</span> <span class="k">Новый</span> <span class="nc">Соответствие</span><span class="p">);</span>
 
-        <span class="nv">мПараметрыУстройства</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;T_СоответствиеПоПризнакамПоставщика&quot;</span><span class="p">,</span> <span class="nv">ДанныеРаспределения</span><span class="p">);</span>
+        <span class="nv">мПараметрыУстройства</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">"T_СоответствиеПоПризнакамПоставщика"</span><span class="p">,</span> <span class="nv">ДанныеРаспределения</span><span class="p">);</span>
     <span class="k">КонецЕсли</span><span class="p">;</span>  
 
     <span class="nv">ДанныеРаспределенияПоПозициям</span> <span class="o">=</span> <span class="nv">мПараметрыУстройства</span><span class="o">.</span><span class="nv">T_СоответствиеПоПризнакамПоставщикаПоПозициям</span><span class="p">;</span>
-    <span class="k">Если</span> <span class="k">НЕ</span> <span class="nb">ТипЗнч</span><span class="p">(</span><span class="nv">ДанныеРаспределенияПоПозициям</span><span class="p">)</span> <span class="o">=</span> <span class="nb">Тип</span><span class="p">(</span><span class="s">&quot;Структура&quot;</span><span class="p">)</span> <span class="k">Тогда</span>
+    <span class="k">Если</span> <span class="k">НЕ</span> <span class="nb">ТипЗнч</span><span class="p">(</span><span class="nv">ДанныеРаспределенияПоПозициям</span><span class="p">)</span> <span class="o">=</span> <span class="nb">Тип</span><span class="p">(</span><span class="s">"Структура"</span><span class="p">)</span> <span class="k">Тогда</span>
         <span class="nv">ДанныеРаспределенияПоПозициям</span> <span class="o">=</span> <span class="k">Новый</span> <span class="nc">Структура</span><span class="p">;</span>
-        <span class="nv">ДанныеРаспределенияПоПозициям</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;ТаблицаПоставщиков&quot;</span><span class="p">,</span> <span class="nv">ТаблицаПоставщиков</span><span class="p">);</span>
-        <span class="nv">ДанныеРаспределенияПоПозициям</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;Соответствие&quot;</span><span class="p">,</span> <span class="k">Новый</span> <span class="nc">Соответствие</span><span class="p">);</span>
-        <span class="nv">мПараметрыУстройства</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;T_СоответствиеПоПризнакамПоставщикаПоПозициям&quot;</span><span class="p">,</span> <span class="nv">ДанныеРаспределенияПоПозициям</span><span class="p">);</span>
+        <span class="nv">ДанныеРаспределенияПоПозициям</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">"ТаблицаПоставщиков"</span><span class="p">,</span> <span class="nv">ТаблицаПоставщиков</span><span class="p">);</span>
+        <span class="nv">ДанныеРаспределенияПоПозициям</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">"Соответствие"</span><span class="p">,</span> <span class="k">Новый</span> <span class="nc">Соответствие</span><span class="p">);</span>
+        <span class="nv">мПараметрыУстройства</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">"T_СоответствиеПоПризнакамПоставщикаПоПозициям"</span><span class="p">,</span> <span class="nv">ДанныеРаспределенияПоПозициям</span><span class="p">);</span>
     <span class="k">КонецЕсли</span><span class="p">;</span>  
 
     <span class="nv">ДанныеПоставщика</span> <span class="o">=</span> <span class="k">Новый</span> <span class="nc">Структура</span><span class="p">;</span>
-    <span class="nv">ДанныеПоставщика</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;Наименование&quot;</span><span class="p">,</span> <span class="nv">НаименованиеПоставщика</span><span class="p">);</span>
-    <span class="nv">ДанныеПоставщика</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;Поставщик&quot;</span><span class="p">,</span> <span class="nv">ДанныеПоставщикаТекущие</span><span class="o">.</span><span class="nv">Наименование</span><span class="p">);</span>
-    <span class="nv">ДанныеПоставщика</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;ТелефонПоставщика&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">);</span> 
-    <span class="nv">ДанныеПоставщика</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;ИННПоставщика&quot;</span><span class="p">,</span> <span class="nv">ДанныеПоставщикаТекущие</span><span class="o">.</span><span class="nv">ИНН</span><span class="p">);</span>
+    <span class="nv">ДанныеПоставщика</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">"Наименование"</span><span class="p">,</span> <span class="nv">НаименованиеПоставщика</span><span class="p">);</span>
+    <span class="nv">ДанныеПоставщика</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">"Поставщик"</span><span class="p">,</span> <span class="nv">ДанныеПоставщикаТекущие</span><span class="o">.</span><span class="nv">Наименование</span><span class="p">);</span>
+    <span class="nv">ДанныеПоставщика</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">"ТелефонПоставщика"</span><span class="p">,</span> <span class="s">""</span><span class="p">);</span> 
+    <span class="nv">ДанныеПоставщика</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">"ИННПоставщика"</span><span class="p">,</span> <span class="nv">ДанныеПоставщикаТекущие</span><span class="o">.</span><span class="nv">ИНН</span><span class="p">);</span>
 
-    <span class="nv">СтрокаПоставщика</span> <span class="o">=</span> <span class="nv">ТаблицаПоставщиков</span><span class="o">.</span><span class="nf">Найти</span><span class="p">(</span><span class="nv">НаименованиеПоставщика</span><span class="p">,</span> <span class="s">&quot;НаименованиеПоставщика&quot;</span><span class="p">);</span>
+    <span class="nv">СтрокаПоставщика</span> <span class="o">=</span> <span class="nv">ТаблицаПоставщиков</span><span class="o">.</span><span class="nf">Найти</span><span class="p">(</span><span class="nv">НаименованиеПоставщика</span><span class="p">,</span> <span class="s">"НаименованиеПоставщика"</span><span class="p">);</span>
     <span class="k">Если</span> <span class="nv">СтрокаПоставщика</span> <span class="o">=</span> <span class="kc">Неопределено</span> <span class="k">Тогда</span>
         <span class="nv">СтрокаПоставщика</span> <span class="o">=</span> <span class="nv">ТаблицаПоставщиков</span><span class="o">.</span><span class="nf">Добавить</span><span class="p">();</span>   
     <span class="k">КонецЕсли</span><span class="p">;</span> 
     <span class="nv">СтрокаПоставщика</span><span class="o">.</span><span class="nv">НаименованиеПоставщика</span> <span class="o">=</span> <span class="nv">НаименованиеПоставщика</span><span class="p">;</span>
     <span class="nv">СтрокаПоставщика</span><span class="o">.</span><span class="nv">Поставщик</span> <span class="o">=</span> <span class="nv">ОсновнаяОбработка</span><span class="o">.</span><span class="nf">ККТ_ПреобразоватьДанныеВСтроку</span><span class="p">(</span><span class="nv">ДанныеПоставщика</span><span class="p">);</span>
-    <span class="nv">ДанныеРаспределенияПоПозициям</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">&quot;ТаблицаПоставщиков&quot;</span><span class="p">,</span> <span class="nv">ТаблицаПоставщиков</span><span class="p">);</span>
+    <span class="nv">ДанныеРаспределенияПоПозициям</span><span class="o">.</span><span class="nf">Вставить</span><span class="p">(</span><span class="s">"ТаблицаПоставщиков"</span><span class="p">,</span> <span class="nv">ТаблицаПоставщиков</span><span class="p">);</span>
 
 <span class="k">КонецПроцедуры</span>
 </code></pre></div>
