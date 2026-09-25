@@ -17,4 +17,15 @@
 | Официальный сайт с компонентами для оборудования СчетМаш                                     | <https://schetmash.com/>                                                                                                                                                                                                                                                             |
 | Описание методов веб-сервера АТОЛ                                                            | <http://integration.atol.ru/#103cbcf96a>                                                                                                                                                                                                                                             |
 | База знаний АТОЛ для работы по 54 ФЗ                                                         | <https://onedrive.live.com/redir?resid=189C614ED00D4C23%21128&authkey=%21ABE4IM6eOvPtlrQ&page=View&wd=target%2854-%D0%A4%D0%97.one%7C27377c95-2928-4aa8-8fd7-4b03b801c6ef%2F%D0%94%D0%BE%D0%BF.%20%D0%BC%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%B0%D0%BB%D1%8B%7Ca071440e-6651-458f-a477-7fba4fd851d0%2F%29> |
-| Актульнаые драйвера ПосЦентр                                                        | <https://disk.yandex.ru/d/6Pj_Co6NfQqV_g> |
+| Актуальные драйвера ПосЦентр                                                        | <https://disk.yandex.ru/d/6Pj_Co6NfQqV_g> |
+
+## Официальные разъяснения для проверки настроек
+
+Ссылки проверены при редакции документации 19.09.2026. Перед применением переходных правил проверьте дату и содержание публикации.
+
+- [ФНС: формирование чеков с НДС 22%, включая предоплату и возвраты](https://www.nalog.gov.ru/rn59/news/activities_fts/16598241/).
+- [ФНС: методические рекомендации по исправлению ошибок ККТ](https://www.nalog.gov.ru/html/sites/www.rn47.nalog.ru/media/Listovki/kktrekom.pdf).
+- [Честный знак: ТС ПИоТ и действующий токен разрешительного режима](https://markirovka.ru/knowledge/tovarnye-gruppy/obschie-voprosy-gis/obyazatelno-li-ustanavlivat-ts-piot-esli-kassa-vzaimodeystvuet-s-sistemoy-markirovki-i-lokalnym-modu).
+- [Честный знак: фасовка и продажа моторных масел в розлив](https://markirovka.ru/knowledge/tovarnye-gruppy/motornye-masla/fasovka-motornykh-masel-nuzhno-li-markirovat-motornye-masla-prodavaemye-na-rozliv).
+
+Сведения о том, как обработка заполняет чек, находятся в соответствующих разделах инструкции. Порядок применения ККТ и правила товарной группы проверяйте по официальным разъяснениям.
