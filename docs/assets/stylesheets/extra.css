@@ -20,3 +20,34 @@
   display: none;
   }
 }
+
+
+/* Readable commands and addresses in the TS PIoT chapter of the PDF. */
+@media print {
+  [id="ts_piot/:"] code {
+    color: #222 !important;
+    font-size: 9pt !important;
+  }
+
+  [id="ts_piot/:"] pre {
+    font-size: 9pt !important;
+    white-space: pre-wrap;
+  }
+
+  [id="ts_piot/:"] pre > code {
+    font-size: inherit !important;
+    line-height: 1.4;
+    white-space: pre-wrap !important;
+  }
+
+  [id="ts_piot/:"] code span {
+    color: #222 !important;
+  }
+}
+
+/* Indent nested sections in the desktop sidebar. */
+@media screen and (min-width: 76.25em) {
+  .md-nav--primary .md-nav[data-md-level="2"] > .md-nav__list {
+    padding-left: 1.6rem;
+  }
+}

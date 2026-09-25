@@ -1,6 +1,7 @@
 site_name: 'ККТ ОНЛАЙН 54-ФЗ: Решение для онлайн касс'
 docs_dir: docs
 site_author: Андрей Карпов
+copyright: ""
 site_description: >-
   Инструкция по работе с программой "ККТ-ОНЛАЙН 54-ФЗ: Обработка для 
   работы фискальных регистраторов" 1С.
@@ -13,7 +14,9 @@ nav:
   - Описание параметров: parameters_description.md
   - Документация: 
     - Общая информация: instruction.md
-    - Маркировка: marking.md
+    - Маркировка:
+      - Общие сведения: marking.md
+      - Настройка ТС ПИоТ: ts_piot.md
     - Рассылка: management_distribution.md
     - Форма проверки чека: form_check_and_check_correction.md
     - Шаблон чека: template_document.md

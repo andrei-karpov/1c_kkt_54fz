@@ -1,0 +1,32 @@
+flowchart TB
+    accTitle: Как ККТ-ОНЛАЙН работает с ТС ПИоТ и кассой
+    accDescr: Проверка марки передаётся в ЕСМ по HTTPS. Печать и фискализация идут отдельным каналом через компоненту 1С и драйвер ККТ. ЕСМ связан с ГИС МТ, контроллером локального модуля и драйвером ККТ.
+
+    APP["ККТ-ОНЛАЙН<br/>версия 4.17 и выше<br/>Обработка в 1С"]
+    ESM["ЕСМ / ТС ПИоТ<br/>Проверка разрешения<br/>на продажу"]
+    GIS["ГИС МТ<br/>«Честный знак»<br/>Онлайн-проверка"]
+    CONTROLLER["Контроллер ЛМ<br/>порт 50063"]
+    LM["Локальный модуль<br/>Офлайн-проверка"]
+    COMPONENT["Компонента 1С<br/>Печать и команды"]
+    DRIVER["ДККТ<br/>Драйвер ККТ"]
+    KKT["ККТ / ФН<br/>Фискализация чека"]
+
+    APP -->|"Проверка КМ · HTTPS :51401"| ESM
+    ESM -->|"Ответ ЕСМ"| APP
+    ESM -->|"Онлайн"| GIS
+    ESM -->|"Офлайн"| CONTROLLER
+    CONTROLLER --> LM
+    ESM <-->|"Связь с кассой · Порт драйвера :4042"| DRIVER
+    APP -->|"Данные чека, команды ККТ"| COMPONENT
+    COMPONENT --> DRIVER
+    DRIVER <--> KKT
+
+    NOTE["Порты 4041 (АТОЛ) и 50003 (Дримкас): отдельные настройки кассового ПО."]
+
+    classDef main fill:#f0fdfa,stroke:#75b8ae,color:#173b39,stroke-width:2px;
+    classDef service fill:#f8fbfa,stroke:#a3bfba,color:#173b39,stroke-width:2px;
+    classDef note fill:#fff,stroke:#d6e5e1,color:#49635f;
+    class APP,ESM,COMPONENT,DRIVER,KKT main;
+    class GIS,CONTROLLER,LM service;
+    class NOTE note;
+    linkStyle default stroke:#0f766e,stroke-width:2px;
