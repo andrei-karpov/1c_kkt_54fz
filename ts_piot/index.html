@@ -1,0 +1,2608 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Инструкция по работе с программой "ККТ-ОНЛАЙН 54-ФЗ: Обработка для  работы фискальных регистраторов" 1С.">
+      
+      
+        <meta name="author" content="Андрей Карпов">
+      
+      
+        <link rel="canonical" href="https://andrei-karpov.github.io/1c_kkt_54fz/ts_piot/">
+      
+      
+        <link rel="prev" href="../marking/">
+      
+      
+        <link rel="next" href="../management_distribution/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Настройка ТС ПИоТ - ККТ ОНЛАЙН 54-ФЗ: Решение для онлайн касс</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-CFJS7X0PH9"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-CFJS7X0PH9",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-CFJS7X0PH9",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#настройка-тс-пиот" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href=".." title="ККТ ОНЛАЙН 54-ФЗ: Решение для онлайн касс" class="md-header__button md-logo" aria-label="ККТ ОНЛАЙН 54-ФЗ: Решение для онлайн касс" data-md-component="logo">
+      
+  <img src="../assets/images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ККТ ОНЛАЙН 54-ФЗ: Решение для онлайн касс
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Настройка ТС ПИоТ
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="teal"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1M8 13h8v-2H8zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4a5 5 0 0 0 5-5 5 5 0 0 0-5-5"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/andrei-karpov/1c_kkt_54fz" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    andrei-karpov/1c_kkt_54fz
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Главная
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../connecting/" class="md-tabs__link">
+          
+  
+  
+  Подключение
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../parameters_description/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Описание параметров
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../instruction/" class="md-tabs__link">
+          
+  
+  
+  Документация
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../for_programmers/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Для программистов
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../licensing/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Лицензирование
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../components/" class="md-tabs__link">
+          
+  
+  
+  Дополнительно
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="ККТ ОНЛАЙН 54-ФЗ: Решение для онлайн касс" class="md-nav__button md-logo" aria-label="ККТ ОНЛАЙН 54-ФЗ: Решение для онлайн касс" data-md-component="logo">
+      
+  <img src="../assets/images/logo.png" alt="logo">
+
+    </a>
+    ККТ ОНЛАЙН 54-ФЗ: Решение для онлайн касс
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/andrei-karpov/1c_kkt_54fz" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    andrei-karpov/1c_kkt_54fz
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Подключение
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Подключение
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../connecting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Описание
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rarus_connecting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Рарус
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../parameters_description/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Описание параметров
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Документация
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Документация
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../instruction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Общая информация
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Маркировка
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Маркировка
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../marking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Общие сведения
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка ТС ПИоТ
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка ТС ПИоТ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Требования перед началом настройки
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Требования перед началом настройки">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#минимальные-версии-по-семействам-ккт" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Минимальные версии по семействам ККТ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#модели-poscenter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Модели POScenter и ШТРИХ с прошивкой POScenter
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Как устроена работа
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ports" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Адреса и порты
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Адреса и порты">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#порты-драйверов-по-семействам" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Порты драйверов по семействам
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#общие-порты-есм-и-локального-модуля" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Общие порты ЕСМ и локального модуля
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#подготовка" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Подготовка кассового компьютера
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#установка-атол" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        АТОЛ: драйвер, ЕСМ и связь с кассой
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#установка-poscenter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POScenter: драйвер, лицензия ККТ и ЕСМ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#установка-тбм" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ШТРИХ / Торговый Баланс М: драйвер и ЕСМ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#установка-дримкас" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Дримкас Вики Принт: VikiDriver, VikiESM и ЕСМ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#установка-есм-и-лм" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Установка ЕСМ и локального модуля
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#регистрация-есм" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Регистрация ЕСМ и проверка лицензии
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Регистрация ЕСМ и проверка лицензии">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#сертификаты-https" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Сертификаты HTTPS
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Настройка ККТ-ОНЛАЙН
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Настройка ККТ-ОНЛАЙН">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#подключение-оборудования-для-печати" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Подключение оборудования для печати
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#подключение-тс-пиот-для-проверки-марки" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Подключение ТС ПИоТ для проверки марки
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#несколько-организаций" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Несколько организаций
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#резервный-переход-к-обычному-разрешительному-режиму" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Резервный переход к обычному разрешительному режиму
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#offline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Офлайн-проверки
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Проверка результата
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Проверка результата">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#emulator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Проверка с эмулятором
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diagnostics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Если подключение не работает
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Если подключение не работает">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#диагностика-портов" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Проверка портов в PowerShell
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#что-передать-в-поддержку" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Что передать в поддержку
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multi-register" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Несколько касс, организаций и работа через RDP
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#технические-сведения" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Коротко о запросах обработки
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Источники и дата проверки
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../management_distribution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Рассылка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../form_check_and_check_correction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Форма проверки чека
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../template_document/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Шаблон чека
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mechanism_distribution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Механизм распределения
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../for_programmers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Для программистов
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../licensing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лицензирование
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Дополнительно
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Дополнительно
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../components/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Компоненты
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../useful_links/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Полезные ссылки
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../errors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Возможные ошибки
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Требования перед началом настройки
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Требования перед началом настройки">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#минимальные-версии-по-семействам-ккт" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Минимальные версии по семействам ККТ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#модели-poscenter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Модели POScenter и ШТРИХ с прошивкой POScenter
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Как устроена работа
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ports" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Адреса и порты
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Адреса и порты">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#порты-драйверов-по-семействам" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Порты драйверов по семействам
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#общие-порты-есм-и-локального-модуля" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Общие порты ЕСМ и локального модуля
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#подготовка" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Подготовка кассового компьютера
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#установка-атол" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        АТОЛ: драйвер, ЕСМ и связь с кассой
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#установка-poscenter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POScenter: драйвер, лицензия ККТ и ЕСМ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#установка-тбм" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ШТРИХ / Торговый Баланс М: драйвер и ЕСМ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#установка-дримкас" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Дримкас Вики Принт: VikiDriver, VikiESM и ЕСМ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#установка-есм-и-лм" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Установка ЕСМ и локального модуля
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#регистрация-есм" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Регистрация ЕСМ и проверка лицензии
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Регистрация ЕСМ и проверка лицензии">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#сертификаты-https" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Сертификаты HTTPS
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Настройка ККТ-ОНЛАЙН
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Настройка ККТ-ОНЛАЙН">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#подключение-оборудования-для-печати" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Подключение оборудования для печати
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#подключение-тс-пиот-для-проверки-марки" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Подключение ТС ПИоТ для проверки марки
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#несколько-организаций" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Несколько организаций
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#резервный-переход-к-обычному-разрешительному-режиму" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Резервный переход к обычному разрешительному режиму
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#offline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Офлайн-проверки
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Проверка результата
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Проверка результата">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#emulator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Проверка с эмулятором
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diagnostics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Если подключение не работает
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Если подключение не работает">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#диагностика-портов" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Проверка портов в PowerShell
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#что-передать-в-поддержку" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Что передать в поддержку
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multi-register" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Несколько касс, организаций и работа через RDP
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#технические-сведения" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Коротко о запросах обработки
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Источники и дата проверки
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="настройка-тс-пиот">Настройка ТС ПИоТ<a class="headerlink" href="#настройка-тс-пиот" title="Permanent link">&para;</a></h1>
+<h2 id="requirements">Требования перед началом настройки<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h2>
+<p>Для этой инструкции нужна обработка <strong>ККТ-ОНЛАЙН версии 4.17 или выше</strong>. Установку выполняйте на кассовом компьютере с Windows. Основной сценарий: обработка 1С, драйвер ККТ и ЕСМ работают на одном компьютере, к которому подключена одна касса.</p>
+<table>
+<thead>
+<tr>
+<th>Что проверить</th>
+<th>Требование</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Обработка</td>
+<td>ККТ-ОНЛАЙН 4.17 или выше</td>
+</tr>
+<tr>
+<td>Касса</td>
+<td>Модель из поддерживаемого семейства: АТОЛ, POScenter, ШТРИХ с соответствующей веткой прошивки или Дримкас Вики Принт. Уточнения по моделям приведены ниже</td>
+</tr>
+<tr>
+<td>Регистрация ККТ</td>
+<td>ФФД 1.2; включён признак «Торговля маркированными товарами»</td>
+</tr>
+<tr>
+<td>Прошивка и драйвер</td>
+<td>Соответствуют выбранной ветке в таблице ниже; обычный драйвер без поддержки ЕСМ не подходит</td>
+</tr>
+<tr>
+<td>Компонента для 1С</td>
+<td>Поддерживает выбранный драйвер и нужные функции ККТ; разрядность соответствует процессу 1С</td>
+</tr>
+<tr>
+<td>ЕСМ</td>
+<td>Дистрибутив для своей ККТ из личного кабинета АО «ЕСП», действующая лицензия и зарегистрированный экземпляр</td>
+</tr>
+<tr>
+<td>Локальный модуль Честного знака</td>
+<td>Для офлайн-проверок нужны ЛМ ЧЗ и Контроллер ЛМ ЧЗ. Контроллер устанавливают на том же компьютере или сервере, где работает ЛМ</td>
+</tr>
+<tr>
+<td>Работа с ЛМ ЧЗ 2.0</td>
+<td>ЕСМ и lm-controller версии 1.6 или выше. Для Дримкас производитель отдельно требует ЛМ ЧЗ 2.5.1 или выше</td>
+</tr>
+<tr>
+<td>Доступ</td>
+<td>Права на установку ПО, доступ к личному кабинету ЕСП, интернет и разрешённые сетевые соединения из <a href="#ports">таблицы портов</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="минимальные-версии-по-семействам-ккт">Минимальные версии по семействам ККТ<a class="headerlink" href="#минимальные-версии-по-семействам-ккт" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Семейство</th>
+<th>Модель и прошивка</th>
+<th>Драйвер и дополнительные компоненты</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>АТОЛ</td>
+<td>Модель должна поддерживаться ЕСМ и работать на ФФД 1.2 с подходящей прошивкой АТОЛ. Общая инструкция ЕСП не задаёт одного номера прошивки для всех моделей</td>
+<td>ДККТ <strong>10.10.8.24 или выше</strong>, обязательно с компонентом «Интеграционные компоненты для ЕСМ». <a href="https://static.ao-esp.ru/downloads/pmsr/docs/ATOL/all/WINDOWS_2.1.pdf">Источник: ЕСП</a></td>
+</tr>
+<tr>
+<td>POScenter, РИТЕЙЛ, ШТРИХ с прошивкой POScenter</td>
+<td>Точная модель, версия модели и дата прошивки указаны в <a href="#модели-poscenter">следующей таблице</a></td>
+<td>POScenter <strong>5.21.1.1255 или выше</strong>, сборка с поддержкой ПИоТ из комплекта ЕСП. <a href="https://static.ao-esp.ru/downloads/pmsr/docs/POSCENTER/all/WINDOWS_2.3.pdf">Источник: ЕСП</a></td>
+</tr>
+<tr>
+<td>ШТРИХ / Торговый Баланс М</td>
+<td>Прошивка <strong>T.3</strong>, сборка <strong>7161 или выше</strong>; модель должна поддерживаться выбранным дистрибутивом ЕСМ</td>
+<td>Драйвер <strong>5.25.2096 или выше</strong>, при подключении к ККТ выбрать протокол <strong>3.0</strong>. <a href="https://static.ao-esp.ru/downloads/pmsr/docs/SHTRIHM/all/WINDOWS_1.8.pdf">Источник: ЕСП</a></td>
+</tr>
+<tr>
+<td>Дримкас</td>
+<td><strong>ВИКИ ПРИНТ 57 Ф, ВИКИ ПРИНТ 57 ПЛЮС Ф, ВИКИ ПРИНТ 80 ПЛЮС Ф</strong>; прошивка <strong>665.4.45 или выше</strong></td>
+<td><strong>VikiDriver 2.0.2 или выше</strong>, <strong>VikiESM 1.0 или выше</strong>. Windows со сборкой <strong>21H2 или новее</strong>. <a href="https://static.ao-esp.ru/downloads/pmsr/docs/DREAMKAS/all/WINDOWS_1.5.pdf">ЕСП</a>, <a href="https://help.dreamkas.ru/kb/viki-printy/ts-piot/install-ts-piot/">Дримкас</a></td>
+</tr>
+</tbody>
+</table>
+<p>В таблице указаны нижние границы из проверенных инструкций. Для новой установки берите свежий совместимый комплект из личного кабинета ЕСП. Компоненты комплекта рассчитаны на совместную работу; замена одного из них произвольной сборкой может нарушить связь с ЕСМ.</p>
+<p>У разных документов встречаются разные требования. Для АТОЛ здесь принят минимум 10.10.8.24 из общей инструкции ЕСП от 27.07.2026, хотя инструкция для расширения 1С содержит более раннее значение 10.10.8.23. Для VikiDriver принят минимум 2.0.2 из инструкции производителя Дримкас; PDF ЕСП содержит 2.0.1. Это версии разных документов, а не повод понижать уже установленный рабочий драйвер.</p>
+<h3 id="модели-poscenter">Модели POScenter и ШТРИХ с прошивкой POScenter<a class="headerlink" href="#модели-poscenter" title="Permanent link">&para;</a></h3>
+<p>Перечень приведён по <a href="https://static.ao-esp.ru/downloads/pmsr/docs/POSCENTER/all/WINDOWS_2.3.pdf">инструкции ЕСП v2.3 от 27.07.2026</a>. Проверяйте не только надпись на корпусе, но и версию модели, которую возвращает драйвер.</p>
+<table>
+<thead>
+<tr>
+<th>Модель</th>
+<th>Версия модели</th>
+<th>Прошивка не ниже</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Штрих-Нано-Ф</td>
+<td>003</td>
+<td>C3/D3 от 12.05.2026</td>
+</tr>
+<tr>
+<td>NCR-001 Ф</td>
+<td>003</td>
+<td>C3/D3 от 12.05.2026</td>
+</tr>
+<tr>
+<td>Штрих-Сити-Ф</td>
+<td>003</td>
+<td>C3/D3 от 12.05.2026</td>
+</tr>
+<tr>
+<td>Штрих-ЛАЙТ-02Ф</td>
+<td>003</td>
+<td>C3/D3 от 12.05.2026</td>
+</tr>
+<tr>
+<td>Штрих-МИНИ-01Ф</td>
+<td>003</td>
+<td>C3/D3 от 12.05.2026</td>
+</tr>
+<tr>
+<td>Штрих-М-02Ф</td>
+<td>003</td>
+<td>C3/D3 от 12.05.2026</td>
+</tr>
+<tr>
+<td>РИТЕЙЛ-КОМБО-01 Ф</td>
+<td>003</td>
+<td>C3/D3 от 10.12.2025</td>
+</tr>
+<tr>
+<td>РИТЕЙЛ-01ФМ</td>
+<td>003</td>
+<td>C3/D3 от 10.12.2025</td>
+</tr>
+<tr>
+<td>РИТЕЙЛ-02 Ф</td>
+<td>003</td>
+<td>C3/D3 от 10.12.2025</td>
+</tr>
+<tr>
+<td>POScenter-02 Ф</td>
+<td>003, 004</td>
+<td>C3/D3 от 10.12.2025</td>
+</tr>
+<tr>
+<td>POScenter-03ФМ</td>
+<td>003</td>
+<td>C3/D3 от 10.12.2025</td>
+</tr>
+<tr>
+<td>POScenter BANK-01Ф</td>
+<td>003</td>
+<td>C2 от 10.12.2025</td>
+</tr>
+</tbody>
+</table>
+<p>Обозначение C3/D3 в этой таблице повторяет перечень ЕСП. Оно не означает, что на любую кассу можно установить любую из двух веток. Файл прошивки выбирайте для своей модели по документации POScenter. В частности, у POScenter BANK-01Ф в перечне указана C2.</p>
+<p>Кассы ШТРИХ с прошивками POScenter и Торгового Баланса М настраиваются по разным веткам. До установки посмотрите версию ПО в тесте драйвера. Если на кассе T.3, используйте <a href="#установка-тбм">ветку ТБМ</a>. Для прошивки POScenter используйте <a href="#установка-poscenter">ветку POScenter</a>. Переход между прошивками не входит в обычную настройку ЕСМ и выполняется по процедуре производителя.</p>
+<p>Для АТОЛ и ТБМ в использованных общих инструкциях нет полного списка моделей с минимальными прошивками. Перед обновлением проверьте свою модель в личном кабинете ЕСП и документации производителя. Наличие поддержки ФФД 1.2 само по себе не подтверждает совместимость с выбранным ТС ПИоТ.</p>
+<h2 id="flow">Как устроена работа<a class="headerlink" href="#flow" title="Permanent link">&para;</a></h2>
+<p>ТС ПИоТ получает код маркировки от обработки и возвращает результат проверки. ЕСМ связывается с системой «Честный знак» и, когда это предусмотрено его настройками, с локальным модулем. Связь ЕСМ с драйвером ККТ нужна для получения сведений о кассе и работы с ФН.</p>
+<p>Обработка использует два отдельных маршрута:</p>
+<ol>
+<li>Проверяет марку через сервис ТС ПИоТ по указанному адресу, например <code>https://localhost:51401</code>.</li>
+<li>Передаёт фискальный чек через компоненту оборудования и драйвер ККТ. Печать не перенаправляется на HTTPS-адрес ТС ПИоТ.</li>
+</ol>
+<p><img alt="Проверка марки и формирование чека в ККТ-ОНЛАЙН" src="../media/ts_piot_flow.svg" /></p>
+<p>Исходник схемы для редактирования: <code>docs/media/ts_piot_flow.mmd</code> (Mermaid).</p>
+<p>Успешная связь с ЕСМ ещё не подтверждает правильную печать чека. Проверку марки и формирование чека нужно проверить отдельно.</p>
+<p>Эта глава адаптирует инструкции ЕСП для «1С Розница 3.0 (расширение)» к ККТ-ОНЛАЙН. В обработке используются её собственные настройки ТС ПИоТ. Установка расширения <code>.cfe</code> для типовой «Розницы», патчей типовой конфигурации и настройка её РМК не входят в описанный порядок.</p>
+<h2 id="ports">Адреса и порты<a class="headerlink" href="#ports" title="Permanent link">&para;</a></h2>
+<h3 id="порты-драйверов-по-семействам">Порты драйверов по семействам<a class="headerlink" href="#порты-драйверов-по-семействам" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Семейство ККТ</th>
+<th>Порт драйвера для связи с ЕСМ</th>
+<th>Что ещё учитывать</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>АТОЛ</td>
+<td><strong>4042/TCP</strong></td>
+<td>В свойствах драйвера отдельное поле «Порт сервера GRPC» настраивается на <strong>4041</strong></td>
+</tr>
+<tr>
+<td>POScenter, включая ШТРИХ с прошивкой POScenter</td>
+<td><strong>4042/TCP</strong></td>
+<td>Включите передачу информации в ЕСМ в дополнительных параметрах драйвера</td>
+</tr>
+<tr>
+<td>ШТРИХ / Торговый Баланс М</td>
+<td><strong>4042/TCP</strong></td>
+<td>Для связи драйвера с ККТ используется протокол ККТ 3.0</td>
+</tr>
+<tr>
+<td>Дримкас Вики Принт</td>
+<td><strong>4042/TCP</strong></td>
+<td>Связь кассового ПО с VikiDriver по умолчанию идёт на <strong>127.0.0.1:50003</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Порт 4042 указан в общих инструкциях ЕСП для всех четырёх семейств. У АТОЛ значение 4041 относится к отдельному полю свойств драйвера. Не заменяйте одно значение другим. <a href="https://static.ao-esp.ru/downloads/pmsr/docs/ATOL/all/WINDOWS_2.1.pdf">АТОЛ</a>, <a href="https://static.ao-esp.ru/downloads/pmsr/docs/POSCENTER/all/WINDOWS_2.3.pdf">POScenter</a>, <a href="https://static.ao-esp.ru/downloads/pmsr/docs/SHTRIHM/all/WINDOWS_1.8.pdf">ТБМ</a>, <a href="https://static.ao-esp.ru/downloads/pmsr/docs/DREAMKAS/all/WINDOWS_1.5.pdf">Дримкас</a>.</p>
+<p>Для Вики Принт следующие кассы могут использовать порты 50004, 50005 и далее. Фактическое значение смотрите в VikiClient: выберите кассу и откройте «Порты подключения». <a href="https://help.dreamkas.ru/kb/f-a-q/kassovaya-programma-ne-vidit-viki-print/">Инструкция Дримкас</a>.</p>
+<h3 id="общие-порты-есм-и-локального-модуля">Общие порты ЕСМ и локального модуля<a class="headerlink" href="#общие-порты-есм-и-локального-модуля" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Порт</th>
+<th>Назначение</th>
+<th>Где используется</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>51401/TCP, HTTPS</strong></td>
+<td>Приём запросов от кассового ПО</td>
+<td>В основной локальной схеме адрес обработки: <code>https://localhost:51401</code></td>
+</tr>
+<tr>
+<td><strong>50401/TCP</strong></td>
+<td>Внутреннее соединение оркестратора с экземпляром ЕСМ</td>
+<td>Не подставляйте вместо HTTPS-порта кассового ПО 51401</td>
+</tr>
+<tr>
+<td><strong>51077/TCP</strong></td>
+<td>Настройка ТС ПИоТ</td>
+<td>Служебный интерфейс ЕСМ</td>
+</tr>
+<tr>
+<td><strong>50063/TCP</strong></td>
+<td>Контроллер ЛМ ЧЗ</td>
+<td>Этот порт указывают в настройках ЛМ в интерфейсе ЕСМ</td>
+</tr>
+<tr>
+<td><strong>5063/TCP</strong></td>
+<td>Дополнительный порт Контроллера ЛМ ЧЗ</td>
+<td>Указан в перечне портов ЕСП</td>
+</tr>
+<tr>
+<td><strong>5995/TCP</strong></td>
+<td>Сам локальный модуль Честного знака</td>
+<td>Не заменяет порт 50063 в настройках ЕСМ</td>
+</tr>
+<tr>
+<td><strong>19100/TCP</strong></td>
+<td>Регистрация экземпляра в ГИС МТ</td>
+<td><code>https://ts-reg.crpt.ru:19100</code></td>
+</tr>
+<tr>
+<td><strong>19101/TCP</strong></td>
+<td>Площадки проверки Честного знака</td>
+<td>Адреса CDN из актуального перечня ЕСП</td>
+</tr>
+<tr>
+<td><strong>443/TCP</strong></td>
+<td>Сервисы ЕСП</td>
+<td>В том числе <code>api.ao-esp.ru</code> и <code>stats.ao-esp.ru</code>; для POScenter также требуется доступ к серверу лицензий <code>its.pos-center.ru</code></td>
+</tr>
+</tbody>
+</table>
+<p>Источники: <a href="https://static.ao-esp.ru/downloads/integrator/documentation/pereen_ispolzuemyh_adresov_i_portov_1785911223160.pdf">перечень адресов и портов ЕСП</a> и общие инструкции установки по семействам. Назначение внутренних портов также описано в <a href="https://static.ao-esp.ru/downloads/integrator/documentation/instrukci_po_podkleni_neskolkih_kkt_k_ts_piot_1782288846974.pdf">инструкции ЕСП для нескольких ККТ</a>. Полный список CDN берите из актуального перечня: одного доступного адреса регистрации недостаточно для всех операций.</p>
+<p>Порты 4042, 50401, 51401 и 51077 в локальной схеме обслуживают программы на кассовом компьютере. Проброс этих портов из интернета не требуется. Номер COM-порта и TCP-порт физической ККТ относятся к другому соединению; их определяют в настройках самой кассы или через поиск оборудования.</p>
+<p>В этой инструкции сохранены стандартные порты производителей. Если порт занят, сначала определите владельца через <a href="#диагностика-портов">диагностику</a>. Менять номер только в одной программе нельзя: обе стороны соединения должны использовать согласованные настройки.</p>
+<h2 id="подготовка">Подготовка кассового компьютера<a class="headerlink" href="#подготовка" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Запишите модель и заводской номер ККТ, номер ФН, ИНН, версию прошивки и драйвера. Они понадобятся при сверке данных в ЕСМ и обработке.</li>
+<li>Проверьте версию ККТ-ОНЛАЙН и разрядность платформы 1С. Драйвер и компонента должны подходить к процессу 1С: 32-разрядная 1С может работать на 64-разрядной Windows.</li>
+<li>Проверьте лицензию обработки, лицензию ЕСМ и необходимые лицензии производителя ККТ. Это отдельные условия работы. Для POScenter дополнительно проверяется лицензия ККТ на функции ПИоТ и право на нужную прошивку.</li>
+<li>Согласуйте время обновления, завершите текущую работу с кассой и закройте программы, которые используют её драйвер. Перед обновлением прошивки сохраните настройки ККТ по инструкции производителя.</li>
+<li>Откройте <a href="https://lk.ao-esp.ru/">личный кабинет ЕСП</a>, раздел «Скачать ПО». Выберите «Фискальный регистратор», своего производителя и Windows. Скачайте предназначенный для этой связки комплект и распакуйте архив.</li>
+<li>Установите драйвер по одной из четырёх веток ниже. На этапе первоначальной настройки убедитесь, что тест драйвера видит нужную ККТ.</li>
+<li>Установите ЕСМ и Контроллер ЛМ ЧЗ, затем выполните <a href="#регистрация-есм">регистрацию</a>.</li>
+</ol>
+<p>Сам ЛМ ЧЗ и Контроллер ЛМ ЧЗ устанавливаются отдельно друг от друга. Если локальный модуль размещён на сервере, контроллер тоже должен работать на этом сервере. Сохраните логин и пароль ЛМ: они понадобятся в ЕСМ.</p>
+<h2 id="установка-атол">АТОЛ: драйвер, ЕСМ и связь с кассой<a class="headerlink" href="#установка-атол" title="Permanent link">&para;</a></h2>
+<p>Порядок основан на <a href="https://static.ao-esp.ru/downloads/pmsr/docs/ATOL/all/WINDOWS_2.1.pdf">общей инструкции ЕСП для АТОЛ</a>.</p>
+<ol>
+<li>Откройте папку <code>DKKT</code> в распакованном комплекте. Запустите установщик нужной разрядности вида <code>KKT10-10.10.*.*-windows*-setup-signed.exe</code>.</li>
+<li>При выборе компонентов оставьте «Интеграционные компоненты для ЕСМ». Установите «Драйвер 1С», если он требуется выбранной компоненте оборудования. Завершите установку.</li>
+<li>Установите ЕСМ и Контроллер ЛМ ЧЗ по <a href="#установка-есм-и-лм">общему порядку</a>.</li>
+<li>Подключите кассу и откройте «Тест драйвера ККТ». В «Свойствах» укажите параметры своей ККТ: тип соединения, порт или сетевой адрес. Для неизвестных параметров используйте поиск оборудования.</li>
+<li>В поле «Порт сервера GRPC» укажите <strong>4041</strong>. Выполните проверку связи, сохраните свойства и включите флаг «Включено» в тесте драйвера.</li>
+<li>Проверьте, что драйвер показывает нужную модель и заводской номер. Откройте смену, если она закрыта; если смена истекла, сначала завершите её штатным способом.</li>
+<li>Оставьте тест драйвера подключённым на время <a href="#регистрация-есм">регистрации ЕСМ</a>.</li>
+<li>После регистрации закройте тест и перейдите к настройке компоненты ККТ в обработке. Рабочая компонента должна использовать тот же совместимый драйвер и нужное соединение с кассой.</li>
+</ol>
+<p>Если ЕСМ видит кассу только при открытом тесте драйвера, а после перехода в 1С связь пропадает, проверьте интеграционные компоненты АТОЛ и способ подключения драйвера из обработки. Постоянно открытый тест параллельно рабочей программе не заменяет настройку рабочего подключения.</p>
+<h2 id="установка-poscenter">POScenter: драйвер, лицензия ККТ и ЕСМ<a class="headerlink" href="#установка-poscenter" title="Permanent link">&para;</a></h2>
+<p>Эта ветка подходит также для перечисленных <a href="#модели-poscenter">моделей ШТРИХ с прошивкой POScenter</a>. Порядок основан на <a href="https://static.ao-esp.ru/downloads/pmsr/docs/POSCENTER/all/WINDOWS_2.3.pdf">инструкции ЕСП</a>.</p>
+<ol>
+<li>Проверьте модель, версию модели и дату прошивки по таблице в начале главы. При необходимости обновите прошивку по инструкции POScenter до установки связи с ЕСМ.</li>
+<li>Из комплекта ЕСП запустите установщик нужной разрядности вида <code>Poscenter_DrvKKT_5.21.*.*_*_piot.exe</code>. Завершите установку с предусмотренными компонентами.</li>
+<li>Установите ЕСМ и Контроллер ЛМ ЧЗ по <a href="#установка-есм-и-лм">общему порядку</a>.</li>
+<li>Подключите ККТ и запустите «POScenter: Тест ДККТ». Нажмите «Настройка свойств».</li>
+<li>Выберите «Локально» для соответствующего COM-подключения либо «TCP-сокет» для сетевого подключения. Если параметры неизвестны, выполните «Поиск оборудования» и выберите найденную кассу.</li>
+<li>Выполните «Проверку связи». Сверьте модель и заводской номер.</li>
+<li>Откройте «Дополнит. параметры» → «20. ТС ПИоТ». Установите флаг «Включить передачу информации в драйвер ТС ПИоТ (ЕСМ)», сохраните параметры.</li>
+<li>Выполните «Длинный запрос» и проверьте состояние ККТ. В разделе «12. ТС ПИоТ» нажмите «Проверка ККТ на готовность работы с ТС ПИоТ».</li>
+<li>Дождитесь результата. Драйвер проверит соответствие требованиям и загрузит лицензию ККТ для ПИоТ. После загрузки касса может перезагрузиться; восстановите связь и повторно проверьте её состояние.</li>
+<li>Убедитесь, что смена открыта и не истекла. Снова выполните «Длинный запрос». Оставьте тест открытым на время <a href="#регистрация-есм">регистрации ЕСМ</a>.</li>
+<li>После регистрации закройте тест и настройте обработку с компонентой POScenter для этой ветки драйвера.</li>
+</ol>
+<p>ЕСМ и функции ПИоТ в ККТ лицензируются отдельно. Если постоянная лицензия ККТ ещё не доступна, драйвер может загрузить временную лицензию на месяц. Проверьте обе даты действия, даже если проверка готовности прошла успешно. Подробности получения лицензии и подписки на прошивку приведены в <a href="https://teletype.in/@poscenter/piot">инструкции POScenter</a>. Условия подписки различаются для C.3 и D.3; уточняйте их для своей модели в <a href="https://teletype.in/@poscenter/doc.shtrih-m.ru">каталоге прошивок производителя</a>.</p>
+<p>Для Windows используйте компоненту, совместимую со специальным драйвером ПИоТ из комплекта ЕСП. Производитель отдельно указывает ограничения драйвера NG для этой схемы в <a href="https://teletype.in/@poscenter/07-26">ответах поддержки за июль 2026 года</a>.</p>
+<h2 id="установка-тбм">ШТРИХ / Торговый Баланс М: драйвер и ЕСМ<a class="headerlink" href="#установка-тбм" title="Permanent link">&para;</a></h2>
+<p>Порядок основан на <a href="https://static.ao-esp.ru/downloads/pmsr/docs/SHTRIHM/all/WINDOWS_1.8.pdf">инструкции ЕСП для ТБМ</a>.</p>
+<ol>
+<li>Через тест драйвера проверьте, что на ККТ установлена прошивка <strong>T.3</strong>, сборка <strong>7161 или выше</strong>. Для другой ветки прошивки сначала определите её производителя.</li>
+<li>Из комплекта ЕСП установите драйвер нужной разрядности вида <code>DrvFR_5.25_*_x*_dkkt-signed.exe</code>, версия <strong>5.25.2096 или выше</strong>.</li>
+<li>Установите ЕСМ и Контроллер ЛМ ЧЗ по <a href="#установка-есм-и-лм">общему порядку</a>.</li>
+<li>Откройте «Тест драйвера ККТ» и нажмите «Настройка свойств».</li>
+<li>Выберите <strong>«Протокол ККТ 3.0»</strong>. Этот протокол требуется для работы с ЕСМ.</li>
+<li>Выберите подключение «Локально» либо «TCP-сокет». При необходимости запустите «Поиск оборудования», выберите найденную ККТ и выполните «Проверку связи».</li>
+<li>Сверьте модель и заводской номер. Выполните «Длинный запрос».</li>
+<li>Проверьте смену. Для регистрации ЕСМ она должна быть открыта и не превышать 24 часа. После открытия смены снова выполните «Длинный запрос».</li>
+<li>Оставьте тест открытым на время <a href="#регистрация-есм">регистрации ЕСМ</a>. После регистрации закройте его и настройте в обработке компоненту ТБМ, соответствующую установленному драйверу.</li>
+</ol>
+<p>На <a href="https://torgbalance.com/download_new/">странице загрузок ТБМ</a> опубликованы также более новые драйверы и прошивки. Например, на дату проверки там размещены общий драйвер 5.25.2235 и T.3 сборки 7338. Это доступные обновления, а не замена минимальных требований таблицы. Драйвер, выделенный производителем для отдельной кассовой программы, выбирают по назначению, а не только по большему номеру версии.</p>
+<h2 id="установка-дримкас">Дримкас Вики Принт: VikiDriver, VikiESM и ЕСМ<a class="headerlink" href="#установка-дримкас" title="Permanent link">&para;</a></h2>
+<p>Для этой ветки нужны три компонента: VikiDriver для связи с кассой, VikiESM для интеграции и сам ЕСМ. Порядок описан в <a href="https://static.ao-esp.ru/downloads/pmsr/docs/DREAMKAS/all/WINDOWS_1.5.pdf">инструкции ЕСП</a> и <a href="https://help.dreamkas.ru/kb/viki-printy/ts-piot/install-ts-piot/">инструкции Дримкас</a>.</p>
+<ol>
+<li>Проверьте модель Вики Принт, версию Windows и прошивку кассы. При прошивке ниже <strong>665.4.45</strong> подготовьте обновление по инструкции производителя; выполните его после установки VikiDriver.</li>
+<li>Если на компьютере используется старый ComProxy, выполните переход на VikiDriver по инструкции Дримкас. Одновременное использование старого соединения и нового драйвера может мешать обнаружению кассы.</li>
+<li>Установите <strong>VikiDriver 2.0.2 или выше</strong>. В комплекте ЕСП установщик имеет вид <code>VikiDriverOfflineInstaller-x86-64.exe</code>.</li>
+<li>Подключите Вики Принт и проверьте его обнаружение в VikiClient. Сверьте модель и заводской номер, при необходимости обновите прошивку до требуемой версии.</li>
+<li>Выберите кассу в VikiClient и откройте «Порты подключения». Запишите адрес и порт для кассовой программы. Для первой кассы по умолчанию используется <strong>127.0.0.1:50003</strong>. Для нескольких касс берите фактический порт каждой записи, а не общий порт первой кассы.</li>
+<li>Из папки <code>DKKT</code> установите <strong>VikiESM 1.0 или выше</strong>, установщик вида <code>VikiEsm_OfflineSetup</code>.</li>
+<li>Установите ЕСМ и Контроллер ЛМ ЧЗ по <a href="#установка-есм-и-лм">общему порядку</a>. Для локального модуля соблюдайте требования Дримкас, включая версию ЛМ ЧЗ <strong>2.5.1 или выше</strong>.</li>
+<li>Убедитесь, что касса доступна VikiDriver, имеет нужные регистрационные признаки и открыта неистёкшая смена. Выполните <a href="#регистрация-есм">регистрацию ЕСМ</a>.</li>
+<li>В обработке выберите компоненту Вики Принт и настройте её подключение к VikiDriver на записанный TCP-порт. Для основной схемы это <code>127.0.0.1:50003</code>.</li>
+<li>Настройте адрес ТС ПИоТ в отдельной форме обработки: <code>https://localhost:51401</code>. Он не заменяет адрес VikiDriver для печати.</li>
+</ol>
+<p>Версия VikiDriver, версия VikiESM и версия компоненты для 1С проверяются отдельно. Число в названии компоненты 1С нельзя сравнивать с требованием VikiDriver 2.0.2. Если кассовая программа не видит Вики Принт, сверяйте её порт с <a href="https://help.dreamkas.ru/kb/f-a-q/kassovaya-programma-ne-vidit-viki-print/">«Портами подключения» VikiClient</a>.</p>
+<h2 id="установка-есм-и-лм">Установка ЕСМ и локального модуля<a class="headerlink" href="#установка-есм-и-лм" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Запустите установщик ЕСМ из распакованного комплекта, файл вида <code>esm_&lt;версия&gt;-windows-signed-setup.exe</code>.</li>
+<li>Примите соглашение и выберите каталог установки. Если ЛМ ЧЗ будет на этом же компьютере, выберите компонент «Контроллер ЛМ ЧЗ».</li>
+<li>Завершите установку и запустите ЕСМ. При отдельной установке контроллера используйте <code>esm-lm-controller_&lt;версия&gt;-windows-setup.exe</code>.</li>
+<li>Установите сам ЛМ ЧЗ по инструкции Честного знака. Контроллер ЕСМ не содержит базу локального модуля и не заменяет его.</li>
+<li>Если ЛМ уже находится на другом компьютере, установите или обновите контроллер там. Между кассовым компьютером и сервером ЛМ должны быть доступны предусмотренные порты 50063 и 5063.</li>
+<li>Перед переходом на ЛМ ЧЗ 2.0 обновите ЕСМ и контроллер до 1.6 или выше. Для Дримкас учитывайте дополнительное требование версии ЛМ из его ветки.</li>
+</ol>
+<p>После установки переходите к регистрации. Готовность офлайн-проверки подтверждается состоянием ЛМ и его синхронизацией; одного установленного контроллера недостаточно.</p>
+<h2 id="регистрация-есм">Регистрация ЕСМ и проверка лицензии<a class="headerlink" href="#регистрация-есм" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Убедитесь, что драйвер выбранной ветки подключён к ККТ. Для регистрации смена должна быть открыта и не превышать 24 часа.</li>
+<li>Откройте интерфейс ЕСМ и нажмите «Обновить список».</li>
+<li>В блоке «Информация о кассе» сверьте модель, заводской номер, номер ФН, РНМ, ИНН и номер смены с нужной ККТ. При неверных данных сначала исправьте подключение драйвера.</li>
+<li>Нажмите «Зарегистрировать». ЕСМ получает лицензию ЕСП и идентификатор регистрации экземпляра в ГИС МТ.</li>
+<li>Дождитесь обновления информации. В блоке ЕСМ лицензия должна иметь статус «Активна до [дата]», а в блоке ГИС МТ должен появиться идентификатор и рабочее состояние, например «Стабильно».</li>
+<li>В блоке ЛМ ЧЗ нажмите «Настроить адрес». Для локальной установки укажите <code>127.0.0.1</code>; для сервера укажите адрес этого сервера. Порт контроллера: <strong>50063</strong>. Введите логин и пароль, заданные при установке ЛМ.</li>
+<li>Дождитесь состояния ЛМ «Готов к работе». Первоначальная загрузка и синхронизация базы могут занимать время.</li>
+<li>В настройках ЕСМ проверьте адрес регистрации ГИС МТ: <code>https://ts-reg.crpt.ru:19100</code>. При необходимости нажмите «Обновить информацию».</li>
+</ol>
+<p>Если касса не появилась, проверьте соответствующую ветку драйвера и <a href="#диагностика-портов">порт 4042</a>. Драйверы разных производителей на одном компьютере могут конфликтовать. Не повторяйте регистрацию с чужими реквизитами кассы.</p>
+<h3 id="сертификаты-https">Сертификаты HTTPS<a class="headerlink" href="#сертификаты-https" title="Permanent link">&para;</a></h3>
+<p>Если при обращении к ЕСМ возникает ошибка проверки сертификата, используйте сертификаты, созданные зарегистрированным экземпляром ЕСМ:</p>
+<ol>
+<li>Откройте каталог <code>%ProgramData%\ESP\ESM\um</code>.</li>
+<li>Для сертификатов <code>ca</code> и <code>gismt</code> откройте мастер установки сертификата.</li>
+<li>Выберите «Локальный компьютер» и хранилище «Доверенные корневые центры сертификации».</li>
+<li>Завершите импорт и повторите проверку подключения из обработки.</li>
+</ol>
+<p>Порядок приведён в общих инструкциях ЕСП. Сертификаты появляются после регистрации экземпляра. Используйте файлы своей установленной системы; постоянное отключение проверки TLS не требуется.</p>
+<h2 id="setup">Настройка ККТ-ОНЛАЙН<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h2>
+<h3 id="подключение-оборудования-для-печати">Подключение оборудования для печати<a class="headerlink" href="#подключение-оборудования-для-печати" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Обновите обработку до <strong>4.17 или выше</strong> и актуальные компоненты оборудования.</li>
+<li>В <a href="../connecting/#мастер-подключения-компонент-начиная-с-версии-410">мастере подключения компонент</a> выберите своё семейство ККТ и компоненту, подходящую к установленному драйверу.</li>
+<li>Проверьте разрядность компоненты и драйвера относительно платформы 1С. Для ШТРИХ отдельно учитывайте производителя прошивки: POScenter или ТБМ.</li>
+<li>Укажите реальные параметры подключения к кассе. Для Вики Принт это соединение с VikiDriver. Для АТОЛ проверьте поле «Порт сервера GRPC» в параметрах выбранной компоненты и укажите <strong>4041</strong>, если это поле доступно. Если его нет, проверьте версию и возможности компоненты. Для остальных семейств используйте параметры своей выбранной компоненты и драйвера.</li>
+<li>Проверьте связь с ККТ из обработки. Сверьте модель, заводской номер и ФН.</li>
+</ol>
+<p>Для компоненты 1С АТОЛ <a href="https://static.ao-esp.ru/downloads/pmsr/docs/ATOL/1%D0%A1%20(%D0%A0%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%B8%D0%B5)/WINDOWS_1.3.pdf">инструкция ЕСП для расширения</a> указывает минимум <strong>10.10.8.20</strong>. Драйвер ККТ проверяется отдельно: в этой главе его минимум <strong>10.10.8.24</strong>. Для новой установки используйте компоненты актуального совместимого комплекта.</p>
+<p>ЕСМ требует активного экземпляра драйвера в течение рабочей смены. В обработке проверьте «Параметры» → «Служебное» → «Подключение кассы». Режим <strong>«СТАНДАРТНО»</strong> удерживает подключение между операциями. Он сам по себе не гарантирует, что экземпляр драйвера останется активным до конца смены: на это влияет сценарий работы 1С, выход из обработки и особенности интеграции с конфигурацией. Другие режимы, включая сценарии Рарус, могут отключать драйвер между операциями.</p>
+<p>После выбора режима проверьте связь ЕСМ с кассой во время реальной работы, после нескольких операций и после повторного открытия формы. Если связь пропадает, устраните причину до начала продаж с ТС ПИоТ.</p>
+<h3 id="подключение-тс-пиот-для-проверки-марки">Подключение ТС ПИоТ для проверки марки<a class="headerlink" href="#подключение-тс-пиот-для-проверки-марки" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Откройте «Параметры» → «Маркировка» → «Разрешительный режим».</li>
+<li>Проверьте поле <strong>«Дата перехода на ТС ПИоТ»</strong>. Оно определяет, с какой даты обработка использует этот маршрут. Укажите дату запланированного перехода после подготовки ЕСМ.</li>
+<li>В строке «ТС ПИоТ» нажмите <strong>«Настроить подключение»</strong>.</li>
+<li>В поле <strong>«Адрес подключения»</strong> введите базовый адрес сервиса. Для ЕСМ на том же компьютере: <code>https://localhost:51401</code>. Путь API к адресу не дописывайте.</li>
+<li>Нажмите <strong>«Заполнить настройки»</strong>. Обработка получает сведения зарегистрированного экземпляра: номер ФН, идентификатор экземпляра, ИНН, заводской номер ККТ и таймаут.</li>
+<li>Сверьте номер ФН, ИНН и заводской номер с выбранной кассой. Полученные сведения используются для настройки подключения; исправляйте неверную регистрацию или адрес сервиса, а не подменяйте реквизиты другой кассы.</li>
+<li>Нажмите <strong>«Проверить подключение»</strong>. Эта команда проверяет получение информации от сервиса. Она не проверяет код маркировки и не печатает чек.</li>
+<li>Закройте форму кнопкой «ОК», сохраните настройки разрешительного режима и затем параметры обработки.</li>
+<li>Проверьте выбранные типы маркировки и даты начала проверок для используемых товарных групп.</li>
+</ol>
+<p><img alt="Настройка ТС ПИоТ в обработке" src="../media/edit_tspiot.png" /></p>
+<p>На скриншоте показаны адрес эмулятора и тестовые реквизиты. Для рабочей кассы укажите адрес своего ЕСМ и сверьте реквизиты, полученные от него.</p>
+<p>Поле «Таймаут» заполняется из сведений сервиса. Не трактуйте его как время ожидания любого HTTP-запроса: транспортное ожидание и параметры проверки марки в обработке имеют разное назначение.</p>
+<h3 id="несколько-организаций">Несколько организаций<a class="headerlink" href="#несколько-организаций" title="Permanent link">&para;</a></h3>
+<p>Если в схеме распределения доступна организация, в форме есть вкладка <strong>«ТС ПИоТ по организациям»</strong>. Для каждой строки укажите «Организация» и «Настройка ТС ПИоТ».</p>
+<p>Настройка выбранной организации заменяет общую настройку. Проверьте соответствие всей цепочки: организация документа, ИНН, ККТ, номер ФН и адрес её ЕСМ. Затем проверьте марку и чек отдельно для каждой организации. Общая настройка одной кассы не должна случайно использоваться для другой.</p>
+<h3 id="резервный-переход-к-обычному-разрешительному-режиму">Резервный переход к обычному разрешительному режиму<a class="headerlink" href="#резервный-переход-к-обычному-разрешительному-режиму" title="Permanent link">&para;</a></h3>
+<p>Параметр «При ошибке ТС Пиот проверять через разрешительный режим» включает предусмотренный обработкой резервный маршрут. Для него обычный разрешительный режим должен быть настроен и доступен.</p>
+<p>Переход зависит от ответа ТС ПИоТ и состояния результата проверки. Этот флаг не отменяет запрет продажи и не гарантирует повторную проверку каждой марки с уже полученным окончательным статусом. Доступность прежнего протокола и сроки перехода приведены в <a href="../marking/#техническая-возможность-использовать-обычный-разрешительный-режим-до-октября-2026">разделе о технической возможности обычного разрешительного режима</a>.</p>
+<h3 id="offline">Офлайн-проверки<a class="headerlink" href="#offline" title="Permanent link">&para;</a></h3>
+<p>Офлайн-проверками через ТС ПИоТ управляет ЕСМ. Настройки прямого локального модуля внутри обработки относятся к обычному разрешительному режиму, в том числе к его резервному использованию. Адреса этих механизмов заполняются отдельно.</p>
+<h2 id="verification">Проверка результата<a class="headerlink" href="#verification" title="Permanent link">&para;</a></h2>
+<p>Проверяйте работу по этапам. Успех следующего этапа нельзя определить по результату предыдущего.</p>
+<p>Для приёмки маршрута ТС ПИоТ указанная в обработке дата перехода должна уже наступить. Если переход запланирован на будущее, проведите эту проверку в назначенную дату или на подготовленном тестовом стенде. До даты перехода сканирование может запускать обычный разрешительный режим.</p>
+<table>
+<thead>
+<tr>
+<th>Этап</th>
+<th>Как проверить</th>
+<th>Что подтверждает результат</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Драйвер и ККТ</td>
+<td>Проверка связи, запрос состояния, сверка ЗН и ФН</td>
+<td>Драйвер видит нужную физическую кассу</td>
+</tr>
+<tr>
+<td>ЕСМ</td>
+<td>Зарегистрированный экземпляр, действующая лицензия, рабочие состояния ГИС МТ и ЛМ</td>
+<td>ЕСМ настроен и получает сведения о кассе</td>
+</tr>
+<tr>
+<td>Обработка и ЕСМ</td>
+<td>«Заполнить настройки», затем «Проверить подключение»</td>
+<td>Обработка обращается к выбранному сервису и получает информацию</td>
+</tr>
+<tr>
+<td>Проверка реального КМ</td>
+<td>Отсканировать марку, просмотреть ответ и журнал обращения к выбранному сервису</td>
+<td>Проверка товара прошла через нужный ТС ПИоТ</td>
+</tr>
+<tr>
+<td>Формирование чека</td>
+<td>Выполнить согласованную реальную продажу или отдельный тест на предназначенном для него стенде</td>
+<td>Компонента, драйвер и ККТ корректно формируют фискальный документ</td>
+</tr>
+<tr>
+<td>Стабильность соединения</td>
+<td>Повторить проверки после нескольких операций и возврата в форму</td>
+<td>ЕСМ продолжает видеть нужную ККТ при рабочем способе подключения</td>
+</tr>
+</tbody>
+</table>
+<p>Для проверки КМ сначала используйте предварительное сканирование без печати. Проверьте, что ответ содержит результат именно для отсканированной марки. При отрицательном результате продажа должна останавливаться по правилам обработки; ошибку обмена нельзя считать разрешением на продажу.</p>
+<p>В <a href="../licensing/#как-записать-лог-для-технической-поддержки">логе обработки</a> найдите операцию «ПРОВЕРКА МАРОК (ТС ПИОТ)» и обращение к нужному адресу сервиса. Если включён резервный переход к обычному разрешительному режиму, различайте исходный ответ ЕСМ и итог резервной проверки. Само успешное сканирование ещё не показывает, каким маршрутом получен результат.</p>
+<p>Личный кабинет ЕСП может показывать «Нет проверки КМ» до первого запроса из кассовой программы. По <a href="https://teletype.in/@poscenter/piot">разъяснению POScenter</a>, для появления такой проверки достаточно предварительного сканирования; реальная продажа не требуется.</p>
+<p>Проверку печати планируйте отдельно. На рабочей зарегистрированной ККТ печать создаёт фискальный документ. Не используйте случайный товар и выдуманную оплату только ради проверки соединения. Для готового рабочего места проверьте корректную операцию в рамках его обычной работы либо используйте подходящий тестовый стенд.</p>
+<h3 id="emulator">Проверка с эмулятором<a class="headerlink" href="#emulator" title="Permanent link">&para;</a></h3>
+<p>Официальный <a href="https://esm-emu.ao-esp.ru">эмулятор ЕСМ</a> помогает предварительно проверить интеграцию. Эмулятор предназначен для тестовой среды. Не используйте его адрес для проверки боевых продаж. Результат эмулятора не подтверждает связь с реальной ККТ, лицензии и работу её прошивки.</p>
+<h2 id="diagnostics">Если подключение не работает<a class="headerlink" href="#diagnostics" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Симптом</th>
+<th>Что проверить</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ЕСМ не показывает кассу</td>
+<td>Модель и прошивку, специальный драйвер, подключение к ККТ, открытие смены, передачу данных в ЕСМ и занятость порта 4042</td>
+</tr>
+<tr>
+<td>Касса видна только при открытом тесте драйвера</td>
+<td>Компоненту обработки, используемый ею драйвер и сохранение его экземпляра между операциями</td>
+</tr>
+<tr>
+<td>Не заполняются настройки обработки</td>
+<td>Базовый адрес ЕСМ, работа служб, сертификаты HTTPS, соответствие выбранного экземпляра и ККТ</td>
+</tr>
+<tr>
+<td>Настройки заполнены, но проверка марки не проходит</td>
+<td>Полный ответ проверки КМ, состояние ГИС МТ и ЛМ, лицензию и текущую связь ЕСМ с кассой</td>
+</tr>
+<tr>
+<td><code>403</code>, «Отсутствует активная лицензия»</td>
+<td>Лицензию и сведения ЕСМ; затем проверьте, не разорван ли сеанс с драйвером ККТ. Один HTTP-код без текста ответа не объясняет причину</td>
+</tr>
+<tr>
+<td><code>X-Fn-Sid</code>, <code>empty X-FN-SID</code></td>
+<td>Получение ЕСМ сведений о нужной ККТ и ФН, регистрацию и сессию обмена</td>
+</tr>
+<tr>
+<td><code>407</code>, временная блокировка процедурой аутентификации</td>
+<td>Актуальность ЕСМ и драйвера, одновременные операции с ФН. После завершения текущей операции повторите проверку марки</td>
+</tr>
+<tr>
+<td><code>514</code>, нет ответа от ГИС МТ или ЛМ ЧЗ</td>
+<td>Доступ к площадкам Честного знака; для офлайна проверьте готовность ЛМ, контроллер на том же сервере, порт 50063 и учётные данные</td>
+</tr>
+<tr>
+<td><code>12029</code>, не удаётся установить соединение</td>
+<td>Запуск ЕСМ, адрес и порт, локальный защитный экран; дождитесь запуска служб после входа в Windows</td>
+</tr>
+<tr>
+<td>«Код маркировки не найден»</td>
+<td>Полный ответ, онлайн- или офлайн-проверку, наличие ошибки обмена. Одного <code>found:false</code> недостаточно для диагностики причины</td>
+</tr>
+<tr>
+<td>Проверка КМ проходит, чек не печатается</td>
+<td>Отдельное подключение компоненты к драйверу и ККТ. Для Вики Принт сверьте порт VikiDriver</td>
+</tr>
+</tbody>
+</table>
+<p>Обработка не формирует <code>X-Fn-Sid</code> самостоятельно: сессию обеспечивает ЕСМ. Не подставляйте произвольный идентификатор и не меняйте отрицательный результат проверки на положительный.</p>
+<p>В обработке предусмотрен один автоматический повтор через одну секунду при установленном признаке ошибки отправки. Это не универсальный повтор для каждого HTTP-кода или отрицательного результата проверки товара.</p>
+<h3 id="диагностика-портов">Проверка портов в PowerShell<a class="headerlink" href="#диагностика-портов" title="Permanent link">&para;</a></h3>
+<p>Команды ниже только читают состояние. Они не останавливают службы и не меняют правила защитного экрана.</p>
+<p>Проверьте, какие из ожидаемых портов слушают программы на кассовом компьютере:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">$tsPiotPorts</span> <span class="p">=</span> <span class="p">@(</span><span class="n">4041</span><span class="p">,</span> <span class="n">4042</span><span class="p">,</span> <span class="n">50401</span><span class="p">,</span> <span class="n">51401</span><span class="p">,</span> <span class="n">51077</span><span class="p">,</span> <span class="n">50063</span><span class="p">,</span> <span class="n">5063</span><span class="p">,</span> <span class="n">5995</span><span class="p">,</span> <span class="n">50003</span><span class="p">)</span>
+<span class="nb">Get-NetTCPConnection</span> <span class="n">-State</span> <span class="n">Listen</span> <span class="n">-ErrorAction</span> <span class="n">SilentlyContinue</span> <span class="p">|</span>
+    <span class="nb">Where-Object</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="n">LocalPort</span> <span class="n">-in</span> <span class="nv">$tsPiotPorts</span> <span class="p">}</span> <span class="p">|</span>
+    <span class="nb">Select-Object</span> <span class="n">LocalAddress</span><span class="p">,</span> <span class="n">LocalPort</span><span class="p">,</span> <span class="n">OwningProcess</span> <span class="p">|</span>
+    <span class="nb">Sort-Object</span> <span class="n">LocalPort</span>
+</code></pre></div>
+<p>Найдите процесс, занявший порт 4042:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">Get-NetTCPConnection</span> <span class="n">-State</span> <span class="n">Listen</span> <span class="n">-LocalPort</span> <span class="n">4042</span> <span class="n">-ErrorAction</span> <span class="n">SilentlyContinue</span> <span class="p">|</span>
+    <span class="k">ForEach</span><span class="n">-Object</span> <span class="p">{</span> <span class="nb">Get-Process</span> <span class="n">-Id</span> <span class="nv">$_</span><span class="p">.</span><span class="n">OwningProcess</span> <span class="n">-ErrorAction</span> <span class="n">SilentlyContinue</span> <span class="p">}</span> <span class="p">|</span>
+    <span class="nb">Select-Object</span> <span class="n">Id</span><span class="p">,</span> <span class="n">ProcessName</span><span class="p">,</span> <span class="n">Path</span> <span class="n">-Unique</span>
+</code></pre></div>
+<p>Проверьте доступность локального HTTPS-порта ЕСМ:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">Test-NetConnection</span> <span class="n">-ComputerName</span> <span class="n">localhost</span> <span class="n">-Port</span> <span class="n">51401</span>
+</code></pre></div>
+<p>Если ЛМ и его контроллер находятся на сервере, замените пример на реальное имя или IP этого сервера:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">$tsPiotLmHost</span> <span class="p">=</span> <span class="s1">'ИМЯ-СЕРВЕРА-ЛМ'</span>
+<span class="nb">Test-NetConnection</span> <span class="n">-ComputerName</span> <span class="nv">$tsPiotLmHost</span> <span class="n">-Port</span> <span class="n">50063</span>
+<span class="nb">Test-NetConnection</span> <span class="n">-ComputerName</span> <span class="nv">$tsPiotLmHost</span> <span class="n">-Port</span> <span class="n">5063</span>
+</code></pre></div>
+<p>При подозрении, что Windows зарезервировала нужный диапазон, выведите список исключённых TCP-портов:</p>
+<div class="highlight"><pre><span></span><code><span class="n">netsh</span> <span class="n">int</span> <span class="n">ipv4</span> <span class="n">show</span> <span class="n">excludedportrange</span> <span class="n">protocol</span><span class="p">=</span><span class="n">tcp</span>
+</code></pre></div>
+<p><code>TcpTestSucceeded: True</code> подтверждает только установление TCP-соединения. Команда не проверяет сертификат, лицензию, правильный ФН и результат проверки марки. Отсутствие слушателя тоже оценивайте по схеме: например, порты ЛМ на кассовом компьютере не ожидаются, если ЛМ размещён на другом сервере.</p>
+<p>Если 4042 занят другим драйвером, сначала определите его назначение и используемую кассу. Не завершайте процесс наугад и не меняйте порты служб без согласованной схемы производителя. Для диагностики фиксируйте адрес, порт и владельца процесса вместе с версией установленного ПО.</p>
+<h3 id="что-передать-в-поддержку">Что передать в поддержку<a class="headerlink" href="#что-передать-в-поддержку" title="Permanent link">&para;</a></h3>
+<p>Сохраните точное сообщение и время ошибки, модель и ЗН ККТ, номер ФН, версии обработки, компоненты, драйвера, прошивки и ЕСМ. Укажите, на каком этапе ошибка возникает: получение информации, проверка марки или формирование чека.</p>
+<p>Запишите <a href="../licensing/#как-записать-лог-для-технической-поддержки">лог обработки</a>. В интерфейсе ЕСМ используйте «Сохранить логи». Для ошибки связи приложите результаты проверки нужных портов. Пароли и полные реквизиты чужих организаций в открытой переписке не публикуйте.</p>
+<h2 id="multi-register">Несколько касс, организаций и работа через RDP<a class="headerlink" href="#multi-register" title="Permanent link">&para;</a></h2>
+<p>Базовая инструкция выше рассчитана на одну кассу. Для нескольких ККТ сначала составьте таблицу: организация, ИНН, модель, ЗН, ФН, адрес экземпляра ЕСМ и параметры драйвера для печати. Лицензирование и регистрацию ЕСМ проверяйте отдельно для каждой кассы.</p>
+<p>Настройки по организациям в обработке и режим нескольких ККТ на одном компьютере в ЕСМ решают разные задачи. В <a href="https://static.ao-esp.ru/downloads/integrator/documentation/instrukci_po_podkleni_neskolkih_kkt_k_ts_piot_1782288846974.pdf">инструкции ЕСП для нескольких ККТ</a> описана схема для одного ИНН и АТОЛ; поддержка POScenter и ТБМ в этой редакции обозначена как ожидаемая. Не распространяйте этот порядок автоматически на все четыре семейства.</p>
+<p>В поддерживаемой схеме каждый экземпляр ЕСМ получает собственные внутренний порт и порт API. У АТОЛ несколько ККТ могут использовать одну службу gRPC с общим портом 4042. Это отличается от конфликта, при котором независимые драйверы разных производителей пытаются занять один адрес и порт.</p>
+<p>Адреса подключения берите из фактически созданных экземпляров ЕСМ. Перед настройкой нескольких ККТ проверьте совместимость установленного ЕСМ с интерфейсом обработки: ККТ-ОНЛАЙН использует API v1, а примеры многокассовой схемы ЕСП содержат API v3. После настройки проверьте каждую организацию, каждую ККТ и переключение между ними. Порядок создания и регистрации экземпляров приведён в инструкции ЕСП.</p>
+<p>При работе через RDP адрес <code>localhost</code> означает компьютер, на котором выполняется соответствующее обращение. Если 1С работает на сервере, он не обозначает автоматически компьютер кассира. Перед настройкой определите, где выполняются запросы обработки, где запущены драйвер и ЕСМ и к какому компьютеру подключена ККТ. Затем проверьте доступность сервиса именно из рабочего сеанса 1С.</p>
+<p>Удалённое размещение ЕСМ, проброс оборудования и совместную работу нескольких пользователей согласуйте с поставщиком драйвера и ЕСМ. Для удалённого ЛМ используйте документированную схему: ЛМ и его контроллер на одном сервере, адрес этого сервера и порт 50063 в ЕСМ.</p>
+<h2 id="технические-сведения">Коротко о запросах обработки<a class="headerlink" href="#технические-сведения" title="Permanent link">&para;</a></h2>
+<p>Этот блок нужен для чтения журналов. В форме подключения указывают только базовый адрес, например <code>https://localhost:51401</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Операция</th>
+<th>Что делает обработка</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Получение сведений и проверка подключения</td>
+<td><code>POST /api/v1/info</code></td>
+</tr>
+<tr>
+<td>Проверка кода маркировки</td>
+<td><code>POST /api/v1/codes/check</code></td>
+</tr>
+<tr>
+<td>Формирование фискального чека</td>
+<td>Передаёт XML через метод компоненты оборудования <code>СформироватьЧек</code></td>
+</tr>
+</tbody>
+</table>
+<p>Из ответа сервиса поле «Таймаут» заполняется значением <code>codesCheckTimeout</code>. Оно не является общим транспортным таймаутом HTTP. Успешный ответ <code>/info</code> не заменяет проверку <code>/codes/check</code> и контроль формирования чека.</p>
+<h2 id="sources">Источники и дата проверки<a class="headerlink" href="#sources" title="Permanent link">&para;</a></h2>
+<p>Сведения сверены <strong>25.09.2026</strong>. Совместимость ККТ-ОНЛАЙН 4.17+ с четырьмя описанными семействами подтверждена автором разработки. Эта глава подготовлена по документации и настройкам обработки; аппаратные испытания четырёх семейств при её подготовке не выполнялись.</p>
+<ul>
+<li><a href="https://lk.ao-esp.ru/instructions?tab=esm">Раздел инструкций личного кабинета АО «ЕСП»</a>.</li>
+<li><a href="https://static.ao-esp.ru/downloads/pmsr/docs/ATOL/all/WINDOWS_2.1.pdf">ЕСП: установка и настройка АТОЛ, Windows, v2.1 от 27.07.2026</a>.</li>
+<li><a href="https://static.ao-esp.ru/downloads/pmsr/docs/POSCENTER/all/WINDOWS_2.3.pdf">ЕСП: установка и настройка POScenter, Windows, v2.3 от 27.07.2026</a>.</li>
+<li><a href="https://static.ao-esp.ru/downloads/pmsr/docs/SHTRIHM/all/WINDOWS_1.8.pdf">ЕСП: установка и настройка ШТРИХ ТБМ, Windows, v1.8 от 27.07.2026</a>.</li>
+<li><a href="https://static.ao-esp.ru/downloads/pmsr/docs/DREAMKAS/all/WINDOWS_1.5.pdf">ЕСП: установка и настройка Дримкас, Windows, v1.5 от 27.07.2026</a>.</li>
+<li><a href="https://static.ao-esp.ru/downloads/integrator/documentation/pereen_ispolzuemyh_adresov_i_portov_1785911223160.pdf">ЕСП: перечень используемых адресов и портов</a>.</li>
+<li><a href="https://static.ao-esp.ru/downloads/integrator/documentation/instrukci_po_podkleni_neskolkih_kkt_k_ts_piot_1782288846974.pdf">ЕСП: подключение нескольких ККТ к ТС ПИоТ</a>.</li>
+<li><a href="https://static.ao-esp.ru/downloads/pmsr/docs/ATOL/1%D0%A1%20(%D0%A0%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%B8%D0%B5)/WINDOWS_1.3.pdf">ЕСП: АТОЛ и «1С Розница 3.0 (расширение)», v1.3</a>.</li>
+<li><a href="https://static.ao-esp.ru/downloads/pmsr/docs/POSCENTER/1%D0%A1%20(%D0%A0%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%B8%D0%B5)/WINDOWS_1.3.pdf">ЕСП: POScenter и «1С Розница 3.0 (расширение)», v1.3</a>.</li>
+<li><a href="https://static.ao-esp.ru/downloads/pmsr/docs/SHTRIHM/1%D0%A1%20(%D0%A0%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%B8%D0%B5)/WINDOWS_1.2.pdf">ЕСП: ШТРИХ и «1С Розница 3.0 (расширение)», v1.2</a>.</li>
+<li><a href="https://static.ao-esp.ru/downloads/pmsr/docs/DREAMKAS/1%D0%A1%20(%D0%A0%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%B8%D0%B5)/WINDOWS_1.1.pdf">ЕСП: Дримкас и «1С Розница 3.0 (расширение)», v1.1</a>.</li>
+<li><a href="https://help.dreamkas.ru/kb/viki-printy/ts-piot/install-ts-piot/">Дримкас: установка ТС ПИоТ для Вики Принт</a>.</li>
+<li><a href="https://help.dreamkas.ru/kb/f-a-q/kassovaya-programma-ne-vidit-viki-print/">Дримкас: кассовая программа не видит Вики Принт, проверка портов</a>.</li>
+<li><a href="https://teletype.in/@poscenter/piot">POScenter: настройка ПИоТ, лицензии и диагностика</a>.</li>
+<li><a href="https://teletype.in/@poscenter/doc.shtrih-m.ru">POScenter: драйверы и прошивки</a>.</li>
+<li><a href="https://torgbalance.com/download_new/">Торговый Баланс М: официальные загрузки</a>.</li>
+</ul>
+<p>В PDF категории «ШТРИХ, 1С (Расширение)» смешаны сведения разных вариантов интеграции, включая версию драйвера POScenter. Поэтому требования ТБМ в этой главе взяты из отдельной общей инструкции ТБМ. Для настройки ККТ-ОНЛАЙН применяются поля самой обработки, а не названия разделов типовой 1С из иллюстраций ЕСП.</p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Нижний колонтитул" >
+        
+          
+          <a href="../marking/" class="md-footer__link md-footer__link--prev" aria-label="Назад: Общие сведения">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              <div class="md-ellipsis">
+                Общие сведения
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../management_distribution/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Рассылка">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              <div class="md-ellipsis">
+                Рассылка
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.footer", "navigation.tabs", "navigation.tabs.sticky", "content.tooltips", "content.code.copy", "search.highlight", "toc.follow", "navigation.instant", "navigation.expand"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

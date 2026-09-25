@@ -764,9 +764,27 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="marking/" class="md-nav__link">
+    
+    
+    
+    
+      
+      
         
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
   
   
   <span class="md-ellipsis">
@@ -780,7 +798,79 @@
   
   
 
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Маркировка
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="marking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Общие сведения
+  
+
+    
+  </span>
+  
+  
+
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ts_piot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка ТС ПИоТ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -1211,6 +1301,7 @@
 <li><a href="connecting/#проверка-первого-подключения">Подключить обработку и проверить первый чек</a>.</li>
 <li><a href="form_check_and_check_correction/#продажа-и-проверка-результата">Оформить продажу или возврат</a>.</li>
 <li><a href="marking/#порядок-проверки-маркированного-товара">Настроить маркировку</a>.</li>
+<li><a href="ts_piot/">Подключить ТС ПИоТ: требования, порты и настройка</a>.</li>
 <li><a href="errors/#чек-напечатался-но-в-1с-возникла-ошибка">Разобраться с ошибкой после печати</a>.</li>
 <li><a href="connecting/#как-обновить-ранее-приобретенную-программу">Обновить обработку</a> или <a href="parameters_description/#что-сохраняется-в-файл-настроек">перенести настройки</a>.</li>
 </ul>
@@ -1239,7 +1330,7 @@
 <li>Поддерживает <a href="marking/#поддержка-ффд-12"><strong>ФФД 1.2</strong></a></li>
 <li>Поддерживает <strong><a href="instruction/#поддержка-ндс-5-и-7">НДС 5% и 7% УСН</a></strong></li>
 <li>поддерживает <strong><a href="instruction/#поддержка-ндс-22">ставку НДС 22%</a></strong></li>
-<li>поддерживает новый механизм работы <a href="marking/#разрешительный-режим-тс-пиот">проверки маркировки <strong>ТС ПИоТ</strong></a></li>
+<li>поддерживает новый механизм работы <a href="ts_piot/">проверки маркировки <strong>ТС ПИоТ</strong></a></li>
 </ul>
 <h2 id="навигация">Навигация<a class="headerlink" href="#навигация" title="Permanent link">&para;</a></h2>
 <ul>
@@ -1270,11 +1361,20 @@
 <li><a href="licensing/#написать-разработчику">Написать разработчику</a></li>
 <li><a href="licensing/#как-записать-лог-для-технической-поддержки">Как записать лог для технической поддержки?</a></li>
 <li><a href="licensing/#особенность-активации-инфостарт">Особенность активации Инфостарт</a></li>
-<li><a href="marking/"><strong>Маркировка. Продажа лекарств, шин, обуви и т.д.</strong></a></li>
+<li><a href="marking/"><strong>Маркировка. Продажа лекарств, шин, обуви и т.д.</strong></a><ul>
 <li><a href="marking/#настройка-типов-маркировки">Настройка типов маркировки</a></li>
 <li><a href="marking/#продажа-лекарств">Продажа лекарств</a></li>
 <li><a href="marking/#отражение-продаж-индивидуальных-средства-защиты">Отражение продаж индивидуальных средства защиты</a></li>
 <li><a href="marking/#как-продавать-маркированный-товар-через-обработку">Как продавать маркированный товар через обработку</a></li>
+<li><a href="ts_piot/"><strong>Настройка ТС ПИоТ</strong></a><ul>
+<li><a href="ts_piot/#requirements">Требования к обработке, драйверам и прошивкам</a></li>
+<li><a href="ts_piot/#ports">Порты и схема обмена</a></li>
+<li><a href="ts_piot/#setup">Настройка подключения в обработке</a></li>
+<li><a href="ts_piot/#verification">Проверка работы и диагностика</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li><a href="instruction/"><strong>Дополнительная функциональность</strong></a></li>
 <li><a href="instruction/#особенность-пробития-авансовых-чеков-и-установки-признаков-способа-расчета">Особенность пробития авансовых чеков и установки признаков способа расчета</a></li>
 <li><a href="instruction/#печать-копии-чека">Печать копии чека</a></li>
